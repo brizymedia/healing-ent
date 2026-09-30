@@ -1,4 +1,4 @@
-# 힐링엔터테인먼트 홈페이지 (시안)
+# 힐링엔터테인먼트 홈페이지
 
 정적 사이트 — GitHub Pages 로 배포: https://brizymedia.github.io/healing-ent/
 
