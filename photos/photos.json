@@ -1,0 +1,30 @@
+{
+ "updated": "",
+ "categories": [
+  {
+   "slug": "school",
+   "name": "학교행사",
+   "desc": "",
+   "count": 0
+  },
+  {
+   "slug": "corp",
+   "name": "기업 · 단체 워크숍",
+   "desc": "",
+   "count": 0
+  },
+  {
+   "slug": "fest",
+   "name": "지역축제",
+   "desc": "",
+   "count": 0
+  },
+  {
+   "slug": "stage",
+   "name": "무대 · 음향",
+   "desc": "",
+   "count": 0
+  }
+ ],
+ "photos": []
+}
