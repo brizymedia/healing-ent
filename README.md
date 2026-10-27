@@ -15,6 +15,7 @@
 | 사진 올리기 + 블로그 · 인스타 글 만들기 | `upload.html` | 갤러리 서버(`apps-script/gallery`) → `photos` 가지 → 현장 갤러리 페이지 |
 | 행사 이야기 | `stories/` | 없음 — `python tools/make_pages.py` |
 | 지역 페이지 | `areas/` | 없음 — 같은 명령 |
+| 행사 준비 블로그 | `blog/` (지역별 글) · `rss.xml` | 없음 — 원본 `_blog/posts/*.json` → `node scripts/blog-check.mjs --new <파일>` → `node scripts/build-blog.mjs` (규칙 `_blog/GUIDE.md`) |
 | 문의 알림 | `contact.html` 폼 · 견적서 | 문의 서버 → 대표 메일 + 큰길브리지 |
 | 행사 일정 · 체크리스트 | `schedule.html` | 계약 서버(일정 기능 — 스크립트 속성 `CREW_PW` 필요) |
 | 대표 전용 업무 문서함 | `office.html` | 없음 — 도구 모음 · 서버 연결 상태 · 암호 안내(noindex) |
