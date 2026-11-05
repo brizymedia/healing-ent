@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T21:05:28.890Z",
+ "updated": "2026-11-05T21:06:17.311Z",
  "categories": [
   {
    "slug": "school",
@@ -23,10 +23,32 @@
    "slug": "stage",
    "name": "무대 · 음향",
    "desc": "",
-   "count": 5
+   "count": 7
   }
  ],
  "photos": [
+  {
+   "path": "photos/stage/20260109-2pdt-002.jpg",
+   "cat": "stage",
+   "event": "행사용 포토존 트러스 조립",
+   "date": "2026-01-09",
+   "place": "실내 행사장",
+   "caption": "행사용 포토존 트러스 조립",
+   "desc": "2026년 1월 9일 행사용 포토존을 준비한 현장입니다. 현수막과 금속 트러스를 맞추어 조립하는 준비 모습, 테이블을 배치한 실내 행사장의 풍경을 담았습니다. 포토존의 조립 과정과 행사 전 공간 준비 상태를 기록했습니다.",
+   "thumb": "photos/_cover/20260109-2pdt-sq.jpg",
+   "cover": "photos/_cover/20260109-2pdt-wide.jpg"
+  },
+  {
+   "path": "photos/stage/20260109-2pdt-001.jpg",
+   "cat": "stage",
+   "event": "행사용 포토존 트러스 조립",
+   "date": "2026-01-09",
+   "place": "실내 행사장",
+   "caption": "행사용 포토존 트러스 조립",
+   "desc": "2026년 1월 9일 행사용 포토존을 준비한 현장입니다. 현수막과 금속 트러스를 맞추어 조립하는 준비 모습, 테이블을 배치한 실내 행사장의 풍경을 담았습니다. 포토존의 조립 과정과 행사 전 공간 준비 상태를 기록했습니다.",
+   "thumb": "photos/_cover/20260109-2pdt-sq.jpg",
+   "cover": "photos/_cover/20260109-2pdt-wide.jpg"
+  },
   {
    "path": "photos/corp/20260120-w4dh-003.jpg",
    "cat": "corp",
