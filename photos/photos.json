@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T19:50:46.058Z",
+ "updated": "2026-11-05T19:51:25.376Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 94
+   "count": 99
   },
   {
    "slug": "fest",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20260530-fo2o-005.jpg",
+   "cat": "corp",
+   "event": "GAEC 제16대 총동문회 봄 야유회",
+   "date": "2026-05-30",
+   "place": "일영 봉주르",
+   "caption": "GAEC 제16대 총동문회 봄 야유회",
+   "desc": "2026년 5월 30일 일영 봉주르에서 열린 GAEC 제16대 총동문회 봄 야유회 현장입니다. 행사 현수막과 에어 아치, 기념 포토월 및 잔디 운동장에서 함께하는 단체 게임을 담았습니다. 컵을 활용한 게임과 공기 주입식 말 모양 도구를 이용한 팀 활동 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20260530-fo2o-sq.jpg",
+   "cover": "photos/_cover/20260530-fo2o-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260530-fo2o-004.jpg",
+   "cat": "corp",
+   "event": "GAEC 제16대 총동문회 봄 야유회",
+   "date": "2026-05-30",
+   "place": "일영 봉주르",
+   "caption": "GAEC 제16대 총동문회 봄 야유회",
+   "desc": "2026년 5월 30일 일영 봉주르에서 열린 GAEC 제16대 총동문회 봄 야유회 현장입니다. 행사 현수막과 에어 아치, 기념 포토월 및 잔디 운동장에서 함께하는 단체 게임을 담았습니다. 컵을 활용한 게임과 공기 주입식 말 모양 도구를 이용한 팀 활동 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20260530-fo2o-sq.jpg",
+   "cover": "photos/_cover/20260530-fo2o-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260530-fo2o-003.jpg",
+   "cat": "corp",
+   "event": "GAEC 제16대 총동문회 봄 야유회",
+   "date": "2026-05-30",
+   "place": "일영 봉주르",
+   "caption": "GAEC 제16대 총동문회 봄 야유회",
+   "desc": "2026년 5월 30일 일영 봉주르에서 열린 GAEC 제16대 총동문회 봄 야유회 현장입니다. 행사 현수막과 에어 아치, 기념 포토월 및 잔디 운동장에서 함께하는 단체 게임을 담았습니다. 컵을 활용한 게임과 공기 주입식 말 모양 도구를 이용한 팀 활동 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20260530-fo2o-sq.jpg",
+   "cover": "photos/_cover/20260530-fo2o-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260530-fo2o-002.jpg",
+   "cat": "corp",
+   "event": "GAEC 제16대 총동문회 봄 야유회",
+   "date": "2026-05-30",
+   "place": "일영 봉주르",
+   "caption": "GAEC 제16대 총동문회 봄 야유회",
+   "desc": "2026년 5월 30일 일영 봉주르에서 열린 GAEC 제16대 총동문회 봄 야유회 현장입니다. 행사 현수막과 에어 아치, 기념 포토월 및 잔디 운동장에서 함께하는 단체 게임을 담았습니다. 컵을 활용한 게임과 공기 주입식 말 모양 도구를 이용한 팀 활동 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20260530-fo2o-sq.jpg",
+   "cover": "photos/_cover/20260530-fo2o-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260530-fo2o-001.jpg",
+   "cat": "corp",
+   "event": "GAEC 제16대 총동문회 봄 야유회",
+   "date": "2026-05-30",
+   "place": "일영 봉주르",
+   "caption": "GAEC 제16대 총동문회 봄 야유회",
+   "desc": "2026년 5월 30일 일영 봉주르에서 열린 GAEC 제16대 총동문회 봄 야유회 현장입니다. 행사 현수막과 에어 아치, 기념 포토월 및 잔디 운동장에서 함께하는 단체 게임을 담았습니다. 컵을 활용한 게임과 공기 주입식 말 모양 도구를 이용한 팀 활동 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20260530-fo2o-sq.jpg",
+   "cover": "photos/_cover/20260530-fo2o-wide.jpg"
+  },
   {
    "path": "photos/corp/20260605-uu8q-005.jpg",
    "cat": "corp",
