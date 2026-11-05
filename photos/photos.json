@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T21:29:48.016Z",
+ "updated": "2026-11-05T21:33:07.928Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 181
+   "count": 185
   },
   {
    "slug": "fest",
@@ -27,6 +27,50 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20251119-sxqp-004.jpg",
+   "cat": "corp",
+   "event": "한화 강북지역단 전주 행사",
+   "date": "2025-11-19",
+   "place": "전주 실내 연회장",
+   "caption": "한화 강북지역단 전주 행사",
+   "desc": "2025년 11월 19일 전주에서 진행된 한화 강북지역단 행사 현장입니다. 대형 화면과 테이블을 마련한 연회장, 진행자와 참가자들이 함께하는 단체 참여 장면을 담았습니다. 색색의 조명과 응원 도구를 활용해 호응하는 실내 행사의 분위기를 기록했습니다.",
+   "thumb": "photos/_cover/20251119-sxqp-sq.jpg",
+   "cover": "photos/_cover/20251119-sxqp-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251119-sxqp-003.jpg",
+   "cat": "corp",
+   "event": "한화 강북지역단 전주 행사",
+   "date": "2025-11-19",
+   "place": "전주 실내 연회장",
+   "caption": "한화 강북지역단 전주 행사",
+   "desc": "2025년 11월 19일 전주에서 진행된 한화 강북지역단 행사 현장입니다. 대형 화면과 테이블을 마련한 연회장, 진행자와 참가자들이 함께하는 단체 참여 장면을 담았습니다. 색색의 조명과 응원 도구를 활용해 호응하는 실내 행사의 분위기를 기록했습니다.",
+   "thumb": "photos/_cover/20251119-sxqp-sq.jpg",
+   "cover": "photos/_cover/20251119-sxqp-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251119-sxqp-002.jpg",
+   "cat": "corp",
+   "event": "한화 강북지역단 전주 행사",
+   "date": "2025-11-19",
+   "place": "전주 실내 연회장",
+   "caption": "한화 강북지역단 전주 행사",
+   "desc": "2025년 11월 19일 전주에서 진행된 한화 강북지역단 행사 현장입니다. 대형 화면과 테이블을 마련한 연회장, 진행자와 참가자들이 함께하는 단체 참여 장면을 담았습니다. 색색의 조명과 응원 도구를 활용해 호응하는 실내 행사의 분위기를 기록했습니다.",
+   "thumb": "photos/_cover/20251119-sxqp-sq.jpg",
+   "cover": "photos/_cover/20251119-sxqp-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251119-sxqp-001.jpg",
+   "cat": "corp",
+   "event": "한화 강북지역단 전주 행사",
+   "date": "2025-11-19",
+   "place": "전주 실내 연회장",
+   "caption": "한화 강북지역단 전주 행사",
+   "desc": "2025년 11월 19일 전주에서 진행된 한화 강북지역단 행사 현장입니다. 대형 화면과 테이블을 마련한 연회장, 진행자와 참가자들이 함께하는 단체 참여 장면을 담았습니다. 색색의 조명과 응원 도구를 활용해 호응하는 실내 행사의 분위기를 기록했습니다.",
+   "thumb": "photos/_cover/20251119-sxqp-sq.jpg",
+   "cover": "photos/_cover/20251119-sxqp-wide.jpg"
+  },
   {
    "path": "photos/school/20251120-aeji-005.jpg",
    "cat": "school",
