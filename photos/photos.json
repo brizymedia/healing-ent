@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T20:12:04.062Z",
+ "updated": "2026-11-05T20:12:59.950Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 121
+   "count": 125
   },
   {
    "slug": "corp",
@@ -27,6 +27,50 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20260507-8ilr-005.jpg",
+   "cat": "school",
+   "event": "강릉 송양초등학교 운동회",
+   "date": "2026-05-07",
+   "place": "강릉 송양초등학교 운동장",
+   "caption": "강릉 송양초등학교 운동회",
+   "desc": "2026년 5월 7일 강릉 송양초등학교 운동회 현장입니다. 잔디 운동장에 설치한 만국기와 에어 아치, 큰 공과 색색의 천을 활용한 단체 활동을 담았습니다. 배 모양 경기 도구를 이용한 팀 경기와 줄다리기 장면을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20260507-8ilr-sq.jpg",
+   "cover": "photos/_cover/20260507-8ilr-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260507-8ilr-004.jpg",
+   "cat": "school",
+   "event": "강릉 송양초등학교 운동회",
+   "date": "2026-05-07",
+   "place": "강릉 송양초등학교 운동장",
+   "caption": "강릉 송양초등학교 운동회",
+   "desc": "2026년 5월 7일 강릉 송양초등학교 운동회 현장입니다. 잔디 운동장에 설치한 만국기와 에어 아치, 큰 공과 색색의 천을 활용한 단체 활동을 담았습니다. 배 모양 경기 도구를 이용한 팀 경기와 줄다리기 장면을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20260507-8ilr-sq.jpg",
+   "cover": "photos/_cover/20260507-8ilr-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260507-8ilr-003.jpg",
+   "cat": "school",
+   "event": "강릉 송양초등학교 운동회",
+   "date": "2026-05-07",
+   "place": "강릉 송양초등학교 운동장",
+   "caption": "강릉 송양초등학교 운동회",
+   "desc": "2026년 5월 7일 강릉 송양초등학교 운동회 현장입니다. 잔디 운동장에 설치한 만국기와 에어 아치, 큰 공과 색색의 천을 활용한 단체 활동을 담았습니다. 배 모양 경기 도구를 이용한 팀 경기와 줄다리기 장면을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20260507-8ilr-sq.jpg",
+   "cover": "photos/_cover/20260507-8ilr-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260507-8ilr-002.jpg",
+   "cat": "school",
+   "event": "강릉 송양초등학교 운동회",
+   "date": "2026-05-07",
+   "place": "강릉 송양초등학교 운동장",
+   "caption": "강릉 송양초등학교 운동회",
+   "desc": "2026년 5월 7일 강릉 송양초등학교 운동회 현장입니다. 잔디 운동장에 설치한 만국기와 에어 아치, 큰 공과 색색의 천을 활용한 단체 활동을 담았습니다. 배 모양 경기 도구를 이용한 팀 경기와 줄다리기 장면을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20260507-8ilr-sq.jpg",
+   "cover": "photos/_cover/20260507-8ilr-wide.jpg"
+  },
   {
    "path": "photos/school/20260507-g4zk-005.jpg",
    "cat": "school",
