@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T19:18:17.834Z",
+ "updated": "2026-11-05T19:19:32.032Z",
  "categories": [
   {
    "slug": "school",
@@ -23,10 +23,65 @@
    "slug": "stage",
    "name": "무대 · 음향",
    "desc": "",
-   "count": 0
+   "count": 5
   }
  ],
  "photos": [
+  {
+   "path": "photos/stage/20260829-2ckd-005.jpg",
+   "cat": "stage",
+   "event": "Last Summer 풀파티",
+   "date": "2026-08-29",
+   "place": "야외 수영장 행사장",
+   "caption": "Last Summer 풀파티",
+   "desc": "2026년 8월 29일 야외 수영장에서 진행된 Last Summer 풀파티 현장입니다. 입구 포토존과 수영장 주변의 음향 장비 및 조명, 저녁 공연 장면을 담았습니다. 준비 단계와 조명이 켜진 수영장 풍경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20260829-2ckd-sq.jpg",
+   "cover": "photos/_cover/20260829-2ckd-wide.jpg"
+  },
+  {
+   "path": "photos/stage/20260829-2ckd-004.jpg",
+   "cat": "stage",
+   "event": "Last Summer 풀파티",
+   "date": "2026-08-29",
+   "place": "야외 수영장 행사장",
+   "caption": "Last Summer 풀파티",
+   "desc": "2026년 8월 29일 야외 수영장에서 진행된 Last Summer 풀파티 현장입니다. 입구 포토존과 수영장 주변의 음향 장비 및 조명, 저녁 공연 장면을 담았습니다. 준비 단계와 조명이 켜진 수영장 풍경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20260829-2ckd-sq.jpg",
+   "cover": "photos/_cover/20260829-2ckd-wide.jpg"
+  },
+  {
+   "path": "photos/stage/20260829-2ckd-003.jpg",
+   "cat": "stage",
+   "event": "Last Summer 풀파티",
+   "date": "2026-08-29",
+   "place": "야외 수영장 행사장",
+   "caption": "Last Summer 풀파티",
+   "desc": "2026년 8월 29일 야외 수영장에서 진행된 Last Summer 풀파티 현장입니다. 입구 포토존과 수영장 주변의 음향 장비 및 조명, 저녁 공연 장면을 담았습니다. 준비 단계와 조명이 켜진 수영장 풍경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20260829-2ckd-sq.jpg",
+   "cover": "photos/_cover/20260829-2ckd-wide.jpg"
+  },
+  {
+   "path": "photos/stage/20260829-2ckd-002.jpg",
+   "cat": "stage",
+   "event": "Last Summer 풀파티",
+   "date": "2026-08-29",
+   "place": "야외 수영장 행사장",
+   "caption": "Last Summer 풀파티",
+   "desc": "2026년 8월 29일 야외 수영장에서 진행된 Last Summer 풀파티 현장입니다. 입구 포토존과 수영장 주변의 음향 장비 및 조명, 저녁 공연 장면을 담았습니다. 준비 단계와 조명이 켜진 수영장 풍경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20260829-2ckd-sq.jpg",
+   "cover": "photos/_cover/20260829-2ckd-wide.jpg"
+  },
+  {
+   "path": "photos/stage/20260829-2ckd-001.jpg",
+   "cat": "stage",
+   "event": "Last Summer 풀파티",
+   "date": "2026-08-29",
+   "place": "야외 수영장 행사장",
+   "caption": "Last Summer 풀파티",
+   "desc": "2026년 8월 29일 야외 수영장에서 진행된 Last Summer 풀파티 현장입니다. 입구 포토존과 수영장 주변의 음향 장비 및 조명, 저녁 공연 장면을 담았습니다. 준비 단계와 조명이 켜진 수영장 풍경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20260829-2ckd-sq.jpg",
+   "cover": "photos/_cover/20260829-2ckd-wide.jpg"
+  },
   {
    "path": "photos/corp/20260829-tods-005.jpg",
    "cat": "corp",
