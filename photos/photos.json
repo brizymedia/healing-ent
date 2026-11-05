@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T22:25:14.186Z",
+ "updated": "2026-11-05T22:25:57.534Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 214
+   "count": 219
   },
   {
    "slug": "corp",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20250930-vtla-005.jpg",
+   "cat": "school",
+   "event": "단원고등학교 레크리에이션",
+   "date": "2025-09-30",
+   "place": "속초 한화 실내 행사장",
+   "caption": "단원고등학교 레크리에이션",
+   "desc": "2025년 9월 30일 속초 한화에서 진행된 단원고등학교 레크리에이션 현장입니다. 무대와 음향 장비, 색색의 조명을 마련한 실내 행사장을 담았습니다. 객석의 단체 참여와 무대 공연, 함께 무대에 오른 참가자들의 프로그램 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250930-vtla-sq.jpg",
+   "cover": "photos/_cover/20250930-vtla-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250930-vtla-004.jpg",
+   "cat": "school",
+   "event": "단원고등학교 레크리에이션",
+   "date": "2025-09-30",
+   "place": "속초 한화 실내 행사장",
+   "caption": "단원고등학교 레크리에이션",
+   "desc": "2025년 9월 30일 속초 한화에서 진행된 단원고등학교 레크리에이션 현장입니다. 무대와 음향 장비, 색색의 조명을 마련한 실내 행사장을 담았습니다. 객석의 단체 참여와 무대 공연, 함께 무대에 오른 참가자들의 프로그램 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250930-vtla-sq.jpg",
+   "cover": "photos/_cover/20250930-vtla-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250930-vtla-003.jpg",
+   "cat": "school",
+   "event": "단원고등학교 레크리에이션",
+   "date": "2025-09-30",
+   "place": "속초 한화 실내 행사장",
+   "caption": "단원고등학교 레크리에이션",
+   "desc": "2025년 9월 30일 속초 한화에서 진행된 단원고등학교 레크리에이션 현장입니다. 무대와 음향 장비, 색색의 조명을 마련한 실내 행사장을 담았습니다. 객석의 단체 참여와 무대 공연, 함께 무대에 오른 참가자들의 프로그램 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250930-vtla-sq.jpg",
+   "cover": "photos/_cover/20250930-vtla-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250930-vtla-002.jpg",
+   "cat": "school",
+   "event": "단원고등학교 레크리에이션",
+   "date": "2025-09-30",
+   "place": "속초 한화 실내 행사장",
+   "caption": "단원고등학교 레크리에이션",
+   "desc": "2025년 9월 30일 속초 한화에서 진행된 단원고등학교 레크리에이션 현장입니다. 무대와 음향 장비, 색색의 조명을 마련한 실내 행사장을 담았습니다. 객석의 단체 참여와 무대 공연, 함께 무대에 오른 참가자들의 프로그램 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250930-vtla-sq.jpg",
+   "cover": "photos/_cover/20250930-vtla-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250930-vtla-001.jpg",
+   "cat": "school",
+   "event": "단원고등학교 레크리에이션",
+   "date": "2025-09-30",
+   "place": "속초 한화 실내 행사장",
+   "caption": "단원고등학교 레크리에이션",
+   "desc": "2025년 9월 30일 속초 한화에서 진행된 단원고등학교 레크리에이션 현장입니다. 무대와 음향 장비, 색색의 조명을 마련한 실내 행사장을 담았습니다. 객석의 단체 참여와 무대 공연, 함께 무대에 오른 참가자들의 프로그램 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250930-vtla-sq.jpg",
+   "cover": "photos/_cover/20250930-vtla-wide.jpg"
+  },
   {
    "path": "photos/school/20251002-ha70-005.jpg",
    "cat": "school",
