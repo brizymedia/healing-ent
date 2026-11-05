@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T22:54:02.482Z",
+ "updated": "2026-11-05T22:54:49.628Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 263
+   "count": 268
   },
   {
    "slug": "fest",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20250902-c9ac-005.jpg",
+   "cat": "corp",
+   "event": "개포3동 합동생신잔치",
+   "date": "2025-09-02",
+   "place": "실내 행사장",
+   "caption": "개포3동 합동생신잔치",
+   "desc": "2025년 9월 2일 개포3동 합동생신잔치 현장입니다. 생신 축하 현수막과 풍선, 생신상 장식을 마련한 실내 행사장을 담았습니다. 축하 공연과 관람, 진행자와 함께하는 단체 프로그램 등 참가자들이 모인 행사의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250902-c9ac-sq.jpg",
+   "cover": "photos/_cover/20250902-c9ac-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250902-c9ac-004.jpg",
+   "cat": "corp",
+   "event": "개포3동 합동생신잔치",
+   "date": "2025-09-02",
+   "place": "실내 행사장",
+   "caption": "개포3동 합동생신잔치",
+   "desc": "2025년 9월 2일 개포3동 합동생신잔치 현장입니다. 생신 축하 현수막과 풍선, 생신상 장식을 마련한 실내 행사장을 담았습니다. 축하 공연과 관람, 진행자와 함께하는 단체 프로그램 등 참가자들이 모인 행사의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250902-c9ac-sq.jpg",
+   "cover": "photos/_cover/20250902-c9ac-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250902-c9ac-003.jpg",
+   "cat": "corp",
+   "event": "개포3동 합동생신잔치",
+   "date": "2025-09-02",
+   "place": "실내 행사장",
+   "caption": "개포3동 합동생신잔치",
+   "desc": "2025년 9월 2일 개포3동 합동생신잔치 현장입니다. 생신 축하 현수막과 풍선, 생신상 장식을 마련한 실내 행사장을 담았습니다. 축하 공연과 관람, 진행자와 함께하는 단체 프로그램 등 참가자들이 모인 행사의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250902-c9ac-sq.jpg",
+   "cover": "photos/_cover/20250902-c9ac-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250902-c9ac-002.jpg",
+   "cat": "corp",
+   "event": "개포3동 합동생신잔치",
+   "date": "2025-09-02",
+   "place": "실내 행사장",
+   "caption": "개포3동 합동생신잔치",
+   "desc": "2025년 9월 2일 개포3동 합동생신잔치 현장입니다. 생신 축하 현수막과 풍선, 생신상 장식을 마련한 실내 행사장을 담았습니다. 축하 공연과 관람, 진행자와 함께하는 단체 프로그램 등 참가자들이 모인 행사의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250902-c9ac-sq.jpg",
+   "cover": "photos/_cover/20250902-c9ac-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250902-c9ac-001.jpg",
+   "cat": "corp",
+   "event": "개포3동 합동생신잔치",
+   "date": "2025-09-02",
+   "place": "실내 행사장",
+   "caption": "개포3동 합동생신잔치",
+   "desc": "2025년 9월 2일 개포3동 합동생신잔치 현장입니다. 생신 축하 현수막과 풍선, 생신상 장식을 마련한 실내 행사장을 담았습니다. 축하 공연과 관람, 진행자와 함께하는 단체 프로그램 등 참가자들이 모인 행사의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250902-c9ac-sq.jpg",
+   "cover": "photos/_cover/20250902-c9ac-wide.jpg"
+  },
   {
    "path": "photos/school/20250905-vcrd-005.jpg",
    "cat": "school",
