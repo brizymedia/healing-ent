@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T20:36:20.410Z",
+ "updated": "2026-11-05T20:42:49.833Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 122
+   "count": 127
   },
   {
    "slug": "fest",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20260408-nloh-005.jpg",
+   "cat": "corp",
+   "event": "2026 BTCNEX Community Seminar",
+   "date": "2026-04-08",
+   "place": "신도림 라마다 실내 연회장",
+   "caption": "2026 BTCNEX Community Seminar",
+   "desc": "2026년 4월 8일 신도림 라마다에서 열린 2026 BTCNEX Community Seminar 현장입니다. 행사 로고를 배치한 포토월과 연회장 테이블, 대형 화면을 활용한 무대 진행 및 참가자들의 참여 장면을 담았습니다. 무대 조명과 공식 프로그램이 이어지는 컨벤션 현장의 분위기를 기록했습니다.",
+   "thumb": "photos/_cover/20260408-nloh-sq.jpg",
+   "cover": "photos/_cover/20260408-nloh-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260408-nloh-004.jpg",
+   "cat": "corp",
+   "event": "2026 BTCNEX Community Seminar",
+   "date": "2026-04-08",
+   "place": "신도림 라마다 실내 연회장",
+   "caption": "2026 BTCNEX Community Seminar",
+   "desc": "2026년 4월 8일 신도림 라마다에서 열린 2026 BTCNEX Community Seminar 현장입니다. 행사 로고를 배치한 포토월과 연회장 테이블, 대형 화면을 활용한 무대 진행 및 참가자들의 참여 장면을 담았습니다. 무대 조명과 공식 프로그램이 이어지는 컨벤션 현장의 분위기를 기록했습니다.",
+   "thumb": "photos/_cover/20260408-nloh-sq.jpg",
+   "cover": "photos/_cover/20260408-nloh-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260408-nloh-003.jpg",
+   "cat": "corp",
+   "event": "2026 BTCNEX Community Seminar",
+   "date": "2026-04-08",
+   "place": "신도림 라마다 실내 연회장",
+   "caption": "2026 BTCNEX Community Seminar",
+   "desc": "2026년 4월 8일 신도림 라마다에서 열린 2026 BTCNEX Community Seminar 현장입니다. 행사 로고를 배치한 포토월과 연회장 테이블, 대형 화면을 활용한 무대 진행 및 참가자들의 참여 장면을 담았습니다. 무대 조명과 공식 프로그램이 이어지는 컨벤션 현장의 분위기를 기록했습니다.",
+   "thumb": "photos/_cover/20260408-nloh-sq.jpg",
+   "cover": "photos/_cover/20260408-nloh-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260408-nloh-002.jpg",
+   "cat": "corp",
+   "event": "2026 BTCNEX Community Seminar",
+   "date": "2026-04-08",
+   "place": "신도림 라마다 실내 연회장",
+   "caption": "2026 BTCNEX Community Seminar",
+   "desc": "2026년 4월 8일 신도림 라마다에서 열린 2026 BTCNEX Community Seminar 현장입니다. 행사 로고를 배치한 포토월과 연회장 테이블, 대형 화면을 활용한 무대 진행 및 참가자들의 참여 장면을 담았습니다. 무대 조명과 공식 프로그램이 이어지는 컨벤션 현장의 분위기를 기록했습니다.",
+   "thumb": "photos/_cover/20260408-nloh-sq.jpg",
+   "cover": "photos/_cover/20260408-nloh-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260408-nloh-001.jpg",
+   "cat": "corp",
+   "event": "2026 BTCNEX Community Seminar",
+   "date": "2026-04-08",
+   "place": "신도림 라마다 실내 연회장",
+   "caption": "2026 BTCNEX Community Seminar",
+   "desc": "2026년 4월 8일 신도림 라마다에서 열린 2026 BTCNEX Community Seminar 현장입니다. 행사 로고를 배치한 포토월과 연회장 테이블, 대형 화면을 활용한 무대 진행 및 참가자들의 참여 장면을 담았습니다. 무대 조명과 공식 프로그램이 이어지는 컨벤션 현장의 분위기를 기록했습니다.",
+   "thumb": "photos/_cover/20260408-nloh-sq.jpg",
+   "cover": "photos/_cover/20260408-nloh-wide.jpg"
+  },
   {
    "path": "photos/corp/20260412-xylq-005.jpg",
    "cat": "corp",
