@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T19:54:00.454Z",
+ "updated": "2026-11-05T19:59:07.727Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 86
+   "count": 91
   },
   {
    "slug": "corp",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20260522-dgw9-005.jpg",
+   "cat": "school",
+   "event": "용문중학교 운동회",
+   "date": "2026-05-22",
+   "place": "용문중학교 운동장",
+   "caption": "용문중학교 운동회",
+   "desc": "2026년 5월 22일 용문중학교 운동회 현장입니다. 만국기와 에어 아치를 설치한 운동장, 대형 공을 활용한 단체 활동과 팀별 경기, 트랙 달리기 장면을 담았습니다. 준비된 경기 도구와 학생들이 함께 참여하는 야외 행사 풍경을 기록했습니다.",
+   "thumb": "photos/_cover/20260522-dgw9-sq.jpg",
+   "cover": "photos/_cover/20260522-dgw9-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260522-dgw9-004.jpg",
+   "cat": "school",
+   "event": "용문중학교 운동회",
+   "date": "2026-05-22",
+   "place": "용문중학교 운동장",
+   "caption": "용문중학교 운동회",
+   "desc": "2026년 5월 22일 용문중학교 운동회 현장입니다. 만국기와 에어 아치를 설치한 운동장, 대형 공을 활용한 단체 활동과 팀별 경기, 트랙 달리기 장면을 담았습니다. 준비된 경기 도구와 학생들이 함께 참여하는 야외 행사 풍경을 기록했습니다.",
+   "thumb": "photos/_cover/20260522-dgw9-sq.jpg",
+   "cover": "photos/_cover/20260522-dgw9-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260522-dgw9-003.jpg",
+   "cat": "school",
+   "event": "용문중학교 운동회",
+   "date": "2026-05-22",
+   "place": "용문중학교 운동장",
+   "caption": "용문중학교 운동회",
+   "desc": "2026년 5월 22일 용문중학교 운동회 현장입니다. 만국기와 에어 아치를 설치한 운동장, 대형 공을 활용한 단체 활동과 팀별 경기, 트랙 달리기 장면을 담았습니다. 준비된 경기 도구와 학생들이 함께 참여하는 야외 행사 풍경을 기록했습니다.",
+   "thumb": "photos/_cover/20260522-dgw9-sq.jpg",
+   "cover": "photos/_cover/20260522-dgw9-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260522-dgw9-002.jpg",
+   "cat": "school",
+   "event": "용문중학교 운동회",
+   "date": "2026-05-22",
+   "place": "용문중학교 운동장",
+   "caption": "용문중학교 운동회",
+   "desc": "2026년 5월 22일 용문중학교 운동회 현장입니다. 만국기와 에어 아치를 설치한 운동장, 대형 공을 활용한 단체 활동과 팀별 경기, 트랙 달리기 장면을 담았습니다. 준비된 경기 도구와 학생들이 함께 참여하는 야외 행사 풍경을 기록했습니다.",
+   "thumb": "photos/_cover/20260522-dgw9-sq.jpg",
+   "cover": "photos/_cover/20260522-dgw9-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260522-dgw9-001.jpg",
+   "cat": "school",
+   "event": "용문중학교 운동회",
+   "date": "2026-05-22",
+   "place": "용문중학교 운동장",
+   "caption": "용문중학교 운동회",
+   "desc": "2026년 5월 22일 용문중학교 운동회 현장입니다. 만국기와 에어 아치를 설치한 운동장, 대형 공을 활용한 단체 활동과 팀별 경기, 트랙 달리기 장면을 담았습니다. 준비된 경기 도구와 학생들이 함께 참여하는 야외 행사 풍경을 기록했습니다.",
+   "thumb": "photos/_cover/20260522-dgw9-sq.jpg",
+   "cover": "photos/_cover/20260522-dgw9-wide.jpg"
+  },
   {
    "path": "photos/school/20260527-b7nd-005.jpg",
    "cat": "school",
