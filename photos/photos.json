@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T18:48:52.972Z",
+ "updated": "2026-11-05T18:54:38.271Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 50
+   "count": 56
   },
   {
    "slug": "corp",
@@ -27,6 +27,72 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20261002-cz9v-006.jpg",
+   "cat": "school",
+   "event": "충암중학교 체육대회 1부",
+   "date": "2026-10-02",
+   "place": "충암중학교 운동장",
+   "caption": "충암중학교 체육대회 1부",
+   "desc": "2026년 10월 2일 충암중학교 체육대회 1부 현장입니다. 만국기가 걸린 인조잔디 운동장에서 학생들이 달리기와 줄다리기에 참여하는 모습을 담았습니다. 경기 전 준비와 진행자 주변에 모인 학생들, 운동장 전경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20261002-cz9v-sq.jpg",
+   "cover": "photos/_cover/20261002-cz9v-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261002-cz9v-005.jpg",
+   "cat": "school",
+   "event": "충암중학교 체육대회 1부",
+   "date": "2026-10-02",
+   "place": "충암중학교 운동장",
+   "caption": "충암중학교 체육대회 1부",
+   "desc": "2026년 10월 2일 충암중학교 체육대회 1부 현장입니다. 만국기가 걸린 인조잔디 운동장에서 학생들이 달리기와 줄다리기에 참여하는 모습을 담았습니다. 경기 전 준비와 진행자 주변에 모인 학생들, 운동장 전경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20261002-cz9v-sq.jpg",
+   "cover": "photos/_cover/20261002-cz9v-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261002-cz9v-004.jpg",
+   "cat": "school",
+   "event": "충암중학교 체육대회 1부",
+   "date": "2026-10-02",
+   "place": "충암중학교 운동장",
+   "caption": "충암중학교 체육대회 1부",
+   "desc": "2026년 10월 2일 충암중학교 체육대회 1부 현장입니다. 만국기가 걸린 인조잔디 운동장에서 학생들이 달리기와 줄다리기에 참여하는 모습을 담았습니다. 경기 전 준비와 진행자 주변에 모인 학생들, 운동장 전경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20261002-cz9v-sq.jpg",
+   "cover": "photos/_cover/20261002-cz9v-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261002-cz9v-003.jpg",
+   "cat": "school",
+   "event": "충암중학교 체육대회 1부",
+   "date": "2026-10-02",
+   "place": "충암중학교 운동장",
+   "caption": "충암중학교 체육대회 1부",
+   "desc": "2026년 10월 2일 충암중학교 체육대회 1부 현장입니다. 만국기가 걸린 인조잔디 운동장에서 학생들이 달리기와 줄다리기에 참여하는 모습을 담았습니다. 경기 전 준비와 진행자 주변에 모인 학생들, 운동장 전경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20261002-cz9v-sq.jpg",
+   "cover": "photos/_cover/20261002-cz9v-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261002-cz9v-002.jpg",
+   "cat": "school",
+   "event": "충암중학교 체육대회 1부",
+   "date": "2026-10-02",
+   "place": "충암중학교 운동장",
+   "caption": "충암중학교 체육대회 1부",
+   "desc": "2026년 10월 2일 충암중학교 체육대회 1부 현장입니다. 만국기가 걸린 인조잔디 운동장에서 학생들이 달리기와 줄다리기에 참여하는 모습을 담았습니다. 경기 전 준비와 진행자 주변에 모인 학생들, 운동장 전경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20261002-cz9v-sq.jpg",
+   "cover": "photos/_cover/20261002-cz9v-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261002-cz9v-001.jpg",
+   "cat": "school",
+   "event": "충암중학교 체육대회 1부",
+   "date": "2026-10-02",
+   "place": "충암중학교 운동장",
+   "caption": "충암중학교 체육대회 1부",
+   "desc": "2026년 10월 2일 충암중학교 체육대회 1부 현장입니다. 만국기가 걸린 인조잔디 운동장에서 학생들이 달리기와 줄다리기에 참여하는 모습을 담았습니다. 경기 전 준비와 진행자 주변에 모인 학생들, 운동장 전경을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20261002-cz9v-sq.jpg",
+   "cover": "photos/_cover/20261002-cz9v-wide.jpg"
+  },
   {
    "path": "photos/fest/20261003-h4oe-007.jpg",
    "cat": "fest",
