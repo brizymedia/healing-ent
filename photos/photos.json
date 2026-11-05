@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T19:24:57.759Z",
+ "updated": "2026-11-05T19:27:54.836Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 74
+   "count": 75
   },
   {
    "slug": "corp",
@@ -27,6 +27,17 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20260825-p2u4-001.jpg",
+   "cat": "school",
+   "event": "신천고 부산 영도 레크리에이션",
+   "date": "2026-08-25",
+   "place": "부산 영도 실내 행사장",
+   "caption": "신천고 부산 영도 레크리에이션",
+   "desc": "2026년 8월 25일 신천고 부산 영도 레크리에이션 현장입니다. 실내 행사장에서 학생들이 무대 앞에 모여 진행자와 함께하는 참여 장면을 한 장의 사진으로 기록했습니다.",
+   "thumb": "photos/_cover/20260825-p2u4-sq.jpg",
+   "cover": "photos/_cover/20260825-p2u4-wide.jpg"
+  },
   {
    "path": "photos/corp/20260827-o067-005.jpg",
    "cat": "corp",
