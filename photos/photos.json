@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T22:34:13.082Z",
+ "updated": "2026-11-05T22:35:11.439Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 224
+   "count": 229
   },
   {
    "slug": "corp",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20250926-dt1w-005.jpg",
+   "cat": "school",
+   "event": "Summit Family Sports Day 가족운동회",
+   "date": "2025-09-26",
+   "place": "김포시농어민문화체육센터",
+   "caption": "Summit Family Sports Day 가족운동회",
+   "desc": "2025년 9월 26일 김포시농어민문화체육센터에서 진행된 Summit Family Sports Day 가족운동회 현장입니다. 에어 아치와 캐릭터 장식을 설치한 무대, 청팀·백팀의 경기 구역을 담았습니다. 대형 공과 표적 매트, 색색의 게임 원판을 활용해 가족들이 함께하는 단체 활동을 기록했습니다.",
+   "thumb": "photos/_cover/20250926-dt1w-sq.jpg",
+   "cover": "photos/_cover/20250926-dt1w-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250926-dt1w-004.jpg",
+   "cat": "school",
+   "event": "Summit Family Sports Day 가족운동회",
+   "date": "2025-09-26",
+   "place": "김포시농어민문화체육센터",
+   "caption": "Summit Family Sports Day 가족운동회",
+   "desc": "2025년 9월 26일 김포시농어민문화체육센터에서 진행된 Summit Family Sports Day 가족운동회 현장입니다. 에어 아치와 캐릭터 장식을 설치한 무대, 청팀·백팀의 경기 구역을 담았습니다. 대형 공과 표적 매트, 색색의 게임 원판을 활용해 가족들이 함께하는 단체 활동을 기록했습니다.",
+   "thumb": "photos/_cover/20250926-dt1w-sq.jpg",
+   "cover": "photos/_cover/20250926-dt1w-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250926-dt1w-003.jpg",
+   "cat": "school",
+   "event": "Summit Family Sports Day 가족운동회",
+   "date": "2025-09-26",
+   "place": "김포시농어민문화체육센터",
+   "caption": "Summit Family Sports Day 가족운동회",
+   "desc": "2025년 9월 26일 김포시농어민문화체육센터에서 진행된 Summit Family Sports Day 가족운동회 현장입니다. 에어 아치와 캐릭터 장식을 설치한 무대, 청팀·백팀의 경기 구역을 담았습니다. 대형 공과 표적 매트, 색색의 게임 원판을 활용해 가족들이 함께하는 단체 활동을 기록했습니다.",
+   "thumb": "photos/_cover/20250926-dt1w-sq.jpg",
+   "cover": "photos/_cover/20250926-dt1w-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250926-dt1w-002.jpg",
+   "cat": "school",
+   "event": "Summit Family Sports Day 가족운동회",
+   "date": "2025-09-26",
+   "place": "김포시농어민문화체육센터",
+   "caption": "Summit Family Sports Day 가족운동회",
+   "desc": "2025년 9월 26일 김포시농어민문화체육센터에서 진행된 Summit Family Sports Day 가족운동회 현장입니다. 에어 아치와 캐릭터 장식을 설치한 무대, 청팀·백팀의 경기 구역을 담았습니다. 대형 공과 표적 매트, 색색의 게임 원판을 활용해 가족들이 함께하는 단체 활동을 기록했습니다.",
+   "thumb": "photos/_cover/20250926-dt1w-sq.jpg",
+   "cover": "photos/_cover/20250926-dt1w-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250926-dt1w-001.jpg",
+   "cat": "school",
+   "event": "Summit Family Sports Day 가족운동회",
+   "date": "2025-09-26",
+   "place": "김포시농어민문화체육센터",
+   "caption": "Summit Family Sports Day 가족운동회",
+   "desc": "2025년 9월 26일 김포시농어민문화체육센터에서 진행된 Summit Family Sports Day 가족운동회 현장입니다. 에어 아치와 캐릭터 장식을 설치한 무대, 청팀·백팀의 경기 구역을 담았습니다. 대형 공과 표적 매트, 색색의 게임 원판을 활용해 가족들이 함께하는 단체 활동을 기록했습니다.",
+   "thumb": "photos/_cover/20250926-dt1w-sq.jpg",
+   "cover": "photos/_cover/20250926-dt1w-wide.jpg"
+  },
   {
    "path": "photos/corp/20250927-4nmu-005.jpg",
    "cat": "corp",
