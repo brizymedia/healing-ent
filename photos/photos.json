@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T21:56:35.462Z",
+ "updated": "2026-11-05T21:59:36.411Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 179
+   "count": 184
   },
   {
    "slug": "corp",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20251030-mebc-005.jpg",
+   "cat": "school",
+   "event": "진관초등학교 운동회",
+   "date": "2025-10-30",
+   "place": "진관초등학교 운동장",
+   "caption": "진관초등학교 운동회",
+   "desc": "2025년 10월 30일 진관초등학교 운동회 현장입니다. 만국기와 에어 아치로 꾸민 운동장, 학생들이 함께하는 준비 활동과 팀별 경기를 담았습니다. 큰 풍선과 색색의 천을 활용한 단체 활동, 달리기 등 야외 운동회의 다양한 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20251030-mebc-sq.jpg",
+   "cover": "photos/_cover/20251030-mebc-wide.jpg"
+  },
+  {
+   "path": "photos/school/20251030-mebc-004.jpg",
+   "cat": "school",
+   "event": "진관초등학교 운동회",
+   "date": "2025-10-30",
+   "place": "진관초등학교 운동장",
+   "caption": "진관초등학교 운동회",
+   "desc": "2025년 10월 30일 진관초등학교 운동회 현장입니다. 만국기와 에어 아치로 꾸민 운동장, 학생들이 함께하는 준비 활동과 팀별 경기를 담았습니다. 큰 풍선과 색색의 천을 활용한 단체 활동, 달리기 등 야외 운동회의 다양한 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20251030-mebc-sq.jpg",
+   "cover": "photos/_cover/20251030-mebc-wide.jpg"
+  },
+  {
+   "path": "photos/school/20251030-mebc-003.jpg",
+   "cat": "school",
+   "event": "진관초등학교 운동회",
+   "date": "2025-10-30",
+   "place": "진관초등학교 운동장",
+   "caption": "진관초등학교 운동회",
+   "desc": "2025년 10월 30일 진관초등학교 운동회 현장입니다. 만국기와 에어 아치로 꾸민 운동장, 학생들이 함께하는 준비 활동과 팀별 경기를 담았습니다. 큰 풍선과 색색의 천을 활용한 단체 활동, 달리기 등 야외 운동회의 다양한 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20251030-mebc-sq.jpg",
+   "cover": "photos/_cover/20251030-mebc-wide.jpg"
+  },
+  {
+   "path": "photos/school/20251030-mebc-002.jpg",
+   "cat": "school",
+   "event": "진관초등학교 운동회",
+   "date": "2025-10-30",
+   "place": "진관초등학교 운동장",
+   "caption": "진관초등학교 운동회",
+   "desc": "2025년 10월 30일 진관초등학교 운동회 현장입니다. 만국기와 에어 아치로 꾸민 운동장, 학생들이 함께하는 준비 활동과 팀별 경기를 담았습니다. 큰 풍선과 색색의 천을 활용한 단체 활동, 달리기 등 야외 운동회의 다양한 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20251030-mebc-sq.jpg",
+   "cover": "photos/_cover/20251030-mebc-wide.jpg"
+  },
+  {
+   "path": "photos/school/20251030-mebc-001.jpg",
+   "cat": "school",
+   "event": "진관초등학교 운동회",
+   "date": "2025-10-30",
+   "place": "진관초등학교 운동장",
+   "caption": "진관초등학교 운동회",
+   "desc": "2025년 10월 30일 진관초등학교 운동회 현장입니다. 만국기와 에어 아치로 꾸민 운동장, 학생들이 함께하는 준비 활동과 팀별 경기를 담았습니다. 큰 풍선과 색색의 천을 활용한 단체 활동, 달리기 등 야외 운동회의 다양한 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20251030-mebc-sq.jpg",
+   "cover": "photos/_cover/20251030-mebc-wide.jpg"
+  },
   {
    "path": "photos/school/20251031-w6wv-005.jpg",
    "cat": "school",
