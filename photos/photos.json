@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T22:53:05.841Z",
+ "updated": "2026-11-05T22:54:02.482Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 239
+   "count": 244
   },
   {
    "slug": "corp",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20250905-vcrd-005.jpg",
+   "cat": "school",
+   "event": "성북생명숲어린이집 가족운동회",
+   "date": "2025-09-05",
+   "place": "실내 체육관",
+   "caption": "성북생명숲어린이집 가족운동회",
+   "desc": "2025년 9월 5일 성북생명숲어린이집 가족운동회 현장입니다. 행사 현수막과 에어 아치, 팀별 경기 구역을 마련한 실내 체육관을 담았습니다. 컵과 대형 공, 에어 게임 기구 및 큰 천을 활용한 단체 활동을 기록했습니다.",
+   "thumb": "photos/_cover/20250905-vcrd-sq.jpg",
+   "cover": "photos/_cover/20250905-vcrd-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250905-vcrd-004.jpg",
+   "cat": "school",
+   "event": "성북생명숲어린이집 가족운동회",
+   "date": "2025-09-05",
+   "place": "실내 체육관",
+   "caption": "성북생명숲어린이집 가족운동회",
+   "desc": "2025년 9월 5일 성북생명숲어린이집 가족운동회 현장입니다. 행사 현수막과 에어 아치, 팀별 경기 구역을 마련한 실내 체육관을 담았습니다. 컵과 대형 공, 에어 게임 기구 및 큰 천을 활용한 단체 활동을 기록했습니다.",
+   "thumb": "photos/_cover/20250905-vcrd-sq.jpg",
+   "cover": "photos/_cover/20250905-vcrd-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250905-vcrd-003.jpg",
+   "cat": "school",
+   "event": "성북생명숲어린이집 가족운동회",
+   "date": "2025-09-05",
+   "place": "실내 체육관",
+   "caption": "성북생명숲어린이집 가족운동회",
+   "desc": "2025년 9월 5일 성북생명숲어린이집 가족운동회 현장입니다. 행사 현수막과 에어 아치, 팀별 경기 구역을 마련한 실내 체육관을 담았습니다. 컵과 대형 공, 에어 게임 기구 및 큰 천을 활용한 단체 활동을 기록했습니다.",
+   "thumb": "photos/_cover/20250905-vcrd-sq.jpg",
+   "cover": "photos/_cover/20250905-vcrd-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250905-vcrd-002.jpg",
+   "cat": "school",
+   "event": "성북생명숲어린이집 가족운동회",
+   "date": "2025-09-05",
+   "place": "실내 체육관",
+   "caption": "성북생명숲어린이집 가족운동회",
+   "desc": "2025년 9월 5일 성북생명숲어린이집 가족운동회 현장입니다. 행사 현수막과 에어 아치, 팀별 경기 구역을 마련한 실내 체육관을 담았습니다. 컵과 대형 공, 에어 게임 기구 및 큰 천을 활용한 단체 활동을 기록했습니다.",
+   "thumb": "photos/_cover/20250905-vcrd-sq.jpg",
+   "cover": "photos/_cover/20250905-vcrd-wide.jpg"
+  },
+  {
+   "path": "photos/school/20250905-vcrd-001.jpg",
+   "cat": "school",
+   "event": "성북생명숲어린이집 가족운동회",
+   "date": "2025-09-05",
+   "place": "실내 체육관",
+   "caption": "성북생명숲어린이집 가족운동회",
+   "desc": "2025년 9월 5일 성북생명숲어린이집 가족운동회 현장입니다. 행사 현수막과 에어 아치, 팀별 경기 구역을 마련한 실내 체육관을 담았습니다. 컵과 대형 공, 에어 게임 기구 및 큰 천을 활용한 단체 활동을 기록했습니다.",
+   "thumb": "photos/_cover/20250905-vcrd-sq.jpg",
+   "cover": "photos/_cover/20250905-vcrd-wide.jpg"
+  },
   {
    "path": "photos/corp/20250905-wfzs-004.jpg",
    "cat": "corp",
