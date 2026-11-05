@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T20:12:59.950Z",
+ "updated": "2026-11-05T20:18:31.977Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 125
+   "count": 126
   },
   {
    "slug": "corp",
@@ -27,6 +27,17 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20260507-z8tn-001.jpg",
+   "cat": "school",
+   "event": "강릉 송양초등학교 운동회",
+   "date": "2026-05-07",
+   "place": "강릉 송양초등학교 운동장",
+   "caption": "강릉 송양초등학교 운동회",
+   "desc": "2026년 5월 7일 강릉 송양초등학교 운동회 현장입니다. 잔디 운동장에 설치한 만국기와 에어 아치, 큰 공과 색색의 천을 활용한 단체 활동을 담았습니다. 배 모양 경기 도구를 이용한 팀 경기와 줄다리기 장면을 함께 기록했습니다.",
+   "thumb": "photos/_cover/20260507-z8tn-sq.jpg",
+   "cover": "photos/_cover/20260507-z8tn-wide.jpg"
+  },
   {
    "path": "photos/school/20260507-8ilr-005.jpg",
    "cat": "school",
