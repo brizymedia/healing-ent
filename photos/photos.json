@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T22:39:11.254Z",
+ "updated": "2026-11-05T22:43:03.871Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 249
+   "count": 254
   },
   {
    "slug": "fest",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20250917-i6of-005.jpg",
+   "cat": "corp",
+   "event": "JU FINANCE KOREA CONVENTION",
+   "date": "2025-09-17",
+   "place": "실내 연회장",
+   "caption": "JU FINANCE KOREA CONVENTION",
+   "desc": "2025년 9월 17일 JU FINANCE KOREA CONVENTION 현장입니다. 행사명을 건 포토월과 무대, 대형 스크린·음향·조명을 마련한 실내 연회장을 담았습니다. 진행자와 함께하는 무대 프로그램 및 객석 참가자들의 단체 참여 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250917-i6of-sq.jpg",
+   "cover": "photos/_cover/20250917-i6of-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250917-i6of-004.jpg",
+   "cat": "corp",
+   "event": "JU FINANCE KOREA CONVENTION",
+   "date": "2025-09-17",
+   "place": "실내 연회장",
+   "caption": "JU FINANCE KOREA CONVENTION",
+   "desc": "2025년 9월 17일 JU FINANCE KOREA CONVENTION 현장입니다. 행사명을 건 포토월과 무대, 대형 스크린·음향·조명을 마련한 실내 연회장을 담았습니다. 진행자와 함께하는 무대 프로그램 및 객석 참가자들의 단체 참여 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250917-i6of-sq.jpg",
+   "cover": "photos/_cover/20250917-i6of-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250917-i6of-003.jpg",
+   "cat": "corp",
+   "event": "JU FINANCE KOREA CONVENTION",
+   "date": "2025-09-17",
+   "place": "실내 연회장",
+   "caption": "JU FINANCE KOREA CONVENTION",
+   "desc": "2025년 9월 17일 JU FINANCE KOREA CONVENTION 현장입니다. 행사명을 건 포토월과 무대, 대형 스크린·음향·조명을 마련한 실내 연회장을 담았습니다. 진행자와 함께하는 무대 프로그램 및 객석 참가자들의 단체 참여 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250917-i6of-sq.jpg",
+   "cover": "photos/_cover/20250917-i6of-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250917-i6of-002.jpg",
+   "cat": "corp",
+   "event": "JU FINANCE KOREA CONVENTION",
+   "date": "2025-09-17",
+   "place": "실내 연회장",
+   "caption": "JU FINANCE KOREA CONVENTION",
+   "desc": "2025년 9월 17일 JU FINANCE KOREA CONVENTION 현장입니다. 행사명을 건 포토월과 무대, 대형 스크린·음향·조명을 마련한 실내 연회장을 담았습니다. 진행자와 함께하는 무대 프로그램 및 객석 참가자들의 단체 참여 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250917-i6of-sq.jpg",
+   "cover": "photos/_cover/20250917-i6of-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250917-i6of-001.jpg",
+   "cat": "corp",
+   "event": "JU FINANCE KOREA CONVENTION",
+   "date": "2025-09-17",
+   "place": "실내 연회장",
+   "caption": "JU FINANCE KOREA CONVENTION",
+   "desc": "2025년 9월 17일 JU FINANCE KOREA CONVENTION 현장입니다. 행사명을 건 포토월과 무대, 대형 스크린·음향·조명을 마련한 실내 연회장을 담았습니다. 진행자와 함께하는 무대 프로그램 및 객석 참가자들의 단체 참여 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250917-i6of-sq.jpg",
+   "cover": "photos/_cover/20250917-i6of-wide.jpg"
+  },
   {
    "path": "photos/stage/20250918-kbdl-004.jpg",
    "cat": "stage",
