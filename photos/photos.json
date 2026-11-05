@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T19:16:53.281Z",
+ "updated": "2026-11-05T19:18:17.834Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 56
+   "count": 61
   },
   {
    "slug": "fest",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20260829-tods-005.jpg",
+   "cat": "corp",
+   "event": "시흥 야외 체육대회",
+   "date": "2026-08-29",
+   "place": "시흥 야외 잔디 행사장",
+   "caption": "시흥 야외 체육대회",
+   "desc": "2026년 8월 29일 시흥 야외 체육대회 현장입니다. 잔디 공간에 마련한 팀별 천막과 경기 도구, 큰 공을 함께 띄우고 대형 과녁을 활용하는 단체 활동을 담았습니다. 진행자 주변에 모인 참가자들과 행사장 전경을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20260829-tods-sq.jpg",
+   "cover": "photos/_cover/20260829-tods-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260829-tods-004.jpg",
+   "cat": "corp",
+   "event": "시흥 야외 체육대회",
+   "date": "2026-08-29",
+   "place": "시흥 야외 잔디 행사장",
+   "caption": "시흥 야외 체육대회",
+   "desc": "2026년 8월 29일 시흥 야외 체육대회 현장입니다. 잔디 공간에 마련한 팀별 천막과 경기 도구, 큰 공을 함께 띄우고 대형 과녁을 활용하는 단체 활동을 담았습니다. 진행자 주변에 모인 참가자들과 행사장 전경을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20260829-tods-sq.jpg",
+   "cover": "photos/_cover/20260829-tods-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260829-tods-003.jpg",
+   "cat": "corp",
+   "event": "시흥 야외 체육대회",
+   "date": "2026-08-29",
+   "place": "시흥 야외 잔디 행사장",
+   "caption": "시흥 야외 체육대회",
+   "desc": "2026년 8월 29일 시흥 야외 체육대회 현장입니다. 잔디 공간에 마련한 팀별 천막과 경기 도구, 큰 공을 함께 띄우고 대형 과녁을 활용하는 단체 활동을 담았습니다. 진행자 주변에 모인 참가자들과 행사장 전경을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20260829-tods-sq.jpg",
+   "cover": "photos/_cover/20260829-tods-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260829-tods-002.jpg",
+   "cat": "corp",
+   "event": "시흥 야외 체육대회",
+   "date": "2026-08-29",
+   "place": "시흥 야외 잔디 행사장",
+   "caption": "시흥 야외 체육대회",
+   "desc": "2026년 8월 29일 시흥 야외 체육대회 현장입니다. 잔디 공간에 마련한 팀별 천막과 경기 도구, 큰 공을 함께 띄우고 대형 과녁을 활용하는 단체 활동을 담았습니다. 진행자 주변에 모인 참가자들과 행사장 전경을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20260829-tods-sq.jpg",
+   "cover": "photos/_cover/20260829-tods-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260829-tods-001.jpg",
+   "cat": "corp",
+   "event": "시흥 야외 체육대회",
+   "date": "2026-08-29",
+   "place": "시흥 야외 잔디 행사장",
+   "caption": "시흥 야외 체육대회",
+   "desc": "2026년 8월 29일 시흥 야외 체육대회 현장입니다. 잔디 공간에 마련한 팀별 천막과 경기 도구, 큰 공을 함께 띄우고 대형 과녁을 활용하는 단체 활동을 담았습니다. 진행자 주변에 모인 참가자들과 행사장 전경을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20260829-tods-sq.jpg",
+   "cover": "photos/_cover/20260829-tods-wide.jpg"
+  },
   {
    "path": "photos/fest/20260905-66cm-006.jpg",
    "cat": "fest",
