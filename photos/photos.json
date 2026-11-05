@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T18:54:38.271Z",
+ "updated": "2026-11-05T18:55:45.397Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 56
+   "count": 62
   },
   {
    "slug": "corp",
@@ -27,6 +27,72 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20261001-n0at-006.jpg",
+   "cat": "school",
+   "event": "강화 강남중 레크리에이션",
+   "date": "2026-10-01",
+   "place": "설악금호 실내 행사장",
+   "caption": "강화 강남중 레크리에이션",
+   "desc": "2026년 10월 1일 강화 강남중 레크리에이션 현장입니다. 실내 행사장에서 학생들이 무대 위 활동에 참여하고 객석에서 함께 동작을 맞추는 모습을 담았습니다. 조명이 켜진 무대와 행사장 전체의 참여 분위기를 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261001-n0at-sq.jpg",
+   "cover": "photos/_cover/20261001-n0at-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261001-n0at-005.jpg",
+   "cat": "school",
+   "event": "강화 강남중 레크리에이션",
+   "date": "2026-10-01",
+   "place": "설악금호 실내 행사장",
+   "caption": "강화 강남중 레크리에이션",
+   "desc": "2026년 10월 1일 강화 강남중 레크리에이션 현장입니다. 실내 행사장에서 학생들이 무대 위 활동에 참여하고 객석에서 함께 동작을 맞추는 모습을 담았습니다. 조명이 켜진 무대와 행사장 전체의 참여 분위기를 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261001-n0at-sq.jpg",
+   "cover": "photos/_cover/20261001-n0at-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261001-n0at-004.jpg",
+   "cat": "school",
+   "event": "강화 강남중 레크리에이션",
+   "date": "2026-10-01",
+   "place": "설악금호 실내 행사장",
+   "caption": "강화 강남중 레크리에이션",
+   "desc": "2026년 10월 1일 강화 강남중 레크리에이션 현장입니다. 실내 행사장에서 학생들이 무대 위 활동에 참여하고 객석에서 함께 동작을 맞추는 모습을 담았습니다. 조명이 켜진 무대와 행사장 전체의 참여 분위기를 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261001-n0at-sq.jpg",
+   "cover": "photos/_cover/20261001-n0at-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261001-n0at-003.jpg",
+   "cat": "school",
+   "event": "강화 강남중 레크리에이션",
+   "date": "2026-10-01",
+   "place": "설악금호 실내 행사장",
+   "caption": "강화 강남중 레크리에이션",
+   "desc": "2026년 10월 1일 강화 강남중 레크리에이션 현장입니다. 실내 행사장에서 학생들이 무대 위 활동에 참여하고 객석에서 함께 동작을 맞추는 모습을 담았습니다. 조명이 켜진 무대와 행사장 전체의 참여 분위기를 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261001-n0at-sq.jpg",
+   "cover": "photos/_cover/20261001-n0at-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261001-n0at-002.jpg",
+   "cat": "school",
+   "event": "강화 강남중 레크리에이션",
+   "date": "2026-10-01",
+   "place": "설악금호 실내 행사장",
+   "caption": "강화 강남중 레크리에이션",
+   "desc": "2026년 10월 1일 강화 강남중 레크리에이션 현장입니다. 실내 행사장에서 학생들이 무대 위 활동에 참여하고 객석에서 함께 동작을 맞추는 모습을 담았습니다. 조명이 켜진 무대와 행사장 전체의 참여 분위기를 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261001-n0at-sq.jpg",
+   "cover": "photos/_cover/20261001-n0at-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261001-n0at-001.jpg",
+   "cat": "school",
+   "event": "강화 강남중 레크리에이션",
+   "date": "2026-10-01",
+   "place": "설악금호 실내 행사장",
+   "caption": "강화 강남중 레크리에이션",
+   "desc": "2026년 10월 1일 강화 강남중 레크리에이션 현장입니다. 실내 행사장에서 학생들이 무대 위 활동에 참여하고 객석에서 함께 동작을 맞추는 모습을 담았습니다. 조명이 켜진 무대와 행사장 전체의 참여 분위기를 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261001-n0at-sq.jpg",
+   "cover": "photos/_cover/20261001-n0at-wide.jpg"
+  },
   {
    "path": "photos/school/20261002-cz9v-006.jpg",
    "cat": "school",
