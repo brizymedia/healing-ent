@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T22:46:03.586Z",
+ "updated": "2026-11-05T22:53:05.841Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 259
+   "count": 263
   },
   {
    "slug": "fest",
@@ -27,6 +27,50 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20250905-wfzs-004.jpg",
+   "cat": "corp",
+   "event": "하남 가족운동회",
+   "date": "2025-09-05",
+   "place": "실내 활동실",
+   "caption": "하남 가족운동회",
+   "desc": "2025년 9월 5일 하남 가족운동회 현장입니다. 실내 활동실에 게임 도구를 마련하고 진행자와 함께하는 단체 프로그램을 담았습니다. 훌라후프와 컵 쌓기 등 여러 도구를 활용한 모둠별 놀이와 참가자들이 함께 움직이는 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250905-wfzs-sq.jpg",
+   "cover": "photos/_cover/20250905-wfzs-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250905-wfzs-003.jpg",
+   "cat": "corp",
+   "event": "하남 가족운동회",
+   "date": "2025-09-05",
+   "place": "실내 활동실",
+   "caption": "하남 가족운동회",
+   "desc": "2025년 9월 5일 하남 가족운동회 현장입니다. 실내 활동실에 게임 도구를 마련하고 진행자와 함께하는 단체 프로그램을 담았습니다. 훌라후프와 컵 쌓기 등 여러 도구를 활용한 모둠별 놀이와 참가자들이 함께 움직이는 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250905-wfzs-sq.jpg",
+   "cover": "photos/_cover/20250905-wfzs-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250905-wfzs-002.jpg",
+   "cat": "corp",
+   "event": "하남 가족운동회",
+   "date": "2025-09-05",
+   "place": "실내 활동실",
+   "caption": "하남 가족운동회",
+   "desc": "2025년 9월 5일 하남 가족운동회 현장입니다. 실내 활동실에 게임 도구를 마련하고 진행자와 함께하는 단체 프로그램을 담았습니다. 훌라후프와 컵 쌓기 등 여러 도구를 활용한 모둠별 놀이와 참가자들이 함께 움직이는 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250905-wfzs-sq.jpg",
+   "cover": "photos/_cover/20250905-wfzs-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250905-wfzs-001.jpg",
+   "cat": "corp",
+   "event": "하남 가족운동회",
+   "date": "2025-09-05",
+   "place": "실내 활동실",
+   "caption": "하남 가족운동회",
+   "desc": "2025년 9월 5일 하남 가족운동회 현장입니다. 실내 활동실에 게임 도구를 마련하고 진행자와 함께하는 단체 프로그램을 담았습니다. 훌라후프와 컵 쌓기 등 여러 도구를 활용한 모둠별 놀이와 참가자들이 함께 움직이는 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250905-wfzs-sq.jpg",
+   "cover": "photos/_cover/20250905-wfzs-wide.jpg"
+  },
   {
    "path": "photos/corp/20250906-9c6z-005.jpg",
    "cat": "corp",
