@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T22:36:57.605Z",
+ "updated": "2026-11-05T22:39:11.254Z",
  "categories": [
   {
    "slug": "school",
@@ -23,10 +23,54 @@
    "slug": "stage",
    "name": "무대 · 음향",
    "desc": "",
-   "count": 7
+   "count": 11
   }
  ],
  "photos": [
+  {
+   "path": "photos/stage/20250918-kbdl-004.jpg",
+   "cat": "stage",
+   "event": "부산 송도 레크리에이션",
+   "date": "2025-09-18",
+   "place": "부산 송도 실내 행사장",
+   "caption": "부산 송도 레크리에이션",
+   "desc": "2025년 9월 18일 부산 송도 레크리에이션 현장입니다. 실내 무대에 스크린과 스피커, 색색의 조명을 마련한 행사 공간을 담았습니다. 진행자와 함께하는 객석의 단체 참여, 조명 아래 이어진 프로그램과 휴대전화 불빛을 든 전체 풍경을 기록했습니다.",
+   "thumb": "photos/_cover/20250918-kbdl-sq.jpg",
+   "cover": "photos/_cover/20250918-kbdl-wide.jpg"
+  },
+  {
+   "path": "photos/stage/20250918-kbdl-003.jpg",
+   "cat": "stage",
+   "event": "부산 송도 레크리에이션",
+   "date": "2025-09-18",
+   "place": "부산 송도 실내 행사장",
+   "caption": "부산 송도 레크리에이션",
+   "desc": "2025년 9월 18일 부산 송도 레크리에이션 현장입니다. 실내 무대에 스크린과 스피커, 색색의 조명을 마련한 행사 공간을 담았습니다. 진행자와 함께하는 객석의 단체 참여, 조명 아래 이어진 프로그램과 휴대전화 불빛을 든 전체 풍경을 기록했습니다.",
+   "thumb": "photos/_cover/20250918-kbdl-sq.jpg",
+   "cover": "photos/_cover/20250918-kbdl-wide.jpg"
+  },
+  {
+   "path": "photos/stage/20250918-kbdl-002.jpg",
+   "cat": "stage",
+   "event": "부산 송도 레크리에이션",
+   "date": "2025-09-18",
+   "place": "부산 송도 실내 행사장",
+   "caption": "부산 송도 레크리에이션",
+   "desc": "2025년 9월 18일 부산 송도 레크리에이션 현장입니다. 실내 무대에 스크린과 스피커, 색색의 조명을 마련한 행사 공간을 담았습니다. 진행자와 함께하는 객석의 단체 참여, 조명 아래 이어진 프로그램과 휴대전화 불빛을 든 전체 풍경을 기록했습니다.",
+   "thumb": "photos/_cover/20250918-kbdl-sq.jpg",
+   "cover": "photos/_cover/20250918-kbdl-wide.jpg"
+  },
+  {
+   "path": "photos/stage/20250918-kbdl-001.jpg",
+   "cat": "stage",
+   "event": "부산 송도 레크리에이션",
+   "date": "2025-09-18",
+   "place": "부산 송도 실내 행사장",
+   "caption": "부산 송도 레크리에이션",
+   "desc": "2025년 9월 18일 부산 송도 레크리에이션 현장입니다. 실내 무대에 스크린과 스피커, 색색의 조명을 마련한 행사 공간을 담았습니다. 진행자와 함께하는 객석의 단체 참여, 조명 아래 이어진 프로그램과 휴대전화 불빛을 든 전체 풍경을 기록했습니다.",
+   "thumb": "photos/_cover/20250918-kbdl-sq.jpg",
+   "cover": "photos/_cover/20250918-kbdl-wide.jpg"
+  },
   {
    "path": "photos/corp/20250920-922r-005.jpg",
    "cat": "corp",
