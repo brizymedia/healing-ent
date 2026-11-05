@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T18:45:46.842Z",
+ "updated": "2026-11-05T18:47:23.999Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 44
+   "count": 50
   },
   {
    "slug": "corp",
@@ -27,6 +27,72 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20261007-vhrz-006.jpg",
+   "cat": "school",
+   "event": "길음초등학교 운동회",
+   "date": "2026-10-07",
+   "place": "길음초등학교 운동장",
+   "caption": "길음초등학교 운동회",
+   "desc": "2026년 10월 7일 길음초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 큰 경기 도구를 함께 운반하고 줄다리기와 단체 활동에 참여하는 학생들의 모습을 담았습니다. 행사장 준비와 경기 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261007-vhrz-sq.jpg",
+   "cover": "photos/_cover/20261007-vhrz-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261007-vhrz-005.jpg",
+   "cat": "school",
+   "event": "길음초등학교 운동회",
+   "date": "2026-10-07",
+   "place": "길음초등학교 운동장",
+   "caption": "길음초등학교 운동회",
+   "desc": "2026년 10월 7일 길음초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 큰 경기 도구를 함께 운반하고 줄다리기와 단체 활동에 참여하는 학생들의 모습을 담았습니다. 행사장 준비와 경기 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261007-vhrz-sq.jpg",
+   "cover": "photos/_cover/20261007-vhrz-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261007-vhrz-004.jpg",
+   "cat": "school",
+   "event": "길음초등학교 운동회",
+   "date": "2026-10-07",
+   "place": "길음초등학교 운동장",
+   "caption": "길음초등학교 운동회",
+   "desc": "2026년 10월 7일 길음초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 큰 경기 도구를 함께 운반하고 줄다리기와 단체 활동에 참여하는 학생들의 모습을 담았습니다. 행사장 준비와 경기 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261007-vhrz-sq.jpg",
+   "cover": "photos/_cover/20261007-vhrz-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261007-vhrz-003.jpg",
+   "cat": "school",
+   "event": "길음초등학교 운동회",
+   "date": "2026-10-07",
+   "place": "길음초등학교 운동장",
+   "caption": "길음초등학교 운동회",
+   "desc": "2026년 10월 7일 길음초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 큰 경기 도구를 함께 운반하고 줄다리기와 단체 활동에 참여하는 학생들의 모습을 담았습니다. 행사장 준비와 경기 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261007-vhrz-sq.jpg",
+   "cover": "photos/_cover/20261007-vhrz-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261007-vhrz-002.jpg",
+   "cat": "school",
+   "event": "길음초등학교 운동회",
+   "date": "2026-10-07",
+   "place": "길음초등학교 운동장",
+   "caption": "길음초등학교 운동회",
+   "desc": "2026년 10월 7일 길음초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 큰 경기 도구를 함께 운반하고 줄다리기와 단체 활동에 참여하는 학생들의 모습을 담았습니다. 행사장 준비와 경기 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261007-vhrz-sq.jpg",
+   "cover": "photos/_cover/20261007-vhrz-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261007-vhrz-001.jpg",
+   "cat": "school",
+   "event": "길음초등학교 운동회",
+   "date": "2026-10-07",
+   "place": "길음초등학교 운동장",
+   "caption": "길음초등학교 운동회",
+   "desc": "2026년 10월 7일 길음초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 큰 경기 도구를 함께 운반하고 줄다리기와 단체 활동에 참여하는 학생들의 모습을 담았습니다. 행사장 준비와 경기 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261007-vhrz-sq.jpg",
+   "cover": "photos/_cover/20261007-vhrz-wide.jpg"
+  },
   {
    "path": "photos/school/20261008-hvnf-006.jpg",
    "cat": "school",
