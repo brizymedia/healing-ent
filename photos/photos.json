@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T19:59:55.251Z",
+ "updated": "2026-11-05T20:00:48.200Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 96
+   "count": 101
   },
   {
    "slug": "corp",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20260516-kpn9-005.jpg",
+   "cat": "school",
+   "event": "구립신림어린이집 가족운동회",
+   "date": "2026-05-16",
+   "place": "실내 체육관",
+   "caption": "구립신림어린이집 가족운동회",
+   "desc": "2026년 5월 16일 구립신림어린이집 가족운동회 현장입니다. 실내 체육관에 마련한 에어 놀이기구와 경기 구역, 아이들과 보호자가 함께하는 단체 활동을 담았습니다. 배 모양 경기 도구와 큰 공을 활용한 팀별 참여 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20260516-kpn9-sq.jpg",
+   "cover": "photos/_cover/20260516-kpn9-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260516-kpn9-004.jpg",
+   "cat": "school",
+   "event": "구립신림어린이집 가족운동회",
+   "date": "2026-05-16",
+   "place": "실내 체육관",
+   "caption": "구립신림어린이집 가족운동회",
+   "desc": "2026년 5월 16일 구립신림어린이집 가족운동회 현장입니다. 실내 체육관에 마련한 에어 놀이기구와 경기 구역, 아이들과 보호자가 함께하는 단체 활동을 담았습니다. 배 모양 경기 도구와 큰 공을 활용한 팀별 참여 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20260516-kpn9-sq.jpg",
+   "cover": "photos/_cover/20260516-kpn9-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260516-kpn9-003.jpg",
+   "cat": "school",
+   "event": "구립신림어린이집 가족운동회",
+   "date": "2026-05-16",
+   "place": "실내 체육관",
+   "caption": "구립신림어린이집 가족운동회",
+   "desc": "2026년 5월 16일 구립신림어린이집 가족운동회 현장입니다. 실내 체육관에 마련한 에어 놀이기구와 경기 구역, 아이들과 보호자가 함께하는 단체 활동을 담았습니다. 배 모양 경기 도구와 큰 공을 활용한 팀별 참여 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20260516-kpn9-sq.jpg",
+   "cover": "photos/_cover/20260516-kpn9-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260516-kpn9-002.jpg",
+   "cat": "school",
+   "event": "구립신림어린이집 가족운동회",
+   "date": "2026-05-16",
+   "place": "실내 체육관",
+   "caption": "구립신림어린이집 가족운동회",
+   "desc": "2026년 5월 16일 구립신림어린이집 가족운동회 현장입니다. 실내 체육관에 마련한 에어 놀이기구와 경기 구역, 아이들과 보호자가 함께하는 단체 활동을 담았습니다. 배 모양 경기 도구와 큰 공을 활용한 팀별 참여 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20260516-kpn9-sq.jpg",
+   "cover": "photos/_cover/20260516-kpn9-wide.jpg"
+  },
+  {
+   "path": "photos/school/20260516-kpn9-001.jpg",
+   "cat": "school",
+   "event": "구립신림어린이집 가족운동회",
+   "date": "2026-05-16",
+   "place": "실내 체육관",
+   "caption": "구립신림어린이집 가족운동회",
+   "desc": "2026년 5월 16일 구립신림어린이집 가족운동회 현장입니다. 실내 체육관에 마련한 에어 놀이기구와 경기 구역, 아이들과 보호자가 함께하는 단체 활동을 담았습니다. 배 모양 경기 도구와 큰 공을 활용한 팀별 참여 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20260516-kpn9-sq.jpg",
+   "cover": "photos/_cover/20260516-kpn9-wide.jpg"
+  },
   {
    "path": "photos/school/20260520-f78x-005.jpg",
    "cat": "school",
