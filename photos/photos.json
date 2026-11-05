@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T22:35:52.622Z",
+ "updated": "2026-11-05T22:36:57.605Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 244
+   "count": 249
   },
   {
    "slug": "fest",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20250920-922r-005.jpg",
+   "cat": "corp",
+   "event": "BNI 야외 체육대회",
+   "date": "2025-09-20",
+   "place": "야외 인조잔디 운동장",
+   "caption": "BNI 야외 체육대회",
+   "desc": "2025년 9월 20일 BNI 야외 체육대회 현장입니다. 천막과 여러 경기 구역, 표적 매트와 게임 도구를 배치한 인조잔디 운동장을 담았습니다. 팀별 표적 경기와 협동 활동, 대형 천을 활용한 단체 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250920-922r-sq.jpg",
+   "cover": "photos/_cover/20250920-922r-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250920-922r-004.jpg",
+   "cat": "corp",
+   "event": "BNI 야외 체육대회",
+   "date": "2025-09-20",
+   "place": "야외 인조잔디 운동장",
+   "caption": "BNI 야외 체육대회",
+   "desc": "2025년 9월 20일 BNI 야외 체육대회 현장입니다. 천막과 여러 경기 구역, 표적 매트와 게임 도구를 배치한 인조잔디 운동장을 담았습니다. 팀별 표적 경기와 협동 활동, 대형 천을 활용한 단체 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250920-922r-sq.jpg",
+   "cover": "photos/_cover/20250920-922r-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250920-922r-003.jpg",
+   "cat": "corp",
+   "event": "BNI 야외 체육대회",
+   "date": "2025-09-20",
+   "place": "야외 인조잔디 운동장",
+   "caption": "BNI 야외 체육대회",
+   "desc": "2025년 9월 20일 BNI 야외 체육대회 현장입니다. 천막과 여러 경기 구역, 표적 매트와 게임 도구를 배치한 인조잔디 운동장을 담았습니다. 팀별 표적 경기와 협동 활동, 대형 천을 활용한 단체 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250920-922r-sq.jpg",
+   "cover": "photos/_cover/20250920-922r-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250920-922r-002.jpg",
+   "cat": "corp",
+   "event": "BNI 야외 체육대회",
+   "date": "2025-09-20",
+   "place": "야외 인조잔디 운동장",
+   "caption": "BNI 야외 체육대회",
+   "desc": "2025년 9월 20일 BNI 야외 체육대회 현장입니다. 천막과 여러 경기 구역, 표적 매트와 게임 도구를 배치한 인조잔디 운동장을 담았습니다. 팀별 표적 경기와 협동 활동, 대형 천을 활용한 단체 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250920-922r-sq.jpg",
+   "cover": "photos/_cover/20250920-922r-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250920-922r-001.jpg",
+   "cat": "corp",
+   "event": "BNI 야외 체육대회",
+   "date": "2025-09-20",
+   "place": "야외 인조잔디 운동장",
+   "caption": "BNI 야외 체육대회",
+   "desc": "2025년 9월 20일 BNI 야외 체육대회 현장입니다. 천막과 여러 경기 구역, 표적 매트와 게임 도구를 배치한 인조잔디 운동장을 담았습니다. 팀별 표적 경기와 협동 활동, 대형 천을 활용한 단체 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250920-922r-sq.jpg",
+   "cover": "photos/_cover/20250920-922r-wide.jpg"
+  },
   {
    "path": "photos/school/20250925-f1s3-005.jpg",
    "cat": "school",
