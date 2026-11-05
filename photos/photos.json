@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T19:29:05.203Z",
+ "updated": "2026-11-05T19:30:11.897Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 71
+   "count": 74
   },
   {
    "slug": "fest",
@@ -27,6 +27,39 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20260721-5zjr-003.jpg",
+   "cat": "corp",
+   "event": "강남사회복지관 어르신 생신잔치",
+   "date": "2026-07-21",
+   "place": "강남사회복지관 실내 행사장",
+   "caption": "강남사회복지관 어르신 생신잔치",
+   "desc": "2026년 7월 21일 강남사회복지관 어르신 생신잔치 현장입니다. 행사 안내 배너와 풍선으로 꾸민 무대, 진행자와 축하공연 장면을 담았습니다. 실내 행사장의 준비와 축하 분위기를 세 장의 사진으로 기록했습니다.",
+   "thumb": "photos/_cover/20260721-5zjr-sq.jpg",
+   "cover": "photos/_cover/20260721-5zjr-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260721-5zjr-002.jpg",
+   "cat": "corp",
+   "event": "강남사회복지관 어르신 생신잔치",
+   "date": "2026-07-21",
+   "place": "강남사회복지관 실내 행사장",
+   "caption": "강남사회복지관 어르신 생신잔치",
+   "desc": "2026년 7월 21일 강남사회복지관 어르신 생신잔치 현장입니다. 행사 안내 배너와 풍선으로 꾸민 무대, 진행자와 축하공연 장면을 담았습니다. 실내 행사장의 준비와 축하 분위기를 세 장의 사진으로 기록했습니다.",
+   "thumb": "photos/_cover/20260721-5zjr-sq.jpg",
+   "cover": "photos/_cover/20260721-5zjr-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20260721-5zjr-001.jpg",
+   "cat": "corp",
+   "event": "강남사회복지관 어르신 생신잔치",
+   "date": "2026-07-21",
+   "place": "강남사회복지관 실내 행사장",
+   "caption": "강남사회복지관 어르신 생신잔치",
+   "desc": "2026년 7월 21일 강남사회복지관 어르신 생신잔치 현장입니다. 행사 안내 배너와 풍선으로 꾸민 무대, 진행자와 축하공연 장면을 담았습니다. 실내 행사장의 준비와 축하 분위기를 세 장의 사진으로 기록했습니다.",
+   "thumb": "photos/_cover/20260721-5zjr-sq.jpg",
+   "cover": "photos/_cover/20260721-5zjr-wide.jpg"
+  },
   {
    "path": "photos/school/20260822-3z1j-006.jpg",
    "cat": "school",
