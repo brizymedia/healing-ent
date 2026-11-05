@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T22:04:08.308Z",
+ "updated": "2026-11-05T22:05:08.513Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 225
+   "count": 230
   },
   {
    "slug": "fest",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20251023-xm43-005.jpg",
+   "cat": "corp",
+   "event": "SK텔레콤 팀빌딩",
+   "date": "2025-10-23",
+   "place": "실내 체육관",
+   "caption": "SK텔레콤 팀빌딩",
+   "desc": "2025년 10월 23일 SK텔레콤 팀빌딩 현장입니다. 실내 체육관에 마련한 무대 화면과 경기 도구, 색색의 팀 조끼를 입고 함께하는 단체 활동을 담았습니다. 조별 게임과 협동 경기 등 참가자들이 팀으로 움직이는 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20251023-xm43-sq.jpg",
+   "cover": "photos/_cover/20251023-xm43-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251023-xm43-004.jpg",
+   "cat": "corp",
+   "event": "SK텔레콤 팀빌딩",
+   "date": "2025-10-23",
+   "place": "실내 체육관",
+   "caption": "SK텔레콤 팀빌딩",
+   "desc": "2025년 10월 23일 SK텔레콤 팀빌딩 현장입니다. 실내 체육관에 마련한 무대 화면과 경기 도구, 색색의 팀 조끼를 입고 함께하는 단체 활동을 담았습니다. 조별 게임과 협동 경기 등 참가자들이 팀으로 움직이는 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20251023-xm43-sq.jpg",
+   "cover": "photos/_cover/20251023-xm43-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251023-xm43-003.jpg",
+   "cat": "corp",
+   "event": "SK텔레콤 팀빌딩",
+   "date": "2025-10-23",
+   "place": "실내 체육관",
+   "caption": "SK텔레콤 팀빌딩",
+   "desc": "2025년 10월 23일 SK텔레콤 팀빌딩 현장입니다. 실내 체육관에 마련한 무대 화면과 경기 도구, 색색의 팀 조끼를 입고 함께하는 단체 활동을 담았습니다. 조별 게임과 협동 경기 등 참가자들이 팀으로 움직이는 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20251023-xm43-sq.jpg",
+   "cover": "photos/_cover/20251023-xm43-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251023-xm43-002.jpg",
+   "cat": "corp",
+   "event": "SK텔레콤 팀빌딩",
+   "date": "2025-10-23",
+   "place": "실내 체육관",
+   "caption": "SK텔레콤 팀빌딩",
+   "desc": "2025년 10월 23일 SK텔레콤 팀빌딩 현장입니다. 실내 체육관에 마련한 무대 화면과 경기 도구, 색색의 팀 조끼를 입고 함께하는 단체 활동을 담았습니다. 조별 게임과 협동 경기 등 참가자들이 팀으로 움직이는 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20251023-xm43-sq.jpg",
+   "cover": "photos/_cover/20251023-xm43-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251023-xm43-001.jpg",
+   "cat": "corp",
+   "event": "SK텔레콤 팀빌딩",
+   "date": "2025-10-23",
+   "place": "실내 체육관",
+   "caption": "SK텔레콤 팀빌딩",
+   "desc": "2025년 10월 23일 SK텔레콤 팀빌딩 현장입니다. 실내 체육관에 마련한 무대 화면과 경기 도구, 색색의 팀 조끼를 입고 함께하는 단체 활동을 담았습니다. 조별 게임과 협동 경기 등 참가자들이 팀으로 움직이는 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20251023-xm43-sq.jpg",
+   "cover": "photos/_cover/20251023-xm43-wide.jpg"
+  },
   {
    "path": "photos/corp/20251024-6hx7-005.jpg",
    "cat": "corp",
