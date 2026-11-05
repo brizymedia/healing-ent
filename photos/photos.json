@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T18:14:06.878Z",
+ "updated": "2026-11-05T18:15:34.035Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 15
+   "count": 20
   },
   {
    "slug": "corp",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20261022-bvph-005.jpg",
+   "cat": "school",
+   "event": "서울문정초 레크리에이션",
+   "date": "2026-10-22",
+   "place": "서울문정초 실내 체육관",
+   "caption": "서울문정초 레크리에이션",
+   "desc": "2026년 10월 22일 서울문정초 레크리에이션 현장입니다. 실내 체육관에서 학생들이 함께 동작을 맞추고 큰 공을 활용한 단체 활동에 참여하는 모습을 담았습니다. 무대 위 활동부터 체육관에서 함께하는 프로그램까지 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261022-bvph-sq.jpg",
+   "cover": "photos/_cover/20261022-bvph-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261022-bvph-004.jpg",
+   "cat": "school",
+   "event": "서울문정초 레크리에이션",
+   "date": "2026-10-22",
+   "place": "서울문정초 실내 체육관",
+   "caption": "서울문정초 레크리에이션",
+   "desc": "2026년 10월 22일 서울문정초 레크리에이션 현장입니다. 실내 체육관에서 학생들이 함께 동작을 맞추고 큰 공을 활용한 단체 활동에 참여하는 모습을 담았습니다. 무대 위 활동부터 체육관에서 함께하는 프로그램까지 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261022-bvph-sq.jpg",
+   "cover": "photos/_cover/20261022-bvph-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261022-bvph-003.jpg",
+   "cat": "school",
+   "event": "서울문정초 레크리에이션",
+   "date": "2026-10-22",
+   "place": "서울문정초 실내 체육관",
+   "caption": "서울문정초 레크리에이션",
+   "desc": "2026년 10월 22일 서울문정초 레크리에이션 현장입니다. 실내 체육관에서 학생들이 함께 동작을 맞추고 큰 공을 활용한 단체 활동에 참여하는 모습을 담았습니다. 무대 위 활동부터 체육관에서 함께하는 프로그램까지 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261022-bvph-sq.jpg",
+   "cover": "photos/_cover/20261022-bvph-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261022-bvph-002.jpg",
+   "cat": "school",
+   "event": "서울문정초 레크리에이션",
+   "date": "2026-10-22",
+   "place": "서울문정초 실내 체육관",
+   "caption": "서울문정초 레크리에이션",
+   "desc": "2026년 10월 22일 서울문정초 레크리에이션 현장입니다. 실내 체육관에서 학생들이 함께 동작을 맞추고 큰 공을 활용한 단체 활동에 참여하는 모습을 담았습니다. 무대 위 활동부터 체육관에서 함께하는 프로그램까지 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261022-bvph-sq.jpg",
+   "cover": "photos/_cover/20261022-bvph-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261022-bvph-001.jpg",
+   "cat": "school",
+   "event": "서울문정초 레크리에이션",
+   "date": "2026-10-22",
+   "place": "서울문정초 실내 체육관",
+   "caption": "서울문정초 레크리에이션",
+   "desc": "2026년 10월 22일 서울문정초 레크리에이션 현장입니다. 실내 체육관에서 학생들이 함께 동작을 맞추고 큰 공을 활용한 단체 활동에 참여하는 모습을 담았습니다. 무대 위 활동부터 체육관에서 함께하는 프로그램까지 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261022-bvph-sq.jpg",
+   "cover": "photos/_cover/20261022-bvph-wide.jpg"
+  },
   {
    "path": "photos/school/20261023-f088-006.jpg",
    "cat": "school",
