@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T18:36:34.055Z",
+ "updated": "2026-11-05T18:37:44.620Z",
  "categories": [
   {
    "slug": "school",
    "name": "학교행사",
    "desc": "",
-   "count": 26
+   "count": 32
   },
   {
    "slug": "corp",
@@ -27,6 +27,72 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/school/20261014-edqi-006.jpg",
+   "cat": "school",
+   "event": "초당초등학교 운동회",
+   "date": "2026-10-14",
+   "place": "초당초등학교 운동장",
+   "caption": "초당초등학교 운동회",
+   "desc": "2026년 10월 14일 초당초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 함께 몸을 풀고, 달리기와 여러 활동에 참여하는 학생들의 모습을 담았습니다. 운동장에 배치된 경기 도구와 학생들의 단체 참여 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261014-edqi-sq.jpg",
+   "cover": "photos/_cover/20261014-edqi-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261014-edqi-005.jpg",
+   "cat": "school",
+   "event": "초당초등학교 운동회",
+   "date": "2026-10-14",
+   "place": "초당초등학교 운동장",
+   "caption": "초당초등학교 운동회",
+   "desc": "2026년 10월 14일 초당초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 함께 몸을 풀고, 달리기와 여러 활동에 참여하는 학생들의 모습을 담았습니다. 운동장에 배치된 경기 도구와 학생들의 단체 참여 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261014-edqi-sq.jpg",
+   "cover": "photos/_cover/20261014-edqi-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261014-edqi-004.jpg",
+   "cat": "school",
+   "event": "초당초등학교 운동회",
+   "date": "2026-10-14",
+   "place": "초당초등학교 운동장",
+   "caption": "초당초등학교 운동회",
+   "desc": "2026년 10월 14일 초당초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 함께 몸을 풀고, 달리기와 여러 활동에 참여하는 학생들의 모습을 담았습니다. 운동장에 배치된 경기 도구와 학생들의 단체 참여 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261014-edqi-sq.jpg",
+   "cover": "photos/_cover/20261014-edqi-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261014-edqi-003.jpg",
+   "cat": "school",
+   "event": "초당초등학교 운동회",
+   "date": "2026-10-14",
+   "place": "초당초등학교 운동장",
+   "caption": "초당초등학교 운동회",
+   "desc": "2026년 10월 14일 초당초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 함께 몸을 풀고, 달리기와 여러 활동에 참여하는 학생들의 모습을 담았습니다. 운동장에 배치된 경기 도구와 학생들의 단체 참여 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261014-edqi-sq.jpg",
+   "cover": "photos/_cover/20261014-edqi-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261014-edqi-002.jpg",
+   "cat": "school",
+   "event": "초당초등학교 운동회",
+   "date": "2026-10-14",
+   "place": "초당초등학교 운동장",
+   "caption": "초당초등학교 운동회",
+   "desc": "2026년 10월 14일 초당초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 함께 몸을 풀고, 달리기와 여러 활동에 참여하는 학생들의 모습을 담았습니다. 운동장에 배치된 경기 도구와 학생들의 단체 참여 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261014-edqi-sq.jpg",
+   "cover": "photos/_cover/20261014-edqi-wide.jpg"
+  },
+  {
+   "path": "photos/school/20261014-edqi-001.jpg",
+   "cat": "school",
+   "event": "초당초등학교 운동회",
+   "date": "2026-10-14",
+   "place": "초당초등학교 운동장",
+   "caption": "초당초등학교 운동회",
+   "desc": "2026년 10월 14일 초당초등학교 운동회 현장입니다. 만국기가 걸린 운동장에서 함께 몸을 풀고, 달리기와 여러 활동에 참여하는 학생들의 모습을 담았습니다. 운동장에 배치된 경기 도구와 학생들의 단체 참여 장면을 넓은 구도로 기록했습니다.",
+   "thumb": "photos/_cover/20261014-edqi-sq.jpg",
+   "cover": "photos/_cover/20261014-edqi-wide.jpg"
+  },
   {
    "path": "photos/corp/20261015-pys2-006.jpg",
    "cat": "corp",
