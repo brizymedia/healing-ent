@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T21:36:12.182Z",
+ "updated": "2026-11-05T21:45:38.555Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 195
+   "count": 200
   },
   {
    "slug": "fest",
@@ -27,6 +27,61 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20251115-i3cc-005.jpg",
+   "cat": "corp",
+   "event": "여주 축산운동회",
+   "date": "2025-11-15",
+   "place": "여주 야외 운동장",
+   "caption": "여주 축산운동회",
+   "desc": "2025년 11월 15일 여주 축산운동회 현장입니다. 행사 현수막과 경기 용품을 준비한 야외 운동장, 큰 공과 색색의 천을 활용한 단체 활동을 담았습니다. 컬링 매트와 네트를 이용한 팀 경기 및 참가자들이 함께 모인 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20251115-i3cc-sq.jpg",
+   "cover": "photos/_cover/20251115-i3cc-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251115-i3cc-004.jpg",
+   "cat": "corp",
+   "event": "여주 축산운동회",
+   "date": "2025-11-15",
+   "place": "여주 야외 운동장",
+   "caption": "여주 축산운동회",
+   "desc": "2025년 11월 15일 여주 축산운동회 현장입니다. 행사 현수막과 경기 용품을 준비한 야외 운동장, 큰 공과 색색의 천을 활용한 단체 활동을 담았습니다. 컬링 매트와 네트를 이용한 팀 경기 및 참가자들이 함께 모인 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20251115-i3cc-sq.jpg",
+   "cover": "photos/_cover/20251115-i3cc-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251115-i3cc-003.jpg",
+   "cat": "corp",
+   "event": "여주 축산운동회",
+   "date": "2025-11-15",
+   "place": "여주 야외 운동장",
+   "caption": "여주 축산운동회",
+   "desc": "2025년 11월 15일 여주 축산운동회 현장입니다. 행사 현수막과 경기 용품을 준비한 야외 운동장, 큰 공과 색색의 천을 활용한 단체 활동을 담았습니다. 컬링 매트와 네트를 이용한 팀 경기 및 참가자들이 함께 모인 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20251115-i3cc-sq.jpg",
+   "cover": "photos/_cover/20251115-i3cc-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251115-i3cc-002.jpg",
+   "cat": "corp",
+   "event": "여주 축산운동회",
+   "date": "2025-11-15",
+   "place": "여주 야외 운동장",
+   "caption": "여주 축산운동회",
+   "desc": "2025년 11월 15일 여주 축산운동회 현장입니다. 행사 현수막과 경기 용품을 준비한 야외 운동장, 큰 공과 색색의 천을 활용한 단체 활동을 담았습니다. 컬링 매트와 네트를 이용한 팀 경기 및 참가자들이 함께 모인 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20251115-i3cc-sq.jpg",
+   "cover": "photos/_cover/20251115-i3cc-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20251115-i3cc-001.jpg",
+   "cat": "corp",
+   "event": "여주 축산운동회",
+   "date": "2025-11-15",
+   "place": "여주 야외 운동장",
+   "caption": "여주 축산운동회",
+   "desc": "2025년 11월 15일 여주 축산운동회 현장입니다. 행사 현수막과 경기 용품을 준비한 야외 운동장, 큰 공과 색색의 천을 활용한 단체 활동을 담았습니다. 컬링 매트와 네트를 이용한 팀 경기 및 참가자들이 함께 모인 장면을 기록했습니다.",
+   "thumb": "photos/_cover/20251115-i3cc-sq.jpg",
+   "cover": "photos/_cover/20251115-i3cc-wide.jpg"
+  },
   {
    "path": "photos/corp/20251117-21m0-005.jpg",
    "cat": "corp",
