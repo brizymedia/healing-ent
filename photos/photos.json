@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T22:56:11.337Z",
+ "updated": "2026-11-05T22:58:24.109Z",
  "categories": [
   {
    "slug": "school",
@@ -11,7 +11,7 @@
    "slug": "corp",
    "name": "기업 · 단체 워크숍",
    "desc": "",
-   "count": 273
+   "count": 277
   },
   {
    "slug": "fest",
@@ -27,6 +27,50 @@
   }
  ],
  "photos": [
+  {
+   "path": "photos/corp/20250712-kyd0-004.jpg",
+   "cat": "corp",
+   "event": "가족 연수 레크리에이션",
+   "date": "2025-07-12",
+   "place": "실내 행사장",
+   "caption": "가족 연수 레크리에이션",
+   "desc": "2025년 7월 12일 가족 연수 레크리에이션 현장입니다. 가족 연수 현수막과 스피커, 여러 게임 도구를 마련한 실내 행사장을 담았습니다. 진행자와 참가자들이 함께하는 모둠별 놀이와 단체 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250712-kyd0-sq.jpg",
+   "cover": "photos/_cover/20250712-kyd0-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250712-kyd0-003.jpg",
+   "cat": "corp",
+   "event": "가족 연수 레크리에이션",
+   "date": "2025-07-12",
+   "place": "실내 행사장",
+   "caption": "가족 연수 레크리에이션",
+   "desc": "2025년 7월 12일 가족 연수 레크리에이션 현장입니다. 가족 연수 현수막과 스피커, 여러 게임 도구를 마련한 실내 행사장을 담았습니다. 진행자와 참가자들이 함께하는 모둠별 놀이와 단체 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250712-kyd0-sq.jpg",
+   "cover": "photos/_cover/20250712-kyd0-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250712-kyd0-002.jpg",
+   "cat": "corp",
+   "event": "가족 연수 레크리에이션",
+   "date": "2025-07-12",
+   "place": "실내 행사장",
+   "caption": "가족 연수 레크리에이션",
+   "desc": "2025년 7월 12일 가족 연수 레크리에이션 현장입니다. 가족 연수 현수막과 스피커, 여러 게임 도구를 마련한 실내 행사장을 담았습니다. 진행자와 참가자들이 함께하는 모둠별 놀이와 단체 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250712-kyd0-sq.jpg",
+   "cover": "photos/_cover/20250712-kyd0-wide.jpg"
+  },
+  {
+   "path": "photos/corp/20250712-kyd0-001.jpg",
+   "cat": "corp",
+   "event": "가족 연수 레크리에이션",
+   "date": "2025-07-12",
+   "place": "실내 행사장",
+   "caption": "가족 연수 레크리에이션",
+   "desc": "2025년 7월 12일 가족 연수 레크리에이션 현장입니다. 가족 연수 현수막과 스피커, 여러 게임 도구를 마련한 실내 행사장을 담았습니다. 진행자와 참가자들이 함께하는 모둠별 놀이와 단체 프로그램의 모습을 기록했습니다.",
+   "thumb": "photos/_cover/20250712-kyd0-sq.jpg",
+   "cover": "photos/_cover/20250712-kyd0-wide.jpg"
+  },
   {
    "path": "photos/corp/20250804-jpck-005.jpg",
    "cat": "corp",
