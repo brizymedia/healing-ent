@@ -276,7 +276,7 @@ ${더넣기}
         { '@type': 'ListItem', position: 지역글 ? 4 : 3, name: p.title, item: SITE + 경로 } ] },
       { '@type': 'BlogPosting', '@id': SITE + 경로, headline: p.title, description: p.description,
         image: 글이미지들(p).map((im) => 사진주소(im.path)),
-        datePublished: p.date, dateModified: p.updated || p.date, inLanguage: 'ko',
+        datePublished: p.date, dateModified: p.modified || p.updated || p.date, inLanguage: 'ko',
         keywords: [p.keyword.main, ...(p.keyword.sub || [])].join(', '),
         author: { '@type': 'Organization', name: BRAND, url: SITE + '/' },
         publisher: { '@id': SITE + '/#business' },
@@ -378,14 +378,14 @@ ${관련.length ? `<section class="more"><h2>같이 보면 좋은 글</h2><div c
 </main>
 ` + 꼬리;
     쓰기(`blog/${r.slug}`, html);
-    if (목록.length) 허브.push({ loc: 경로, lastmod: 목록[0].updated || 목록[0].date });
+    if (목록.length) 허브.push({ loc: 경로, lastmod: 목록[0].modified || 목록[0].updated || 목록[0].date });
   }
 
   /* ── sitemap.xml — 기존 항목은 두고 /blog/ 부분만 바꾼다 ── */
   const 블로그주소 = posts.length ? [
-    { loc: '/blog/', lastmod: posts[0].updated || posts[0].date },
+    { loc: '/blog/', lastmod: posts[0].modified || posts[0].updated || posts[0].date },
     ...허브,
-    ...posts.map((p) => ({ loc: 글주소(p.slug), lastmod: p.updated || p.date })),
+    ...posts.map((p) => ({ loc: 글주소(p.slug), lastmod: p.modified || p.updated || p.date })),
   ] : [];
   const sm = resolve(ROOT, 'sitemap.xml');
   if (existsSync(sm)) {
