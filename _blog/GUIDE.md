@@ -118,3 +118,7 @@
 - 요점 목록과 준비 체크포인트는 옅은 파랑 박스로 분리하고, 중요한 한 문장과 일반 설명의 위계를 둔다.
 - 색만으로 의미를 전달하지 않고 굵기·소제목·박스를 함께 사용한다. 빨강/여러 색의 남발과 본문 전체 확대는 피한다.
 - 문단 1~2문장 및 문단 사이 여백 기준은 그대로 유지한다.
+
+
+## GIF attachments (user preference)
+Each new article also includes one real GIF. Use optional top-level gif metadata with kind photo-slideshow, own /assets/media/gifs/name.gif path, original poster URL, clear caption, original sourcePhotos3, width640,height360,frameCount3,durationMs4500,loop false. It is additional media, not a substitute for the3 required approved photographs. Distinguish mixed-event guide slides from real single-event stories; never imply still-photo slides are real video or actual chronology. scripts/gif-media.mjs renders accessible controls with reduced-motion support; do not send GIFs through the JPEG photo uploader. No changes to original photo binaries or event dates.

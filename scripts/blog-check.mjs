@@ -256,3 +256,14 @@ console.log(`블로그 검사 — 글 ${posts.length}개 중 ${검사대상.leng
 오류.forEach((m) => console.log(m));
 if (오류.length) { console.log(`실패 ${오류.length}건`); process.exit(1); }
 console.log(`통과${경고.length ? ` (주의 ${경고.length}건)` : ''}`);
+
+// Optional GIF attachments: ordinary catalogue photos remain the required evidence images.
+for (const p of 글읽기(ROOT)) {
+ if (!p.gif) continue;
+ const g=p.gif, rel=String(g.path||'');
+ if(g.kind!=='photo-slideshow'||g.width!==640||g.height!==360||g.frameCount!==3||g.durationMs!==4500||g.loop!==false) throw Error('Invalid GIF metadata: '+p.slug);
+ if(!/^\/assets\/media\/gifs\/[A-Za-z0-9._-]+\.gif$/.test(rel)||!existsSync(resolve(ROOT,'.'+rel)))throw Error('Missing GIF file: '+p.slug);
+ const b=readFileSync(resolve(ROOT,'.'+rel));if(!/^GIF8[79]a$/.test(b.subarray(0,6).toString()))throw Error('Not a real GIF: '+p.slug);
+ if(!Array.isArray(g.sourcePhotos)||g.sourcePhotos.length!==3||g.poster!==g.sourcePhotos[0]||!g.caption||!g.alt)throw Error('Missing GIF evidence: '+p.slug);
+ const own=new Set(글이미지들(p).map(im=>'https://www.healingenter.co.kr'+im.path));if(g.sourcePhotos.some(u=>!own.has(u)))throw Error('Unverified guide GIF source: '+p.slug);
+}

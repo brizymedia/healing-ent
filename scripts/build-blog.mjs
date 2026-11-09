@@ -20,6 +20,7 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync, rmSync, existsSync
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { formatReadableHTML } from './paragraphs.mjs';
+import { renderGif } from './gif-media.mjs';
 
 export const SITE = 'https://www.healingenter.co.kr';
 export const BRAND = '힐링엔터테인먼트';
@@ -300,6 +301,7 @@ ${더넣기}
   <p class="lead">${인라인(p.lead)}</p>
   ${이미지html(p.cover, true)}
   <div class="points"><b>이 글의 요점</b><ul>${p.points.map((x) => `<li>${인라인(x)}</li>`).join('')}</ul></div>
+  ${p.gif ? renderGif(p.gif, {site:SITE}) : ''}
   <nav class="toc" aria-label="목차"><b>목차</b><ol>${p.sections.map((s, i) => `<li><a href="#s${i + 1}">${esc(s.h2)}</a></li>`).join('')}</ol></nav>
   <div class="body">
 ${p.sections.map((s, i) => `<h2 id="s${i + 1}">${esc(s.h2)}</h2>\n${s.blocks.map(블록).join('\n')}`).join('\n')}

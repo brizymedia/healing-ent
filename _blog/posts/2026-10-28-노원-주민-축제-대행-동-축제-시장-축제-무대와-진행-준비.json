@@ -321,5 +321,22 @@
     }
   ],
   "updated": "2026-10-28",
-  "modified": "2026-11-09"
+  "modified": "2026-11-09",
+  "gif": {
+    "path": "/assets/media/gifs/guide-08.gif",
+    "poster": "https://www.healingenter.co.kr/assets/img/sig/fest.webp",
+    "alt": "노원 주민 축제 대행, 동 축제 · 시장 축제 무대와 진행 준비 현장 사진 슬라이드",
+    "caption": "서로 다른 행사 사진을 묶은 준비 참고용 슬라이드 GIF입니다. 한 행사의 진행 순서를 나타내지 않습니다.",
+    "kind": "photo-slideshow",
+    "sourcePhotos": [
+      "https://www.healingenter.co.kr/assets/img/sig/fest.webp",
+      "https://www.healingenter.co.kr/assets/img/works/w20.webp",
+      "https://www.healingenter.co.kr/assets/img/works/w15.webp"
+    ],
+    "width": 640,
+    "height": 360,
+    "frameCount": 3,
+    "durationMs": 4500,
+    "loop": false
+  }
 }

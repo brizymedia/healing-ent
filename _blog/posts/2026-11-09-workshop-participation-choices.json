@@ -370,5 +370,22 @@
     }
   ],
   "updated": "2026-11-09",
-  "modified": "2026-11-09"
+  "modified": "2026-11-09",
+  "gif": {
+    "path": "/assets/media/gifs/guide-05.gif",
+    "poster": "https://www.healingenter.co.kr/assets/img/works/w21.webp",
+    "alt": "워크숍 참여 선택권 설계: 강요 없는 팀빌딩 역할 나누기 현장 사진 슬라이드",
+    "caption": "서로 다른 행사 사진을 묶은 준비 참고용 슬라이드 GIF입니다. 한 행사의 진행 순서를 나타내지 않습니다.",
+    "kind": "photo-slideshow",
+    "sourcePhotos": [
+      "https://www.healingenter.co.kr/assets/img/works/w21.webp",
+      "https://www.healingenter.co.kr/assets/img/works/w4.webp",
+      "https://www.healingenter.co.kr/assets/img/works/w27.webp"
+    ],
+    "width": 640,
+    "height": 360,
+    "frameCount": 3,
+    "durationMs": 4500,
+    "loop": false
+  }
 }
