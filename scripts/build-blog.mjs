@@ -404,7 +404,7 @@ ${관련.length ? `<section class="more"><h2>같이 보면 좋은 글</h2><div c
     let t = readFileSync(ll, 'utf8').replace(/\r\n/g, '\n');
     const 절 = `## 블로그 (행사 준비 정보, 지역별)\n- [행사 준비 블로그](${SITE}/blog/): 노원 · 도봉 · 강북 · 중랑 · 성북 · 동대문 · 은평 · 의정부 · 남양주 지역별 행사 준비 체크리스트\n` +
       posts.map((p) => `- [${p.title}](${SITE}${글주소(p.slug)}): ${p.description}`).join('\n') + '\n';
-    t = /^## 블로그[^]*?(?=^## |\s*$)/m.test(t) ? t.replace(/^## 블로그[^]*?(?=^## |\s*$)/m, 절) : t.trimEnd() + '\n\n' + 절;
+    t = /^## 블로그[^]*?(?=^## |(?![\s\S]))/m.test(t) ? t.replace(/^## 블로그[^]*?(?=^## |(?![\s\S]))/m, 절) : t.trimEnd() + '\n\n' + 절;
     writeFileSync(ll, t, 'utf8');
   }
 
