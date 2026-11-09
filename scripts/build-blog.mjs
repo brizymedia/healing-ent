@@ -19,6 +19,7 @@
 import { readFileSync, readdirSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { formatReadableHTML } from './paragraphs.mjs';
 
 export const SITE = 'https://www.healingenter.co.kr';
 export const BRAND = '힐링엔터테인먼트';
@@ -32,6 +33,7 @@ export const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '
 /** 글 안에서는 **굵게** 와 [글자](주소) 만 쓴다. 주소는 / 로 시작하거나 https:// 여야 한다. */
 export function 인라인(글) {
   return esc(글)
+    .replace(/\n{2,}/g, '<br><br>').replace(/\n/g, '<br>')
     .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
     .replace(/\[([^\]]+)\]\(((?:\/|https:\/\/)[^)\s]*)\)/g, (m, t, u) =>
       u.startsWith('/') ? `<a href="${u}">${t}</a>` : `<a href="${u}" target="_blank" rel="noopener">${t}</a>`);
@@ -170,7 +172,7 @@ export function buildBlog(옵션 = {}) {
   const 쓰기 = (폴더, html) => {
     const d = resolve(ROOT, 폴더);
     mkdirSync(d, { recursive: true });
-    writeFileSync(resolve(d, 'index.html'), 상대화(html, 폴더.split('/').length), 'utf8');
+    writeFileSync(resolve(d, 'index.html'), formatReadableHTML(상대화(html, 폴더.split('/').length)), 'utf8');
   };
 
   const 머리 = ({ 제목, 설명, 경로, 이미지, 종류 = 'website', 더넣기 = '', 색인 = true }) => `<!DOCTYPE html>
