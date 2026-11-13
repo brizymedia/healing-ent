@@ -234,7 +234,7 @@ def fix_same_folder():
 
 def sitemap(extra):
     today = datetime.date.today().isoformat()
-    pages = ['', 'about.html', 'service.html', 'portfolio.html', 'video.html', 'notice.html', 'contact.html', 'quote.html']
+    pages = ['', 'about.html', 'service.html', 'portfolio.html', 'video.html', 'notice.html', 'faq.html', 'contact.html', 'quote.html']
     urls = [BASE + p for p in pages] + extra
     # 블로그 항목(/blog/)은 scripts/build-blog.mjs 가 관리한다 — 지우지 않고 뒤에 그대로 둔다
     path = os.path.join(SITE, 'sitemap.xml')
