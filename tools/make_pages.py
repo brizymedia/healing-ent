@@ -16,6 +16,7 @@ BLOG = 'https://blog.naver.com/leehh2153/'
 NAME = '힐링엔터테인먼트'
 TEL = '010-5620-2153'
 E = html.escape
+false, true, null = False, True, None   # 매일 발행이 JSON 그대로 넣은 값(false 등) 때문에 멈추지 않게
 
 # ── 행사 이야기 ──────────────────────────────────────────────
 # 근거: 각 blog 번호의 네이버 블로그 원문(leehh2153). 숫자 · 고객 말은 원문에 있는 것만.
@@ -198,6 +199,28 @@ def story_pages():
     return urls
 
 
+GU = {'nowon': '서울특별시 노원구', 'dobong': '서울특별시 도봉구', 'gangbuk': '서울특별시 강북구', 'jungnang': '서울특별시 중랑구',
+      'seongbuk': '서울특별시 성북구', 'dongdaemun': '서울특별시 동대문구', 'eunpyeong': '서울특별시 은평구',
+      'uijeongbu': '경기도 의정부시', 'namyangju': '경기도 남양주시'}
+
+
+def area_ld(a):
+    """지역 페이지 스키마 — 이 지역에서 하는 행사(서비스) · 경로(빵부스러기). 사업체 정보는 머리글의 #business 를 가리킨다."""
+    import json
+    url = BASE + 'areas/' + a['slug'] + '.html'
+    data = {'@context': 'https://schema.org', '@graph': [
+        {'@type': 'Service', '@id': url + '#service', 'name': a['name'] + ' 행사 MC · 체육대회 · 운동회 · 워크숍 · 지역축제', 'url': url,
+         'serviceType': '행사 기획 · 전문 MC 진행 · 레크리에이션 · 음향 운영', 'provider': {'@id': BASE + '#business'},
+         'areaServed': {'@type': 'City' if a.get('city') else 'AdministrativeArea', 'name': GU.get(a['slug'], a['name'])},
+         'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': a['name'] + ' 행사 분야', 'itemListElement': [
+             {'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': x, 'description': y}} for x, y in SERVICES]}},
+        {'@type': 'BreadcrumbList', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': '홈', 'item': BASE},
+            {'@type': 'ListItem', 'position': 2, 'name': '운영 지역', 'item': BASE + 'areas/index.html'},
+            {'@type': 'ListItem', 'position': 3, 'name': a['name'], 'item': url}]}]}
+    return '<script type="application/ld+json" data-seo="area-v1">' + json.dumps(data, ensure_ascii=False) + '</script>'
+
+
 def where(a):
     return a['name'] + ('시청' if a.get('city') else '구청')
 
@@ -227,7 +250,7 @@ def area_pages():
                 '<h3 class="h3s">' + n + '에서 한 행사</h3>' + done + ('<div class="scards sm">' + sl + '</div>' if sl else '') + '</div>'
                 '<div class="rv d1"><div class="apics">' + photos + '</div></div></div></section>'
                 '<section class="sec sky"><div class="wrap"><div class="sh rv"><div><p class="eyebrow">What we do</p><h2>' + n + '에서도 <em>이런 행사</em>를 맡습니다</h2></div></div><ul class="asvc">' + svc + '</ul>'
-                '<p class="snote">다른 지역: ' + others + ' · <a href="@@areas/index.html">운영 지역 전체</a></p></div></section>' + cta(n + ' 행사 날짜가 정해졌다면,<br>지금 편하게 물어보세요.'))
+                '<p class="snote">다른 지역: ' + others + ' · <a href="@@areas/index.html">운영 지역 전체</a></p></div></section>' + cta(n + ' 행사 날짜가 정해졌다면,<br>지금 편하게 물어보세요.') + area_ld(a))
         urls.append(page('areas/' + a['slug'] + '.html', title, desc, main, img=pic(a['photos'][0], True)))
     rows = ''.join('<a class="arow" href="@@areas/' + a['slug'] + '.html"><b>' + a['name'] + '</b><span>' + ('본사' if a.get('hq') else '차로 약 ' + str(a['min']) + '분 · ' + ('%g' % a['km']) + 'km') + '</span><em>' + (E(a['done'][0]) if a['done'] else '출장 진행') + '</em></a>' for a in AREAS)
     main = (head('Areas', '운영 지역', '서울 노원 본사에서 출발해 서울 · 경기 어디든 찾아갑니다. 지역을 누르면 그 지역에서 한 행사와 이동 시간을 보실 수 있습니다.', ['<span>운영 지역</span>'], pic('w8', True)) +
@@ -249,7 +272,7 @@ def fix_same_folder():
 
 def sitemap(extra):
     today = datetime.date.today().isoformat()
-    pages = ['', 'about.html', 'service.html', 'portfolio.html', 'video.html', 'notice.html', 'faq.html', 'contact.html', 'quote.html']
+    pages = ['', 'about.html', 'service.html', 'youth.html', 'public.html', 'corporate.html', 'portfolio.html', 'video.html', 'notice.html', 'faq.html', 'contact.html', 'quote.html']
     urls = [BASE + p for p in pages] + extra
     # 블로그 항목(/blog/)은 scripts/build-blog.mjs 가 관리한다 — 지우지 않고 뒤에 그대로 둔다
     path = os.path.join(SITE, 'sitemap.xml')
