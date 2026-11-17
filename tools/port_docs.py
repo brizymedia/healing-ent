@@ -301,6 +301,10 @@ def quote_extra(s):
     s = re.sub(r'<title>[^<]*</title>', '<title>' + QUOTE_TITLE + '</title>', s, count=1)
     s = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="' + QUOTE_DESC + '">', s, count=1)
     # 손님용 견적서는 검색에 나와도 되지만, 관리자 화면 주소가 같아 큰길이벤트처럼 noindex 를 두지 않는다
+    # 광고 성과 측정(메타 픽셀 · 유입 경로) — 손님 화면에서만 동작하고 ?admin=1 에서는 스스로 꺼진다 (2026-11-17)
+    if 'assets/ads.js' not in s:
+        s = re.sub(r'(<script defer src="https://www\.ai-make\.co\.kr/stats/stats\.js"[^>]*></script>)',
+                   r'\1\n<script defer src="/assets/ads.js?v=1"></script>', s, count=1)
     return s
 
 

@@ -201,6 +201,7 @@ export function buildBlog(옵션 = {}) {
 ${더넣기}
 <style>${CSS}</style>
 <script defer src="https://www.ai-make.co.kr/stats/stats.js" data-site="healing"></script>
+<script defer src="/assets/ads.js?v=1"></script>
 </head>
 <body>
 <div class="topbar"><div class="topbar-in">
