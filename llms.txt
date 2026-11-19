@@ -57,6 +57,11 @@
 
 ## 블로그 (행사 준비 정보, 지역별)
 - [행사 준비 블로그](https://www.healingenter.co.kr/blog/): 노원 · 도봉 · 강북 · 중랑 · 성북 · 동대문 · 은평 · 의정부 · 남양주 지역별 행사 준비 체크리스트
+- [행사 참석 인원 집계: 입장·재입장·이탈 수 구분](https://www.healingenter.co.kr/blog/event-attendance-count-basis/): 행사 참석 인원 집계를 맡은 담당자를 위해 신청자와 실제 입장자의 차이, 출입구별 중복 기록, 재입장과 이탈 처리, 중간 보고에 반드시 붙일 집계 기준을 정리했습니다.
+- [행사 순차 통역 진행: 발화 단위·마이크·멈춤 신호](https://www.healingenter.co.kr/blog/event-consecutive-interpretation-turns/): 행사 순차 통역 진행을 준비하는 담당자를 위해 발표와 통역의 차례, 고유명사 자료 공유, 마이크 위치, 이해하지 못한 대목의 확인 신호와 현장 안내 문장을 정리했습니다.
+- [행사 주차 안내 준비: 입구·허용 차량·만차 대안 구분](https://www.healingenter.co.kr/blog/event-parking-arrival-notice/): 행사 주차 안내를 준비하는 담당자를 위해 행사장 주소와 차량 입구의 차이, 이용 가능한 차량 조건, 만차 때 확인할 대안, 현장 연락 창구를 나눠 정리했습니다.
+- [행사 추첨 응모권 검수: 접수·중복·호명 기준 정리](https://www.healingenter.co.kr/blog/event-raffle-entry-validation/): 행사 추첨 응모권을 준비하는 담당자를 위해 참여 조건과 접수 마감, 중복 응모 확인, 추첨 중 판단을 맡을 사람, 결과 호명과 물품 전달의 연결 방법을 정리했습니다.
+- [행사 단체복 배부: 크기 선택·교환·미수령 구분](https://www.healingenter.co.kr/blog/event-team-shirt-size-exchange/): 행사 단체복 배부 담당자를 위해 신청한 크기와 실제 수령품의 대조, 같은 색 다른 크기의 분리, 교환 가능한 상태, 미수령품과 확인 대기 물품을 나누는 방법을 정리했습니다.
 - [체험 부스 순회표 짜기: 조별 출발점과 빈 칸 활용법](https://www.healingenter.co.kr/blog/event-booth-rotation-grid/): 체험 부스 순회표를 짜는 담당자를 위해 조와 회차를 축으로 놓은 예시, 부스별 수용 확인, 쉬는 칸 표기, 한 부스만 늦어졌을 때 바꿀 칸을 정리했습니다.
 - [행사 식권 관리: 묶음 배부부터 사용분 대조까지](https://www.healingenter.co.kr/blog/event-meal-voucher-reconciliation/): 행사 식권 관리를 맡은 담당자를 위해 묶음 단위 인계, 참가자에게 나간 표와 식사처에서 받은 표의 구분, 훼손 교환과 미회수분을 대조하는 방법을 예시 장부로 설명합니다.
 - [행사 셔틀 탑승 확인: 왕복 구간과 편도 변경 나누기](https://www.healingenter.co.kr/blog/event-shuttle-boarding-manifest/): 행사 셔틀 탑승 확인을 맡은 담당자가 갈 때와 돌아올 때의 신청을 따로 받고, 승차 장소 변경과 편도 전환, 차량별 실제 탑승을 구분할 수 있도록 구간별 확인표를 제시합니다.
