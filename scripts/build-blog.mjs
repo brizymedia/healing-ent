@@ -24,6 +24,10 @@ import { renderGif } from './gif-media.mjs';
 
 export const SITE = 'https://www.healingenter.co.kr';
 export const BRAND = '힐링엔터테인먼트';
+// 글쓴이: 대표 MC (AI 검색이 누가 쓴 글인지 알 수 있게, 2026-11-20)
+const 글쓴이 = { '@type': 'Person', '@id': 'https://www.healingenter.co.kr/about.html#hyunholee', name: '이현호', jobTitle: '대표 MC',
+  url: 'https://www.healingenter.co.kr/about.html', worksFor: { '@id': 'https://www.healingenter.co.kr/#business' },
+  sameAs: ['https://www.instagram.com/mc_hyunholee', 'https://blog.naver.com/leehh2153', 'https://litt.ly/healingmc'] };
 const TEL = '010-5620-2153';
 /** 루트 기준 "/x" 를 페이지 폴더 깊이에 맞춰 "../../x" 로 — href · src 속성만(JSON-LD · canonical 은 SITE 절대 주소라 그대로) */
 const 상대화 = (html, 깊이) => html.replace(/\b(href|src)="\/(?!\/)([^"]*)"/g, (m, k, u) => `${k}="${'../'.repeat(깊이)}${u}"`);
@@ -279,7 +283,7 @@ ${더넣기}
         image: 글이미지들(p).map((im) => 사진주소(im.path)),
         datePublished: p.date, dateModified: p.modified || p.updated || p.date, inLanguage: 'ko',
         keywords: [p.keyword.main, ...(p.keyword.sub || [])].join(', '),
-        author: { '@type': 'Organization', name: BRAND, url: SITE + '/' },
+        author: 글쓴이,
         publisher: { '@id': SITE + '/#business' },
         mainEntityOfPage: { '@type': 'WebPage', '@id': SITE + 경로 },
         ...(지역글 ? { spatialCoverage: { '@type': 'Place', name: `${r.도} ${r.시군}` } } : {}) },
