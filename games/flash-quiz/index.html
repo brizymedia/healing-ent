@@ -135,13 +135,44 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
 .team.bump{transform:scale(1.07);border-color:var(--ye)}
 
 /* 결과 */
-#final{align-items:center;justify-content:center;gap:3vh;padding:16px;text-align:center}
+#final{overflow:auto;align-items:center;justify-content:safe center;gap:3vh;padding:16px;text-align:center}
 #final h1{font-size:clamp(2.4rem,7vw,5rem);font-weight:900}
 .rank{display:flex;flex-direction:column;gap:12px;width:min(640px,100%)}
 .rank li{list-style:none;display:flex;align-items:center;gap:1rem;background:rgba(19,47,107,.8);border-radius:18px;padding:1rem 1.4rem;font-size:1.4rem;font-weight:900;animation:pop .5s both}
 .rank li.top{background:linear-gradient(135deg,#FFC23A,#FF8A1E);color:#2A1C00;font-size:1.9rem}
 .rank li b{font-family:var(--en);margin-left:auto}
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:2}
+/* 두근두근 시상대 */
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,2vw,24px);width:min(820px,100%);min-height:44vh}
+.pod{flex:1;max-width:240px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.pod .who{font-weight:900;font-size:clamp(1.1rem,2.6vw,1.8rem);min-height:2.6em;display:flex;flex-direction:column;justify-content:flex-end;opacity:0;transform:translateY(10px);transition:.5s}
+.pod .who small{font-family:var(--en);color:var(--ye);font-size:.8em}
+.pod .bar2{width:100%;border-radius:18px 18px 0 0;display:grid;place-items:start center;padding-top:14px;font-family:var(--en);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35);transition:background .6s,color .6s}
+.pod.p1 .bar2{height:30vh}.pod.p2 .bar2{height:22vh}.pod.p3 .bar2{height:16vh}
+.pod.on .who{opacity:1;transform:none}
+.pod.on.p1 .bar2{background:linear-gradient(180deg,#FFD54A,#FF9A1E);color:#3A2400;box-shadow:0 0 50px rgba(255,194,58,.5)}
+.pod.on.p2 .bar2{background:linear-gradient(180deg,#E6ECF7,#A9B7D8);color:#132F6B}
+.pod.on.p3 .bar2{background:linear-gradient(180deg,#F0B184,#C9773E);color:#3A1A06}
+.pod.drum .bar2{animation:shake .12s infinite}
+@keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.rest{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:min(820px,100%)}
+.rest span{background:rgba(19,47,107,.8);border-radius:12px;padding:.45rem .9rem;font-weight:800;animation:pop .4s both}
+.rest span b{font-family:var(--en);color:var(--ye);margin-left:.4rem}
+/* 보너스 */
+.modal{position:fixed;inset:0;z-index:5;background:rgba(5,10,35,.72);display:grid;place-items:center;padding:16px}
+.modal .box{background:#132F6B;border-radius:22px;padding:22px;width:min(560px,100%);text-align:center}
+.modal h3{font-size:1.4rem;margin-bottom:.3rem}
+.modal p{color:var(--sub);margin-bottom:1rem}
+.bteams{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.bteam{background:#0B1A3D;border-radius:14px;padding:.6rem;display:flex;flex-direction:column;gap:6px;align-items:center;font-weight:900}
+.bteam div{display:flex;gap:6px}
+.bteam button{background:var(--ye);color:#2A1C00;border-radius:10px;padding:.35rem .6rem;font-weight:900;min-width:44px;min-height:40px}
+.bonusfx{position:fixed;inset:0;z-index:6;display:grid;place-items:center;pointer-events:none}
+.bonusfx div{background:linear-gradient(135deg,#FFD54A,#FF8A1E);color:#2A1C00;border-radius:28px;padding:3vh 5vw;text-align:center;font-weight:900;font-size:clamp(2rem,7vw,5rem);box-shadow:0 20px 60px rgba(255,138,30,.5);animation:bonus 2s both}
+.bonusfx small{display:block;font-size:.4em}
+@keyframes bonus{0%{transform:scale(.3);opacity:0}15%{transform:scale(1.1);opacity:1}25%{transform:scale(1)}85%{opacity:1}100%{opacity:0;transform:scale(1.05)}}
+.team{position:relative}
+.team .crown{position:absolute;top:-16px;left:12px;font-size:1.4rem;animation:pop .4s both}
 
 @media (max-width:700px){
   .timer{right:10px;top:4px;bottom:auto;transform:none;width:64px}
@@ -225,6 +256,7 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
     <div class="brand"><img src="../../assets/img/logo-h-white.svg" alt=""> <span>힐링 플래시 퀴즈</span></div>
     <div class="round" id="roundLbl"></div>
     <button class="iconbtn" id="fsBtn" type="button">⛶ 전체화면</button>
+    <button class="iconbtn" id="bonusBtn" type="button">🎁 보너스</button>
     <button class="iconbtn" id="endBtn" type="button">결과 보기</button>
   </div>
   <div class="stage" id="stage"></div>
@@ -235,11 +267,18 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
 <!-- ───── 결과 ───── -->
 <section class="screen" id="final" hidden>
   <div class="brand"><img src="../../assets/img/logo-h-white.svg" alt=""> 힐링엔터테인먼트</div>
-  <h1>🏆 최종 결과</h1>
-  <ol class="rank" id="rank"></ol>
-  <div class="start"><button class="btn" id="againBtn" type="button">처음으로</button></div>
+  <h1>🏆 두근두근 최종 순위</h1>
+  <div class="rest" id="rest"></div>
+  <div class="podium" id="podium"></div>
+  <div class="start"><button class="btn" id="revealBtn" type="button">순위 공개 ▶</button><button class="btn ghost" id="againBtn" type="button">처음으로</button></div>
 </section>
 <canvas id="confetti"></canvas>
+<div class="modal" id="bonusModal" hidden><div class="box">
+  <h3>🎁 보너스 점수</h3><p>응원을 잘한 팀, 미션을 해낸 팀에게 주세요</p>
+  <div class="bteams" id="bteams"></div>
+  <div class="start"><button class="btn ghost" id="bonusClose" type="button">닫기</button></div>
+</div></div>
+<div class="bonusfx" id="bonusFx" hidden></div>
 
 <script>
 /* ───────── 기본 문제 (힐링 주제) ─────────
@@ -582,8 +621,9 @@ function prev(){
 
 function badge(name, i){ const m = /^([A-Za-z])(\s|$)/.exec(name.trim()); return m ? m[1].toUpperCase() : i + 1; }
 function renderBoard(){
+  const top = Math.max(...G.teams.map(t => t.score));
   $('#board').innerHTML = G.teams.map((t, i) => `<div class="team" id="team${i}">
-    <div class="no" style="background:${TEAM_COLORS[i]}">${badge(t.name, i)}</div><div class="nm">${esc(/^[A-Za-z]\s/.test(t.name.trim()) ? t.name.trim().slice(2) : t.name)}</div>
+    <div class="no" style="background:${TEAM_COLORS[i]}">${badge(t.name, i)}</div>${top > 0 && t.score === top ? '<span class="crown">👑</span>' : ''}<div class="nm">${esc(/^[A-Za-z]\s/.test(t.name.trim()) ? t.name.trim().slice(2) : t.name)}</div>
     <div class="sc">${t.score}</div>
     <div class="pm"><button type="button" data-t="${i}" data-d="1" aria-label="${esc(t.name)} 점수 올리기">+</button><button type="button" data-t="${i}" data-d="-1" aria-label="${esc(t.name)} 점수 내리기">−</button></div></div>`).join('');
 }
@@ -595,17 +635,59 @@ function addScore(i, d){
 }
 $('#board').addEventListener('click', e => { const b = e.target.closest('[data-t]'); if(b) addScore(+b.dataset.t, +b.dataset.d); });
 
+/* 두근두근 순위 발표: 4위 이하 → 3위 → 2위 → 1위 순서로 하나씩 */
+const R = {steps: [], k: 0};
 function finish(){
   stopAll(); show('final');
   const sorted = G.teams.map((t, i) => ({...t, i})).sort((a, b) => b.score - a.score);
-  const medals = ['🥇','🥈','🥉'];
-  let rank = 0, prevScore = null;
-  $('#rank').innerHTML = sorted.map((t, k) => {
-    if(t.score !== prevScore){ rank = k; prevScore = t.score; }
-    return `<li class="${rank===0?'top':''}" style="animation-delay:${(sorted.length - k) * .25}s">${medals[rank] || (rank + 1) + '위'} ${esc(t.name)} <b>${t.score}점</b></li>`;
-  }).join('');
-  sfx.chime(); setTimeout(sfx.reveal, 500); confetti();
+  let rank = 0, prev = null;
+  sorted.forEach((t, k) => { if(t.score !== prev){ rank = k; prev = t.score; } t.rank = rank + 1; });
+  const podN = Math.min(3, sorted.length), order = podN === 3 ? [1, 0, 2] : [1, 0].slice(0, podN);
+  $('#podium').innerHTML = order.map(k => `<div class="pod p${k + 1}" id="pod${k}"><div class="who">${esc(sorted[k].name)}<small>${sorted[k].score}점</small></div><div class="bar2">${sorted[k].rank}</div></div>`).join('');
+  $('#rest').innerHTML = '';
+  R.steps = []; R.k = 0;
+  if(sorted.length > 3) R.steps.push({rest: sorted.slice(3)});
+  for(let k = podN - 1; k >= 0; k--) R.steps.push({pod: k, last: k === 0});
+  $('#revealBtn').hidden = false; $('#revealBtn').textContent = (R.steps[0].rest ? '4위부터' : sorted.length >= 3 ? '3위' : '2위') + ' 공개 ▶';
+  sfx.chime();
 }
+function revealNext(){
+  const st = R.steps[R.k]; if(!st) return;
+  $('#revealBtn').disabled = true;
+  if(st.rest){
+    $('#rest').innerHTML = st.rest.map((t, j) => `<span style="animation-delay:${j * .15}s">${t.rank}위 ${esc(t.name)}<b>${t.score}점</b></span>`).join('');
+    sfx.reveal(); done();
+  } else {
+    const el = $('#pod' + st.pod); el.classList.add('drum');
+    let n = 0; const roll = setInterval(() => { tone(180 + (n++ % 2) * 40, .06, 'square', .07); }, 70);
+    setTimeout(() => { clearInterval(roll); el.classList.remove('drum'); el.classList.add('on'); sfx.reveal(); if(st.last){ sfx.chime(); confetti(); } done(); }, st.last ? 2200 : 1300);
+  }
+  function done(){
+    R.k++; $('#revealBtn').disabled = false;
+    const nx = R.steps[R.k];
+    if(!nx) $('#revealBtn').hidden = true;
+    else $('#revealBtn').textContent = (nx.pod + 1) + '위 공개 ▶';
+  }
+}
+$('#revealBtn').addEventListener('click', revealNext);
+
+/* 보너스 점수 */
+function openBonus(){
+  $('#bteams').innerHTML = G.teams.map((t, i) => `<div class="bteam"><span style="color:${TEAM_COLORS[i]}">${esc(t.name)}</span><div>${[1, 2, 3].map(v => `<button type="button" data-bt="${i}" data-bv="${v}">+${v}</button>`).join('')}</div></div>`).join('');
+  $('#bonusModal').hidden = false;
+}
+$('#bonusBtn').addEventListener('click', openBonus);
+$('#bonusClose').addEventListener('click', () => $('#bonusModal').hidden = true);
+$('#bonusModal').addEventListener('click', e => {
+  if(e.target.id === 'bonusModal'){ $('#bonusModal').hidden = true; return; }
+  const b = e.target.closest('[data-bt]'); if(!b) return;
+  const i = +b.dataset.bt, v = +b.dataset.bv;
+  $('#bonusModal').hidden = true;
+  G.teams[i].score += v; renderBoard();
+  const fx = $('#bonusFx'); fx.innerHTML = `<div><small>🎁 보너스 점수</small>${esc(G.teams[i].name)} +${v}점!</div>`; fx.hidden = false;
+  [784, 988, 1175, 1568].forEach((f, k) => tone(f, .3, 'triangle', .16, k * .1));
+  clearTimeout(G.bonusT); G.bonusT = setTimeout(() => fx.hidden = true, 2000);
+});
 
 /* 꽃가루 */
 function confetti(){
@@ -628,7 +710,8 @@ function toggleFS(){
 
 /* 키보드 (사회자용) */
 document.addEventListener('keydown', e => {
-  if($('#play').hidden){ return; }
+  if(!$('#final').hidden && (e.key === ' ' || e.key === 'Enter')){ e.preventDefault(); if(!$('#revealBtn').hidden && !$('#revealBtn').disabled) revealNext(); return; }
+  if($('#play').hidden || !$('#bonusModal').hidden){ return; }
   const k = e.key;
   if(k === ' ' || k === 'Enter' || k === 'ArrowRight' || k === 'PageDown'){ e.preventDefault(); next(); }
   else if(k === 'ArrowLeft' || k === 'PageUp'){ e.preventDefault(); prev(); }
