@@ -77,6 +77,12 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
 .t-flash{background:var(--ye);color:#2A1C00}
 .t-zoom{background:var(--mint);color:#062A20}
 .t-cho{background:var(--pink);color:#3A0618}
+.t-ox{background:#fff;color:#132F6B}
+.oxq{font-size:clamp(1.6rem,5vh,3.2rem);font-weight:900;line-height:1.35;max-width:min(1000px,92vw);text-align:center}
+.oxrow{display:flex;gap:4vw;justify-content:center}
+.ox{width:clamp(6rem,24vh,13rem);aspect-ratio:1;border-radius:28px;display:grid;place-items:center;font-size:clamp(4rem,16vh,9rem);background:rgba(255,255,255,.08);border:4px solid rgba(255,255,255,.15);transition:.3s}
+.ox.right{background:rgba(95,211,168,.25);border-color:var(--mint);transform:scale(1.08);box-shadow:0 0 40px rgba(95,211,168,.5)}
+.ox.wrong{opacity:.2;transform:scale(.9)}
 .center{text-align:center;display:flex;flex-direction:column;align-items:center;gap:3vh}
 .prompt{font-size:clamp(1.3rem,3vw,2.2rem);font-weight:700;color:var(--sub)}
 .big{font-size:clamp(9rem,32vh,22rem);line-height:1;user-select:none}
@@ -151,6 +157,9 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
   .flashbox,.viewport{width:min(72vw,32vh)!important;border-radius:22px}
   .viewport .big,.flashbox .big{font-size:min(26vh,56vw)!important}
   .center>.big{font-size:min(20vh,40vw)!important}
+  .oxq{font-size:1.1rem;padding:0 8px}
+  .ox{width:min(24vw,11vh);font-size:min(14vw,7vh);border-radius:16px}
+  .oxrow{gap:6vw}
   .tiles{gap:6px;flex-wrap:nowrap}
   .tile{width:clamp(2.4rem,11.5vw,4.6rem);font-size:clamp(1.4rem,7vw,2.4rem);border-radius:12px;box-shadow:0 5px 0 #C9D6F2}
   .tile.open{box-shadow:0 5px 0 #C99A20}
@@ -183,6 +192,7 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
       <label class="chk"><input type="checkbox" value="flash" checked> ⚡ 순간포착</label>
       <label class="chk"><input type="checkbox" value="zoom" checked> 🔍 확대 퀴즈</label>
       <label class="chk"><input type="checkbox" value="cho" checked> ㅎㄹ 초성 퀴즈</label>
+      <label class="chk"><input type="checkbox" value="ox" checked> ⭕❌ 퀴즈</label>
     </div>
 
     <h2>난이도</h2>
@@ -267,14 +277,15 @@ const DEFAULT_Q = `순간 | 🌳 | 나무 | 숲을 이루는 것
 const TYPES = {
   순간:{key:'flash',label:'⚡ 순간포착',cls:'t-flash',time:10,prompt:'잠깐 보여드립니다! 무엇일까요?'},
   확대:{key:'zoom',label:'🔍 확대 퀴즈',cls:'t-zoom',time:12,prompt:'점점 멀어집니다. 무엇일까요?'},
-  초성:{key:'cho',label:'ㅎㄹ 초성 퀴즈',cls:'t-cho',time:15,prompt:'초성을 보고 맞혀 보세요!'}
+  초성:{key:'cho',label:'ㅎㄹ 초성 퀴즈',cls:'t-cho',time:15,prompt:'초성을 보고 맞혀 보세요!'},
+  OX:{key:'ox',label:'⭕❌ 퀴즈',cls:'t-ox',time:10,prompt:'맞으면 ⭕, 틀리면 ❌!'}
 };
 const TEAM_COLORS = ['#3D8BFF','#FF8A1E','#5FD3A8','#FF7EA8','#FFC23A','#B48CFF'];
 /* 난이도: 순간포착 보여주는 시간·확대 시작 배율·제한 시간·초성 첫 글자와 힌트 */
 const LEVELS = {
-  easy:  {label:'😊 쉬움',   desc:'1.5초 보여주기 · 첫 글자와 힌트 공개', flash:1500, zoom:3.5, first:true,  hint:true,  time:{순간:15, 확대:18, 초성:25}},
-  normal:{label:'🙂 보통',   desc:'0.7초 · 힌트는 버튼으로',               flash:700,  zoom:6,   first:false, hint:false, time:{순간:10, 확대:12, 초성:15}},
-  hard:  {label:'🔥 어려움', desc:'0.35초 · 아주 크게 확대',               flash:350,  zoom:9,   first:false, hint:false, time:{순간:8,  확대:10, 초성:12}}
+  easy:  {label:'😊 쉬움',   desc:'1.5초 보여주기 · 첫 글자와 힌트 공개', flash:1500, zoom:3.5, first:true,  hint:true,  time:{순간:15, 확대:18, 초성:25, OX:15}},
+  normal:{label:'🙂 보통',   desc:'0.7초 · 힌트는 버튼으로',               flash:700,  zoom:6,   first:false, hint:false, time:{순간:10, 확대:12, 초성:15, OX:10}},
+  hard:  {label:'🔥 어려움', desc:'0.35초 · 아주 크게 확대',               flash:350,  zoom:9,   first:false, hint:false, time:{순간:8,  확대:10, 초성:12, OX:8}}
 };
 const lvl = () => LEVELS[cfg.level] || LEVELS.normal;
 /* 행사별 설정 — 주소 뒤에 ?ev=이름 을 붙이면 적용 */
@@ -313,13 +324,23 @@ const EVENTS = {
 초성 |  | 명함 | 처음 만나면 주고받는 것
 초성 |  | 사업계획서 | 지원 사업 신청의 첫 서류
 초성 |  | 사업자등록 | 예비 창업자와 창업자를 가르는 기준
-초성 |  | 예비창업자 | 아직 사업자 등록 전인 사람`
+초성 |  | 예비창업자 | 아직 사업자 등록 전인 사람
+OX | 예비창업패키지는 아직 사업자 등록을 하지 않은 예비 창업자를 위한 지원 사업이다. | O | 예비 창업자 = 사업자 등록 전
+OX | 초기창업패키지는 사업자 등록 전인 사람만 신청할 수 있다. | X | 초기창업패키지는 이미 창업한 초기 기업을 위한 사업이에요
+OX | 창업보육센터는 새싹 기업에게 사무 공간을 빌려준다. | O | 그래서 「입주기업」이라고 불러요
+OX | 캠퍼스타운은 서울시와 대학이 함께하는 창업 지원 사업이다. | O | 오늘 행사도 캠퍼스타운센터가 열었어요
+OX | 창업동아리는 이미 회사를 차린 사람만 들어갈 수 있다. | X | 창업을 꿈꾸는 학생 누구나 함께할 수 있어요
+OX | 창업대체학점 인정제는 창업 활동을 학점으로 인정해 주는 제도다. | O | 창업도 공부예요
+OX | 사업계획서는 지원 사업에 신청할 때 내는 대표 서류다. | O | 창업의 설계도
+OX | 오늘 창업포럼은 솔라고호텔 2층 연회장에서 열린다. | O | 서울 중구 충무로
+OX | 오늘 창업포럼은 11월 25일 수요일에 열린다. | X | 오늘은 11월 24일 화요일이에요
+OX | 명함은 행사가 다 끝난 뒤에만 주고받을 수 있다. | X | 지금 바로 옆 사람과 나눠 보세요!`
   }
 };
 const EV_KEY = new URLSearchParams(location.search).get('ev');
 const EV = EVENTS[EV_KEY] || null;
 const BASE_Q = EV ? EV.q : DEFAULT_Q;
-const STORE = 'healing-flash-quiz-v4' + (EV ? '-' + EV_KEY : '');
+const STORE = 'healing-flash-quiz-v5' + (EV ? '-' + EV_KEY : '');
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -350,6 +371,8 @@ function parseQ(text){
     const [t, show, ans, hint] = l.split('|').map(s => (s || '').trim());
     const type = TYPES[t];
     if(!type || !ans) return null;
+    if(t === 'OX'){ const o = /^(o|⭕|맞음|참)$/i.test(ans) ? 'O' : /^(x|❌|틀림|거짓)$/i.test(ans) ? 'X' : null; if(!o || !show) return null;
+      return {type: t, show, answer: o, hint: hint || ''}; }
     return {type: t, show: show || (t === '초성' ? chosung(ans) : ans), answer: ans, hint: hint || ''};
   }).filter(Boolean);
 }
@@ -457,6 +480,9 @@ function setPhase(p){
       };
       G.raf = requestAnimationFrame(step);
       startTimer(sec);
+    } else if(q.type === 'OX'){
+      st.innerHTML = head + `<div class="center"><div class="oxq">${esc(q.show)}</div><div class="oxrow"><div class="ox">⭕</div><div class="ox">❌</div></div></div>` + timerHTML(sec);
+      startTimer(sec);
     } else {
       const open = lvl().first && chosung(q.answer) === q.show;
       const tiles = [...q.show].map((c, k) => c === ' ' ? `<div class="tile sp"></div>` : `<div class="tile${open && k === 0 ? ' open' : ''}" style="animation-delay:${k * .12}s">${esc(open && k === 0 ? q.answer[0] : c)}</div>`).join('');
@@ -468,6 +494,11 @@ function setPhase(p){
     return;
   }
   if(p === 'reveal'){
+    if(q.type === 'OX'){
+      const R = q.answer === 'O';
+      st.innerHTML = head + `<div class="center"><div class="oxq">${esc(q.show)}</div><div class="oxrow"><div class="ox ${R ? 'right' : 'wrong'}">⭕</div><div class="ox ${R ? 'wrong' : 'right'}">❌</div></div>${q.hint ? `<div class="hint">💡 ${esc(q.hint)}</div>` : ''}</div>`;
+      sfx.reveal(); return;
+    }
     const vis = q.type === '초성' ? `<div class="tiles">${[...q.show].map(c => c === ' ' ? '<div class="tile sp"></div>' : `<div class="tile">${esc(c)}</div>`).join('')}</div>`
       : q.type === '확대' ? `<div class="viewport" style="width:min(36vh,60vw)"><div class="big" style="font-size:min(26vh,40vw)">${esc(q.show)}</div></div>`
       : (!/[가-힣A-Za-z0-9]/.test(q.show) ? `<div class="big" style="font-size:clamp(6rem,24vh,16rem)">${esc(q.show)}</div>` : '');
