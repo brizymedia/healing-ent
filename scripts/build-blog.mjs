@@ -220,7 +220,7 @@ ${더넣기}
 </div></div>`;
 
   const 꼬리 = `<footer class="foot">
-  <div>${BRAND} · 대표 이현호 · 서울특별시 노원구 덕릉로 595 · <a href="tel:${TEL}">${TEL}</a> · leehh2153@gmail.com</div>
+  <div>${BRAND} · 대표 이경열 · 서울특별시 노원구 덕릉로 595 · <a href="tel:${TEL}">${TEL}</a> · leehh2153@gmail.com</div>
   <div style="margin-top:8px;"><a href="/">홈</a> · <a href="/blog/">블로그</a> · <a href="/stories/index.html">행사 이야기</a> · <a href="/areas/index.html">운영 지역</a> · <a href="/portfolio.html">현장 갤러리</a> · <a href="/quote.html">자동 견적서</a> · <a href="/contact.html">견적문의</a></div>
   <div style="margin-top:8px;">COPYRIGHT © ${new Date().getFullYear()} ${BRAND}. ALL RIGHTS RESERVED.</div>
 </footer>
