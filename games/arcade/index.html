@@ -197,6 +197,17 @@ input{font:inherit;color:inherit}
 .hole{aspect-ratio:1;border-radius:50%;background:radial-gradient(ellipse at 50% 70%,#1B1450 0 45%,#2B2A7A 46% 100%);position:relative;overflow:hidden;display:grid;place-items:center;font-size:min(16vw,9vh)}
 .hole span{animation:rise .15s both}
 @keyframes rise{from{transform:translateY(60%)}}
+.race{width:min(1150px,100%);display:flex;flex-direction:column;gap:1vh}
+.lane{display:flex;align-items:center;gap:12px;font-weight:900}
+.lane .bd{width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;color:#0B1A3D;font-family:var(--en);flex:none}
+.lane .trk{flex:1;position:relative;height:clamp(2.6rem,8vh,4.6rem);border-radius:16px;border:2px solid rgba(255,255,255,.12);background:repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 44px,rgba(255,255,255,.02) 44px 88px)}
+.lane .an{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:clamp(2rem,6.4vh,3.6rem);line-height:1;transition:left .12s linear}
+.lane .an i{display:inline-block;font-style:normal}
+.lane .an.out i{transform:scaleX(-1)}
+.lane .flag{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:clamp(1.4rem,4vh,2.2rem)}
+.lane .home{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:clamp(1.4rem,4vh,2.2rem);opacity:.8}
+.lane .rk{width:6.5rem;text-align:right;color:var(--ye);font-size:clamp(1rem,2.6vh,1.5rem)}
+.lane.done .trk{border-color:var(--ye);box-shadow:0 0 24px rgba(255,194,58,.35)}
 .fin{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,14,60,.85);font-size:2rem;font-weight:900;text-align:center;z-index:2}
 .fin small{display:block;font-size:1rem;color:var(--sub);margin-top:6px}
 
@@ -319,9 +330,12 @@ const GAMES = {
   stop:   {e:'🎯', name:'딱 멈춰!',    dur:20, desc:'움직이는 막대를 가운데에 멈추기 (3번)', unit:'점'},
   mug:    {e:'🌸', name:'무궁화 꽃이 피었습니다', dur:25, desc:'술래가 뒤돌면 마구 눌러 앞으로! 돌아보면 얼음!', unit:'걸음'},
   rps:    {e:'✊', name:'큰 화면과 가위바위보', dur:22, desc:'큰 화면을 이겨라! 5판 (이기면 3점, 비기면 1점)', unit:'점'},
-  mole:   {e:'🐹', name:'두더지 잡기', dur:20, desc:'두더지 1점 · 금두더지 3점 · 폭탄은 −2점', unit:'점'}
+  mole:   {e:'🐹', name:'두더지 잡기', dur:20, desc:'두더지 1점 · 금두더지 3점 · 폭탄은 −2점', unit:'점'},
+  race:   {e:'🏃', name:'왕복 달리기', dur:40, desc:'우리 동물이 깃발 찍고 돌아오기! 누를수록 빨라져요', unit:'번'}
 };
 const ROUND_PTS = [10, 8, 6, 5, 4, 3, 2, 1];
+const ANIMALS = ['🐇','🐢','🦊','🐼','🐿️','🐧','🐨','🐯'];
+const RACE = {auto: 0.012, leg: 55};   // 저절로 가는 속도(1초당), 한쪽 길에 필요한 평균 누름 수
 /* 큰 화면과 모든 휴대폰이 같은 순서로 움직이도록 같은 씨앗으로 만드는 일정 */
 function rng(seed){ let a = seed >>> 0; return () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 function mugSched(seed, dur){
@@ -487,7 +501,28 @@ function host(){
     const t0 = Date.now(), end = t0 + g.dur * 1000, kind = H.game;
     const box = $('#liveBox');
     const sync = kind === 'mug' || kind === 'rps';
-    box.innerHTML = `${sync ? '' : `<h1>${g.e} ${g.name}</h1>`}<div class="clock" id="clk">${g.dur}</div>${sync ? '<div class="gvis" id="gvis"></div>' : ''}<div class="livebars" id="lbars"></div><div class="mvp" id="mvpLine"></div>`;
+    const isRace = kind === 'race';
+    box.innerHTML = `${sync ? '' : `<h1>${g.e} ${g.name}</h1>`}<div class="clock" id="clk">${g.dur}</div>${sync ? '<div class="gvis" id="gvis"></div>' : ''}${isRace ? '<div class="race" id="race"></div>' : '<div class="livebars" id="lbars"></div>'}<div class="mvp" id="mvpLine"></div>`;
+    H.race = {prog: {}, fin: {}, order: 0};
+    let endAt = end;
+    if(isRace) $('#race').innerHTML = H.teams.map((t, i) => `<div class="lane" id="ln${i}"><div class="bd" style="background:${tcolor(t)}">${esc(t)}</div><div class="trk"><span class="home">🏁</span><span class="flag">🚩</span><div class="an out" id="an${i}" style="left:4%"><i>${ANIMALS[i % ANIMALS.length]}</i></div></div><div class="rk" id="rk${i}"></div></div>`).join('');
+    const raceStep = () => {
+      const ms = Date.now() - t0, st = teamStats();
+      st.forEach(s => {
+        const i = H.teams.indexOf(s.t), R = H.race;
+        if(!s.n){ return; }
+        if(R.fin[s.t]) return;
+        const target = Math.min(2, RACE.auto * ms / 1000 + s.avg / RACE.leg), cur = R.prog[s.t] || 0;
+        const np = Math.max(cur, cur + (target - cur) * .3);
+        R.prog[s.t] = np >= 1.995 ? 2 : np;
+        const x = R.prog[s.t] <= 1 ? R.prog[s.t] : 2 - R.prog[s.t], an = $('#an' + i);
+        if(an){ an.style.left = (4 + x * 90) + '%'; an.classList.toggle('out', R.prog[s.t] < 1); }
+        if(R.prog[s.t] >= 2){ R.order++; R.fin[s.t] = R.order; $('#ln' + i).classList.add('done'); $('#rk' + i).textContent = R.order + '등 도착!'; sfx.fan(); }
+        else $('#rk' + i).textContent = R.prog[s.t] >= 1 ? '돌아오는 중' : '';
+      });
+      const playing = st.filter(s => s.n);
+      if(playing.length && playing.every(s => H.race.fin[s.t]) && endAt > Date.now() + 1500){ endAt = Date.now() + 1200; }
+    };
     const msc = kind === 'mug' ? mugSched(H.seed, g.dur) : null, rsc = kind === 'rps' ? rpsSched(H.seed) : null;
     let lastLook = null, lastRev = -1, lastLeft = g.dur;
     const vis = () => {
@@ -516,16 +551,19 @@ function host(){
       const c = $('#clk'); if(c && H.phase === 'play'){ c.textContent = left; c.classList.toggle('low', left <= 3); }
       if(left !== lastLeft){ lastLeft = left; if(left <= 3 && left > 0) sfx.tick(); }
       vis();
-      if(++nb % 3 === 0) draw();
-      if(Date.now() >= end && H.phase === 'play'){ H.phase = 'grace'; sfx.end(); const c2 = $('#clk'); if(c2) c2.textContent = '집계 중…'; }
-      if(Date.now() >= end + 3000){ clearInterval(tick); showResult(g); }
+      if(isRace) raceStep();
+      if(++nb % 3 === 0){ if(isRace){ const m = mvp(); $('#mvpLine').innerHTML = m ? `가장 많이 누른 사람: <b>${esc(m.name)}</b> (${esc(tlabel(m.team))}) ${m.s}번` : '모두 마구 눌러 주세요!'; } else draw(); }
+      if(Date.now() >= endAt && H.phase === 'play'){ H.phase = 'grace'; sfx.end(); const c2 = $('#clk'); if(c2) c2.textContent = isRace && endAt < end ? '모두 도착!' : '집계 중…'; }
+      if(Date.now() >= endAt + (endAt < end ? 1500 : 3000)){ clearInterval(tick); showResult(g); }
     }, 100);
   }
 
   function showResult(g){
-    const st = teamStats().sort((a, b) => b.avg - a.avg);
+    let st = teamStats().sort((a, b) => b.avg - a.avg);
+    const isRace = H.game === 'race' && H.race;
+    if(isRace){ const R = H.race; st.forEach(s => s.key = s.n ? (R.fin[s.t] != null ? 100 - R.fin[s.t] : (R.prog[s.t] || 0)) : -1); st.sort((a, b) => b.key - a.key); }
     let rank = 0, prev = null;
-    st.forEach((s, k) => { if(s.avg !== prev){ rank = k; prev = s.avg; } s.rank = rank; s.pt = s.n ? (ROUND_PTS[rank] || 1) : 0; H.total[s.t] += s.pt; });
+    st.forEach((s, k) => { const kv = isRace ? s.key : s.avg; if(kv !== prev){ rank = k; prev = kv; } s.rank = rank; s.pt = s.n ? (ROUND_PTS[rank] || 1) : 0; H.total[s.t] += s.pt; });
     if(!H.played.includes(H.game)) H.played.push(H.game);
     H.phase = 'result'; saveTot();
     const res = {}; st.forEach(s => res[s.t] = {rank: s.rank + 1, pt: s.pt, avg: s.avg});
@@ -595,7 +633,7 @@ function player(room){
   const me = store('me') || {};
   me.pid = me.pid || rid(10);
   let teams = EV ? EV.teams.slice() : [], client = null, base = 'healingent/arcade1/' + room + '/';
-  let joined = false, curRound = -1, playing = false, state = null;
+  let joined = false, curRound = -1, playing = false, state = null, forceEnd = null;
   if(EV) $('#pEv').textContent = EV.title;
   $('#nick').value = me.name || '';
   const renderPick = () => {
@@ -647,7 +685,7 @@ function player(room){
       curRound = m.round; startGame(m.game, m.dur || GAMES[m.game].dur, m.round, m.seed || 1);
     }
     else if(m.phase === 'result' && m.res && m.res[me.team]){
-      if(playing) return;
+      if(playing){ if(forceEnd) forceEnd(); return; }
       const r = m.res[me.team];
       waitScreen(`우리 테이블 <span style="color:var(--ye)">${r.rank}위</span>!`, `이번 판 +${r.pt}점 · 평균 ${r.avg}`, r.rank === 1 ? '🏆' : r.rank <= 3 ? '🎉' : '👏');
     }
@@ -680,16 +718,17 @@ function player(room){
         if(Date.now() >= end) finish();
       }, 100);
       let cleanup = () => {};
+      forceEnd = finish;
       function finish(){
-        if(!alive) return; alive = false;
+        if(!alive) return; alive = false; forceEnd = null;
         clearInterval(sendT); clearInterval(clock); cleanup(); send(true); sfx.end(); buzz([60, 60, 60]);
         fld.insertAdjacentHTML('beforeend', `<div class="fin pop">끝! ${Math.round(score)}${g.unit}<small>큰 화면에서 결과를 봐 주세요</small></div>`);
         setTimeout(() => { send(true); }, 800);
         setTimeout(() => { A.hidden = true; playing = false; if(state && state.phase === 'result') onState(state); else waitScreen('수고하셨어요! 집계 중…', '큰 화면을 봐 주세요', '⏳'); }, 2600);
       }
 
-      if(kind === 'tap'){
-        fld.innerHTML = `<div class="guide">빠르게 계속 누르세요! 손가락 여러 개도 OK</div><button class="tapbtn" id="tb" type="button">누르기!</button>`;
+      if(kind === 'tap' || kind === 'race'){
+        fld.innerHTML = kind === 'race' ? `<div class="guide">큰 화면의 우리 ${ANIMALS[Math.max(0, teams.indexOf(me.team)) % ANIMALS.length]}을 달리게! 마구 누르세요</div><button class="tapbtn" id="tb" type="button">달려! ${ANIMALS[Math.max(0, teams.indexOf(me.team)) % ANIMALS.length]}</button>` : `<div class="guide">빠르게 계속 누르세요! 손가락 여러 개도 OK</div><button class="tapbtn" id="tb" type="button">누르기!</button>`;
         $('#tb').addEventListener('pointerdown', e => { e.preventDefault(); if(!alive) return; setScore(score + 1); if(score % 5 === 0) tone(500 + (score % 40) * 15, .04, 'square', .05); });
       }
       else if(kind === 'bubble'){
