@@ -101,7 +101,14 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
 .timer.low span{color:var(--or);animation:beat 1s infinite}
 @keyframes beat{50%{transform:scale(1.15)}}
 
-.guide{position:absolute;bottom:1.5vh;left:50%;transform:translateX(-50%);color:var(--sub);font-size:.95rem;white-space:nowrap}
+.ctrl{display:flex;justify-content:center;align-items:center;gap:10px;padding:8px 16px 0;flex-wrap:wrap}
+.cb{background:rgba(255,255,255,.1);border-radius:14px;padding:.7rem 1.1rem;font-weight:800;font-size:1rem;min-height:48px;touch-action:manipulation}
+.cb:active{transform:scale(.96)}
+.cb.main{background:linear-gradient(135deg,var(--or),#FFB066);color:#1A1200;padding:.75rem 1.8rem;font-size:1.15rem;box-shadow:0 8px 22px rgba(255,138,30,.3)}
+.cb kbd{margin-left:.35rem;opacity:.7}
+.cb.main kbd{background:rgba(0,0,0,.12);border-color:rgba(0,0,0,.25);color:inherit}
+@media (hover:none){.cb kbd,.keys.desk{display:none}}
+@media (hover:hover){.keys.touch{display:none}}
 
 /* 점수판 */
 .board{display:flex;gap:12px;padding:14px 22px 18px;justify-content:center;flex-wrap:wrap}
@@ -124,7 +131,8 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
 
 @media (max-width:700px){
   .timer{right:12px;top:auto;bottom:10px;transform:none;width:80px}
-  .guide{display:none}
+  .ctrl{padding:6px 12px 0;gap:8px}
+  .cb.main{flex:1 1 100%;order:-1}
   .bar{padding:10px 12px;gap:.5rem}
   .bar .brand span,.bar .brand img{display:none}
   .round{margin-left:0;margin-right:auto}
@@ -179,7 +187,8 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
     </details>
 
     <div class="start"><button class="btn" id="startBtn" type="button">게임 시작 ▶</button></div>
-    <p class="keys"><kbd>Space</kbd> 다음 단계 &nbsp; <kbd>1</kbd>~<kbd>6</kbd> 팀 점수 +1 (<kbd>Shift</kbd>+숫자 −1) &nbsp; <kbd>R</kbd> 다시 보여주기 &nbsp; <kbd>H</kbd> 힌트 &nbsp; <kbd>←</kbd> 이전 &nbsp; <kbd>F</kbd> 전체화면</p>
+    <p class="keys touch">화면 아래 버튼으로 진행하고, 맞힌 팀의 <b>+</b> 버튼을 눌러 점수를 올려요.</p>
+    <p class="keys desk"><kbd>Space</kbd> 다음 단계 &nbsp; <kbd>1</kbd>~<kbd>6</kbd> 팀 점수 +1 (<kbd>Shift</kbd>+숫자 −1) &nbsp; <kbd>R</kbd> 다시 보여주기 &nbsp; <kbd>H</kbd> 힌트 &nbsp; <kbd>←</kbd> 이전 &nbsp; <kbd>F</kbd> 전체화면</p>
   </div>
 </section>
 
@@ -192,6 +201,7 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
     <button class="iconbtn" id="endBtn" type="button">결과 보기</button>
   </div>
   <div class="stage" id="stage"></div>
+  <div class="ctrl" id="ctrl"></div>
   <div class="board" id="board"></div>
 </section>
 
@@ -356,23 +366,22 @@ function setPhase(p){
   $('#roundLbl').innerHTML = `<b>${G.i + 1}</b> / ${G.qs.length}`;
   const head = `<div class="type ${T.cls}">${T.label}</div>`;
   const st = $('#stage');
+  renderCtrl(p, q);
 
   if(p === 'ready'){
-    st.innerHTML = head + `<div class="center"><div class="prompt">${esc(T.prompt)}</div><div class="qmark">Q${G.i + 1}</div></div>
-      <div class="guide"><kbd>Space</kbd> 문제 시작</div>`;
+    st.innerHTML = head + `<div class="center"><div class="prompt">${esc(T.prompt)}</div><div class="qmark">Q${G.i + 1}</div></div>`;
     return;
   }
   if(p === 'run'){
     if(q.type === '순간'){
       const isEmoji = !/[가-힣A-Za-z0-9]/.test(q.show);
-      st.innerHTML = head + `<div class="center"><div class="flashbox" id="fb"></div></div>` + timerHTML(T.time) +
-        `<div class="guide"><kbd>R</kbd> 한 번 더 보여주기 · <kbd>Space</kbd> 정답 공개</div>`;
+      st.innerHTML = head + `<div class="center"><div class="flashbox" id="fb"></div></div>` + timerHTML(T.time);
       G.flashHTML = isEmoji ? `<div class="big">${esc(q.show)}</div>` : `<div class="word">${esc(q.show)}</div>`;
       setTimeout(doFlash, 700);
       startTimer(T.time, 700 + cfg.speed);
     } else if(q.type === '확대'){
       st.innerHTML = head + `<div class="center"><div class="viewport"><div class="big" id="zm">${esc(q.show)}</div></div></div>` +
-        timerHTML(T.time) + `<div class="guide"><kbd>Space</kbd> 정답 공개</div>`;
+        timerHTML(T.time);
       const el = $('#zm'), dur = T.time * 1000, t0 = performance.now(), ox = (Math.random() - .5) * 30, oy = (Math.random() - .5) * 30;
       const step = now => {
         const k = Math.min(1, (now - t0) / dur), s = 7 - 6 * (1 - Math.pow(1 - k, 2));
@@ -384,7 +393,7 @@ function setPhase(p){
     } else {
       const tiles = [...q.show].map((c, k) => c === ' ' ? `<div class="tile sp"></div>` : `<div class="tile" style="animation-delay:${k * .12}s">${esc(c)}</div>`).join('');
       st.innerHTML = head + `<div class="center"><div class="prompt">${esc(T.prompt)}</div><div class="tiles">${tiles}</div><div id="hintBox"></div></div>` +
-        timerHTML(T.time) + `<div class="guide"><kbd>H</kbd> 힌트 · <kbd>Space</kbd> 정답 공개</div>`;
+        timerHTML(T.time);
       startTimer(T.time);
     }
     return;
@@ -393,11 +402,32 @@ function setPhase(p){
     const vis = q.type === '초성' ? `<div class="tiles">${[...q.show].map(c => c === ' ' ? '<div class="tile sp"></div>' : `<div class="tile">${esc(c)}</div>`).join('')}</div>`
       : q.type === '확대' ? `<div class="viewport" style="width:min(36vh,60vw)"><div class="big" style="font-size:min(26vh,40vw)">${esc(q.show)}</div></div>`
       : (!/[가-힣A-Za-z0-9]/.test(q.show) ? `<div class="big" style="font-size:clamp(6rem,24vh,16rem)">${esc(q.show)}</div>` : '');
-    st.innerHTML = head + `<div class="center">${vis}<div class="answer">${esc(q.answer)}${q.hint ? `<small>${esc(q.hint)}</small>` : ''}</div></div>
-      <div class="guide">맞힌 팀 <kbd>1</kbd>~<kbd>${G.teams.length}</kbd> · <kbd>Space</kbd> ${G.i + 1 < G.qs.length ? '다음 문제' : '최종 결과'}</div>`;
+    st.innerHTML = head + `<div class="center">${vis}<div class="answer">${esc(q.answer)}${q.hint ? `<small>${esc(q.hint)}</small>` : ''}</div></div>`;
     sfx.reveal();
   }
 }
+
+/* 터치·마우스용 진행 버튼 (휴대폰엔 키보드가 없으므로) */
+function renderCtrl(p, q){
+  const last = G.i + 1 >= G.qs.length;
+  const btn = (act, label, key, main) => `<button type="button" class="cb${main ? ' main' : ''}" data-act="${act}">${label}${key ? `<kbd>${key}</kbd>` : ''}</button>`;
+  let h = btn('prev', '◀ 이전', '←');
+  if(p === 'run' && q.type === '순간') h += btn('replay', '🔁 다시 보기', 'R');
+  if(p === 'run' && q.type === '초성' && q.hint) h += btn('hint', '💡 힌트', 'H');
+  h += btn('next', p === 'ready' ? '▶ 문제 시작' : p === 'run' ? '정답 공개' : (last ? '🏆 최종 결과' : '다음 문제 ▶'), 'Space', true);
+  $('#ctrl').innerHTML = h;
+}
+function showHint(){
+  const q = G.qs[G.i], hb = $('#hintBox');
+  if(hb && q.hint && !G.hint){ G.hint = true; hb.innerHTML = `<div class="hint">💡 ${esc(q.hint)}</div>`; sfx.flash(); }
+}
+$('#ctrl').addEventListener('click', e => {
+  const b = e.target.closest('[data-act]'); if(!b) return;
+  const a = b.dataset.act;
+  if(a === 'next') next(); else if(a === 'prev') prev();
+  else if(a === 'replay'){ if(G.phase === 'run') doFlash(); }
+  else if(a === 'hint') showHint();
+});
 
 function doFlash(){
   const fb = $('#fb'); if(!fb || G.phase !== 'run') return;
@@ -491,10 +521,7 @@ document.addEventListener('keydown', e => {
   if(k === ' ' || k === 'Enter' || k === 'ArrowRight' || k === 'PageDown'){ e.preventDefault(); next(); }
   else if(k === 'ArrowLeft' || k === 'PageUp'){ e.preventDefault(); prev(); }
   else if(k === 'r' || k === 'R' || k === 'ㄱ'){ if(G.phase === 'run' && G.qs[G.i].type === '순간') doFlash(); }
-  else if(k === 'h' || k === 'H' || k === 'ㅗ'){
-    const q = G.qs[G.i], hb = $('#hintBox');
-    if(hb && q.hint && !G.hint){ G.hint = true; hb.innerHTML = `<div class="hint">💡 ${esc(q.hint)}</div>`; sfx.flash(); }
-  }
+  else if(k === 'h' || k === 'H' || k === 'ㅗ'){ showHint(); }
   else if(k === 'f' || k === 'F' || k === 'ㄹ'){ toggleFS(); }
   else {
     const m = /^Digit([1-6])$/.exec(e.code);
