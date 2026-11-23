@@ -55,7 +55,7 @@ input{font:inherit;color:inherit}
 .tcell b{font-size:1.05rem}
 .tcell b i{font-style:normal;font-family:var(--en);color:var(--mint);margin-left:.3rem}
 .tcell p{font-size:.78rem;color:var(--sub);margin-top:2px;line-height:1.4;max-height:3.6em;overflow:hidden}
-.games{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
 .gcard{background:rgba(0,0,0,.22);border:2px solid transparent;border-radius:18px;padding:10px 14px;text-align:left;display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center}
 .gcard .e{grid-row:span 2}
 .gcard[aria-pressed="true"]{border-color:var(--mint);background:rgba(46,240,160,.12)}
@@ -172,6 +172,31 @@ input{font:inherit;color:inherit}
 .tries{display:flex;gap:8px}
 .tries span{background:var(--card);border-radius:10px;padding:.3rem .7rem;font-family:var(--en);font-weight:800}
 .stopbtn{background:linear-gradient(135deg,var(--or),#FFB066);color:#1A1200;border-radius:22px;padding:1.2rem 0;width:min(520px,100%);font-size:1.6rem;font-weight:900}
+.gvis{width:min(1100px,100%);border-radius:24px;padding:2vh 2vw;text-align:center;transition:background .2s}
+.gvis .face{font-size:clamp(4rem,14vh,9rem);line-height:1.1}
+.gvis .say{font-size:clamp(1.6rem,5vh,3.2rem);font-weight:900;min-height:1.3em}
+.gvis.look{background:rgba(230,40,80,.35);box-shadow:0 0 60px rgba(230,40,80,.4)}
+.gvis.chant{background:rgba(46,240,160,.12)}
+.gvis .sub{color:var(--sub);font-weight:700}
+.mugtop{position:absolute;left:0;right:0;top:0;height:42%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transition:background .15s}
+.mugtop .face{font-size:4.5rem;line-height:1}
+.mugtop b{font-size:1.5rem}
+.mugtop.look{background:#B3264B}.mugtop.chant{background:rgba(46,240,160,.18)}
+.mugbtn{position:absolute;left:6%;right:6%;bottom:6%;height:44%;border-radius:28px;background:linear-gradient(135deg,#2EF0A0,#16B57A);color:#05301F;font-size:2.2rem;font-weight:900;box-shadow:0 10px 0 #0B7A52}
+.mugbtn:active{transform:translateY(6px);box-shadow:0 4px 0 #0B7A52}
+.mugbtn.stun{background:#555;color:#ddd;box-shadow:none}
+.rpsbox{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;padding:10px 14px}
+.rpsmsg{font-size:1.7rem;font-weight:900;text-align:center;min-height:3.4em;display:flex;flex-direction:column;justify-content:center}
+.rpsmsg .hh{font-size:4rem;line-height:1.1}
+.rpsrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;max-width:480px}
+.rpsrow button{aspect-ratio:1;border-radius:22px;background:rgba(0,0,0,.25);border:4px solid transparent;font-size:3.4rem;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.rpsrow button small{font-size:.9rem;font-weight:800;color:var(--sub)}
+.rpsrow button[aria-pressed="true"]{border-color:var(--ye);background:rgba(255,194,58,.2)}
+.rpsrow button:disabled{opacity:.5}
+.holes{position:absolute;inset:40px 12px 12px;display:grid;grid-template-columns:repeat(3,1fr);align-content:center;gap:12px}
+.hole{aspect-ratio:1;border-radius:50%;background:radial-gradient(ellipse at 50% 70%,#1B1450 0 45%,#2B2A7A 46% 100%);position:relative;overflow:hidden;display:grid;place-items:center;font-size:min(16vw,9vh)}
+.hole span{animation:rise .15s both}
+@keyframes rise{from{transform:translateY(60%)}}
 .fin{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,14,60,.85);font-size:2rem;font-weight:900;text-align:center;z-index:2}
 .fin small{display:block;font-size:1rem;color:var(--sub);margin-top:6px}
 
@@ -291,9 +316,24 @@ const GAMES = {
   tap:    {e:'🔥', name:'연타 경주',   dur:10, desc:'10초 동안 버튼을 최대한 많이 누르기', unit:'번'},
   bubble: {e:'🫧', name:'비눗방울 톡톡', dur:15, desc:'15초 동안 비눗방울을 많이 터뜨리기', unit:'개'},
   react:  {e:'⚡', name:'번개 반응',   dur:20, desc:'초록색으로 바뀌는 순간 누르기 (3번)', unit:'점'},
-  stop:   {e:'🎯', name:'딱 멈춰!',    dur:20, desc:'움직이는 막대를 가운데에 멈추기 (3번)', unit:'점'}
+  stop:   {e:'🎯', name:'딱 멈춰!',    dur:20, desc:'움직이는 막대를 가운데에 멈추기 (3번)', unit:'점'},
+  mug:    {e:'🌸', name:'무궁화 꽃이 피었습니다', dur:25, desc:'술래가 뒤돌면 마구 눌러 앞으로! 돌아보면 얼음!', unit:'걸음'},
+  rps:    {e:'✊', name:'큰 화면과 가위바위보', dur:22, desc:'큰 화면을 이겨라! 5판 (이기면 3점, 비기면 1점)', unit:'점'},
+  mole:   {e:'🐹', name:'두더지 잡기', dur:20, desc:'두더지 1점 · 금두더지 3점 · 폭탄은 −2점', unit:'점'}
 };
 const ROUND_PTS = [10, 8, 6, 5, 4, 3, 2, 1];
+/* 큰 화면과 모든 휴대폰이 같은 순서로 움직이도록 같은 씨앗으로 만드는 일정 */
+function rng(seed){ let a = seed >>> 0; return () => { a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function mugSched(seed, dur){
+  const r = rng(seed), out = [{a: 0, b: 1500, look: true}]; let t = 1500;
+  while(t < dur * 1000){ const c = 1800 + r() * 2700; out.push({a: t, b: t + c, look: false}); t += c; const l = 1300 + r() * 1200; out.push({a: t, b: t + l, look: true}); t += l; }
+  return out;
+}
+const mugAt = (sc, ms) => sc.find(x => ms >= x.a && ms < x.b) || sc[sc.length - 1];
+const CHANT = '무궁화 꽃이 피었습니다';
+const HANDS = [['✊','바위'], ['✌️','가위'], ['🖐','보']];
+function rpsSched(seed){ const r = rng(seed); return Array.from({length: 5}, (_, i) => ({a: i * 4400, rev: i * 4400 + 3000, end: i * 4400 + 4400, hand: Math.floor(r() * 3)})); }
+const rpsAt = (sc, ms) => sc.find(x => ms >= x.a && ms < x.end);
 
 /* 소리 */
 let ac;
@@ -429,9 +469,9 @@ function host(){
   $('#goBtn').addEventListener('click', () => {
     if(!H.game) return;
     if(!H.client || !H.client.connected){ alert('중계 서버에 아직 연결되지 않았어요. 잠시 뒤 다시 눌러 주세요.'); return; }
-    H.round++; H.scores = {}; H.phase = 'count'; saveTot();
+    H.round++; H.scores = {}; H.phase = 'count'; H.seed = Math.floor(Math.random() * 1e9); saveTot();
     const g = GAMES[H.game];
-    pub({dur: g.dur});
+    pub({dur: g.dur, seed: H.seed});
     show('hLive'); $('#hLiveTitle').textContent = `${g.e} ${g.name} · ${H.round}판`;
     let n = 3;
     const box = $('#liveBox');
@@ -443,23 +483,43 @@ function host(){
   });
 
   function startPlay(g){
-    H.phase = 'play'; pub({dur: g.dur});
-    const t0 = Date.now(), end = t0 + g.dur * 1000;
+    H.phase = 'play'; pub({dur: g.dur, seed: H.seed});
+    const t0 = Date.now(), end = t0 + g.dur * 1000, kind = H.game;
     const box = $('#liveBox');
-    box.innerHTML = `<h1>${g.e} ${g.name}</h1><div class="clock" id="clk">${g.dur}</div><div class="livebars" id="lbars"></div><div class="mvp" id="mvpLine"></div>`;
+    const sync = kind === 'mug' || kind === 'rps';
+    box.innerHTML = `${sync ? '' : `<h1>${g.e} ${g.name}</h1>`}<div class="clock" id="clk">${g.dur}</div>${sync ? '<div class="gvis" id="gvis"></div>' : ''}<div class="livebars" id="lbars"></div><div class="mvp" id="mvpLine"></div>`;
+    const msc = kind === 'mug' ? mugSched(H.seed, g.dur) : null, rsc = kind === 'rps' ? rpsSched(H.seed) : null;
+    let lastLook = null, lastRev = -1, lastLeft = g.dur;
+    const vis = () => {
+      const ms = Date.now() - t0, v = $('#gvis'); if(!v) return;
+      if(msc){
+        const seg = mugAt(msc, ms);
+        if(seg.look !== lastLook){ lastLook = seg.look; if(seg.look){ tone(220, .35, 'sawtooth', .14); } }
+        if(seg.look){ v.className = 'gvis look'; v.innerHTML = `<div class="face">👀</div><div class="say">얼음! 누르면 뒤로 밀려나요</div>`; }
+        else { const k = Math.min(1, (ms - seg.a) / (seg.b - seg.a)), n = Math.ceil(k * CHANT.length);
+          v.className = 'gvis chant'; v.innerHTML = `<div class="face">🙈</div><div class="say">${CHANT.slice(0, n)}…</div><div class="sub">지금 마구 누르세요!</div>`; }
+      } else if(rsc){
+        const r = rpsAt(rsc, ms), i = rsc.indexOf(r);
+        if(!r){ v.className = 'gvis'; v.innerHTML = '<div class="say">끝!</div>'; return; }
+        if(ms < r.rev){ const c = Math.ceil((r.rev - ms) / 1000); v.className = 'gvis chant'; v.innerHTML = `<div class="sub">${i + 1} / 5판</div><div class="face">🤔</div><div class="say">${['보!', '바위…', '가위…'][c - 1] || '가위…'}</div>`; }
+        else { if(lastRev !== i){ lastRev = i; sfx.fan(); } v.className = 'gvis look'; v.innerHTML = `<div class="sub">${i + 1} / 5판</div><div class="face">${HANDS[r.hand][0]}</div><div class="say">큰 화면은 「${HANDS[r.hand][1]}」!</div>`; }
+      }
+    };
     const draw = () => {
       const st = teamStats().sort((a, b) => b.avg - a.avg), max = Math.max(1, ...st.map(s => s.avg));
       $('#lbars').innerHTML = st.map(s => `<div class="lb"><div class="bd" style="background:${tcolor(s.t)}">${esc(s.t)}</div><div class="n">${s.n}명</div><div class="track"><div class="fill" style="width:${s.avg / max * 100}%;background:${tcolor(s.t)}"></div></div><div class="v">${s.avg}</div></div>`).join('');
       const m = mvp(); $('#mvpLine').innerHTML = m ? `지금 1등: <b>${esc(m.name)}</b> (${esc(tlabel(m.team))}) ${m.s}${g.unit}` : '';
     };
+    let nb = 0;
     const tick = setInterval(() => {
       const left = Math.max(0, Math.ceil((end - Date.now()) / 1000));
-      const c = $('#clk'); if(c){ c.textContent = left; c.classList.toggle('low', left <= 3); }
-      if(left <= 3 && left > 0 && (end - Date.now()) % 1000 > 750) sfx.tick();
-      draw();
+      const c = $('#clk'); if(c && H.phase === 'play'){ c.textContent = left; c.classList.toggle('low', left <= 3); }
+      if(left !== lastLeft){ lastLeft = left; if(left <= 3 && left > 0) sfx.tick(); }
+      vis();
+      if(++nb % 3 === 0) draw();
       if(Date.now() >= end && H.phase === 'play'){ H.phase = 'grace'; sfx.end(); const c2 = $('#clk'); if(c2) c2.textContent = '집계 중…'; }
       if(Date.now() >= end + 3000){ clearInterval(tick); showResult(g); }
-    }, 250);
+    }, 100);
   }
 
   function showResult(g){
@@ -584,7 +644,7 @@ function player(room){
       if(m.round === curRound) return;
       // 이미 진행 중인 판에 늦게 들어온 경우 (저장된 상태로 받은 경우)
       if(retained || m.phase === 'play'){ waitScreen('지금 게임이 진행 중이에요', '다음 판부터 함께해요!', '⏳'); return; }
-      curRound = m.round; startGame(m.game, m.dur || GAMES[m.game].dur, m.round);
+      curRound = m.round; startGame(m.game, m.dur || GAMES[m.game].dur, m.round, m.seed || 1);
     }
     else if(m.phase === 'result' && m.res && m.res[me.team]){
       if(playing) return;
@@ -595,7 +655,7 @@ function player(room){
   }
 
   /* ── 게임 실행 ── */
-  function startGame(kind, dur, round){
+  function startGame(kind, dur, round, seed){
     playing = true;
     const A = $('#arena'); A.hidden = false; buzz(50);
     const g = GAMES[kind];
@@ -688,6 +748,70 @@ function player(room){
           else setTimeout(() => { if(alive) $('#smsg').textContent = `완료! 합계 ${Math.round(score)}점`; }, 1000);
         });
         cleanup = () => cancelAnimationFrame(raf);
+      }
+      else if(kind === 'mug'){
+        const sc = mugSched(seed, dur), t0 = Date.now(); let stunUntil = 0, lastLook = null;
+        fld.innerHTML = `<div class="mugtop" id="mt"></div><button class="mugbtn" id="mb" type="button">앞으로! 👣</button>`;
+        const upd = () => {
+          const ms = Date.now() - t0, seg = mugAt(sc, ms), mt = $('#mt'); if(!mt) return;
+          if(seg.look !== lastLook){ lastLook = seg.look; if(seg.look) buzz(120); }
+          mt.className = 'mugtop ' + (seg.look ? 'look' : 'chant');
+          mt.innerHTML = seg.look ? '<div class="face">👀</div><b>얼음! 누르지 마세요</b>' : `<div class="face">🙈</div><b>${CHANT.slice(0, Math.ceil(Math.min(1, (ms - seg.a) / (seg.b - seg.a)) * CHANT.length))}…</b>`;
+          const mb = $('#mb'); mb.classList.toggle('stun', Date.now() < stunUntil); mb.textContent = Date.now() < stunUntil ? '들켰다! 😱' : '앞으로! 👣';
+        };
+        const iv = setInterval(upd, 60); upd();
+        $('#mb').addEventListener('pointerdown', e => {
+          e.preventDefault(); if(!alive || Date.now() < stunUntil) return;
+          const ms = Date.now() - t0, seg = mugAt(sc, ms);
+          if(!seg.look){ setScore(score + 1); if(score % 5 === 0) tone(700, .04, 'square', .05); }
+          else if(ms - seg.a > 350){ setScore(Math.max(0, score - 8)); stunUntil = Date.now() + 1200; tone(180, .3, 'sawtooth', .14); buzz(300); }
+        });
+        cleanup = () => clearInterval(iv);
+      }
+      else if(kind === 'rps'){
+        const sc = rpsSched(seed), t0 = Date.now(); let pick = null, curI = -1, judged = -1;
+        fld.innerHTML = `<div class="rpsbox"><div class="rpsmsg" id="rm"></div><div class="rpsrow" id="rr">${HANDS.map((h, k) => `<button type="button" data-h="${k}">${h[0]}<small>${h[1]}</small></button>`).join('')}</div></div>`;
+        const btns = [...fld.querySelectorAll('[data-h]')];
+        const upd = () => {
+          const ms = Date.now() - t0, r = rpsAt(sc, ms), i = sc.indexOf(r), rm = $('#rm'); if(!rm) return;
+          if(!r){ rm.innerHTML = `끝! 합계 ${Math.round(score)}점`; btns.forEach(b => b.disabled = true); return; }
+          if(i !== curI){ curI = i; pick = null; btns.forEach(b => { b.setAttribute('aria-pressed', 'false'); b.disabled = false; }); }
+          if(ms < r.rev){ const c = Math.ceil((r.rev - ms) / 1000); rm.innerHTML = `<span style="font-size:.8em;color:var(--sub)">${i + 1} / 5판</span>${['보!', '바위…', '가위…'][c - 1] || '가위…'}<span style="font-size:.6em;color:var(--sub)">${pick === null ? '하나 고르세요!' : '바꿔도 돼요'}</span>`; }
+          else {
+            btns.forEach(b => b.disabled = true);
+            if(judged !== i){ judged = i;
+              let res = '안 냈어요 😅', pt = 0;
+              if(pick !== null){ const d = (pick - r.hand + 3) % 3; if(d === 0){ res = '비겼어요'; pt = 1; } else if(d === 2){ res = '이겼어요! 🎉'; pt = 3; } else { res = '졌어요 😢'; } }
+              setScore(score + pt); pt === 3 ? sfx.fan() : pt ? sfx.pop() : tone(200, .2, 'sawtooth', .08); buzz(pt === 3 ? [40, 40, 40] : 30);
+              rm.dataset.r = `<span class="hh">${HANDS[r.hand][0]}</span>큰 화면 「${HANDS[r.hand][1]}」<span style="font-size:.7em">${res}${pt ? ' +' + pt : ''}</span>`;
+            }
+            rm.innerHTML = rm.dataset.r;
+          }
+        };
+        fld.addEventListener('pointerdown', e => { const b = e.target.closest('[data-h]'); if(!b || b.disabled || !alive) return; e.preventDefault(); pick = +b.dataset.h; btns.forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); tone(660, .05, 'sine', .1); });
+        const iv = setInterval(upd, 80); upd();
+        cleanup = () => clearInterval(iv);
+      }
+      else if(kind === 'mole'){
+        fld.innerHTML = `<div class="guide">튀어나오면 톡! 💣는 참으세요</div><div class="holes" id="hl">${'<div class="hole"></div>'.repeat(9)}</div>`;
+        const holes = [...fld.querySelectorAll('.hole')];
+        const pop = () => {
+          if(!alive) return;
+          const free = holes.filter(h => !h.firstChild); if(!free.length) return;
+          const h = free[Math.floor(Math.random() * free.length)], x = Math.random();
+          const [ic, val] = x < .12 ? ['🌟', 3] : x < .27 ? ['💣', -2] : ['🐹', 1];
+          const sp = document.createElement('span'); sp.textContent = ic; h.appendChild(sp);
+          const gone = setTimeout(() => sp.remove(), 700 + Math.random() * 500);
+          sp.addEventListener('pointerdown', e => {
+            e.preventDefault(); if(!alive) return; clearTimeout(gone);
+            setScore(Math.max(0, score + val)); val > 0 ? sfx.pop() : (tone(160, .3, 'sawtooth', .14), buzz(200));
+            const b = document.createElement('div'); b.className = 'burst'; b.textContent = (val > 0 ? '+' : '') + val; b.style.color = val > 0 ? '' : 'var(--pink)';
+            const rc = h.getBoundingClientRect(), fr = fld.getBoundingClientRect(); b.style.left = (rc.left - fr.left + rc.width / 3) + 'px'; b.style.top = (rc.top - fr.top) + 'px';
+            fld.appendChild(b); setTimeout(() => b.remove(), 600); sp.remove();
+          });
+        };
+        const iv = setInterval(pop, 380); pop();
+        cleanup = () => clearInterval(iv);
       }
     }
   }
