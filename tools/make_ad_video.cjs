@@ -1,7 +1,7 @@
 /* 인스타 · 페북 릴스 광고 영상 만들기 (세로 1080×1920 · 15초 · 무음 mp4)
    큰길브리지 2026-11-17
 
-   쓰는 법:  node tools/make_ad_video.cjs            → ads/ 에 시안 A · B 두 개
+   쓰는 법:  node tools/make_ad_video.cjs [묶음]     → ads/ 에 시안 (묶음 생략 시 전부)
    필요한 것: playwright(크로미움) · ffmpeg
 
    - 장면 · 문구는 아래 CAMPAIGNS 만 고치면 된다. 사진은 사이트 안의 실제 행사 사진(assets/img/SOURCES.md)만 쓴다.
@@ -24,12 +24,19 @@ const BASE_SCENES = [
   { img: 'assets/img/works/b4.webp', h: '식순 · 레크리에이션\n경품 추첨까지', s: '한 팀이 처음부터 끝까지 맡습니다', t: 6, d: 3 },
   { img: 'assets/img/mc-lee-studio.webp', h: '대표 MC 이현호가\n직접 진행합니다', s: '레크리에이션 지도자 1급 · 웃음치료사 1급', t: 9, d: 3, tall: true },
 ];
-const END = { t: 12, d: 3, h: '12월 송년회\n일정 상담 중', s: '날짜 · 장소 · 인원만 알려 주세요', cta: '프로필 링크 → 카톡 · 견적 문의', tel: '010-5620-2153' };
+const END_BASE = { t: 12, d: 3, s: '날짜 · 장소 · 인원만 알려 주세요', cta: '프로필 링크 → 카톡 · 견적 문의', tel: '010-5620-2153' };
+const END = END_BASE;   // 길이 계산용 (모든 시안이 같은 길이)
 
+/* 시안 묶음 — ONLY 를 'newyear' 처럼 주면 그 묶음만 만든다 (node tools/make_ad_video.cjs newyear) */
 const CAMPAIGNS = [
-  { file: 'yearend-2026-A.mp4', hook: { img: 'assets/img/works/b1.webp', h: '올해 송년회,\n사회자 한 명이\n분위기를 바꿉니다', s: '기업 · 단체 송년회 MC', t: 0, d: 3 } },
-  { file: 'yearend-2026-B.mp4', hook: { img: 'assets/img/works/b1.webp', h: '송년회 첫 10분,\n어색할까\n걱정이라면?', s: '기업 · 단체 송년회 MC', t: 0, d: 3 } },
+  // 2026-11 송년회 (12월이 거의 차서 실제 집행은 신년회 쪽으로 돌림)
+  { set: 'yearend', file: 'yearend-2026-A.mp4', end: '12월 송년회\n일정 상담 중', hook: { img: 'assets/img/works/b1.webp', h: '올해 송년회,\n사회자 한 명이\n분위기를 바꿉니다', s: '기업 · 단체 송년회 MC', t: 0, d: 3 } },
+  { set: 'yearend', file: 'yearend-2026-B.mp4', end: '12월 송년회\n일정 상담 중', hook: { img: 'assets/img/works/b1.webp', h: '송년회 첫 10분,\n어색할까\n걱정이라면?', s: '기업 · 단체 송년회 MC', t: 0, d: 3 } },
+  // 2027-01 신년회 · 시무식
+  { set: 'newyear', file: 'newyear-2027-A.mp4', end: '1월 신년회 · 시무식\n상담 중', hook: { img: 'assets/img/works/b1.webp', h: '새해 첫 행사,\n사회자 한 명이\n분위기를 바꿉니다', s: '기업 · 단체 신년회 · 시무식 MC', t: 0, d: 3 } },
+  { set: 'newyear', file: 'newyear-2027-B.mp4', end: '1월 신년회 · 시무식\n상담 중', hook: { img: 'assets/img/works/b1.webp', h: '신년회 첫 10분,\n어색할까\n걱정이라면?', s: '기업 · 단체 신년회 · 시무식 MC', t: 0, d: 3 } },
 ];
+const ONLY = process.argv[2] || '';
 
 function html(scenes, end) {
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])).replace(/\n/g, '<br>');
@@ -102,9 +109,9 @@ function serve() {
   const { srv, port, set } = await serve();
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
-  for (const c of CAMPAIGNS) {
+  for (const c of CAMPAIGNS.filter((x) => !ONLY || x.set === ONLY)) {
     const scenes = [c.hook, ...BASE_SCENES];
-    set(html(scenes, END));
+    set(html(scenes, Object.assign({}, END_BASE, { h: c.end })));
     await page.goto(`http://127.0.0.1:${port}/`, { waitUntil: 'networkidle' });
     await page.evaluate(async () => { await document.fonts.ready; await Promise.all([...document.images].map((i) => i.decode().catch(() => {}))); });
     const tmp = fs.mkdtempSync(path.join(require('os').tmpdir(), 'adv-'));
