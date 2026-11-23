@@ -91,6 +91,7 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
 .tiles{display:flex;gap:1.2vw;flex-wrap:wrap;justify-content:center}
 .tile{width:clamp(5rem,15vh,10rem);aspect-ratio:1;border-radius:24px;background:#fff;color:#132F6B;display:grid;place-items:center;font-size:clamp(3rem,10vh,7rem);font-weight:900;box-shadow:0 10px 0 #C9D6F2;animation:pop .35s both}
 .tile.sp{background:transparent;box-shadow:none;width:clamp(1.5rem,4vh,3rem)}
+.tile.open{background:var(--ye);box-shadow:0 10px 0 #C99A20}
 @keyframes pop{from{transform:scale(.4);opacity:0}}
 .hint{font-size:clamp(1.2rem,3vh,2rem);background:rgba(255,255,255,.08);padding:.5rem 1.4rem;border-radius:14px;color:var(--ye);font-weight:700}
 .answer{font-size:clamp(3rem,11vh,8rem);font-weight:900;color:var(--ye);text-shadow:0 6px 30px rgba(255,194,58,.4);animation:pop .45s both}
@@ -137,7 +138,8 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:2}
 
 @media (max-width:700px){
-  .timer{right:12px;top:auto;bottom:10px;transform:none;width:80px}
+  .timer{right:10px;top:4px;bottom:auto;transform:none;width:64px}
+  .timer span{font-size:1.6rem}
   .ctrl{padding:6px 12px 0;gap:8px}
   .cb.main{flex:1 1 100%;order:-1}
   .bar{padding:10px 12px;gap:.5rem}
@@ -149,7 +151,11 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
   .flashbox,.viewport{width:min(72vw,32vh)!important;border-radius:22px}
   .viewport .big,.flashbox .big{font-size:min(26vh,56vw)!important}
   .center>.big{font-size:min(20vh,40vw)!important}
-  .tile{width:clamp(3.4rem,18vw,5rem);font-size:2.4rem;border-radius:16px}
+  .tiles{gap:6px;flex-wrap:nowrap}
+  .tile{width:clamp(2.4rem,11.5vw,4.6rem);font-size:clamp(1.4rem,7vw,2.4rem);border-radius:12px;box-shadow:0 5px 0 #C9D6F2}
+  .tile.open{box-shadow:0 5px 0 #C99A20}
+  .tile.sp{width:10px}
+  .hint{font-size:1.05rem;padding:.4rem .9rem}
   .board{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px 14px}
   .team{padding:.45rem .6rem;gap:.4rem}
   .team .sc{font-size:1.6rem}
@@ -179,7 +185,7 @@ kbd{font-family:var(--en);background:#0B1A3D;border:1px solid rgba(255,255,255,.
       <label class="chk"><input type="checkbox" value="cho" checked> ㅎㄹ 초성 퀴즈</label>
     </div>
 
-    <h2>순간포착 보여주는 시간</h2>
+    <h2>난이도</h2>
     <div class="row" id="flashSpeed"></div>
 
     <h2>문제 수 · 순서</h2>
@@ -264,7 +270,13 @@ const TYPES = {
   초성:{key:'cho',label:'ㅎㄹ 초성 퀴즈',cls:'t-cho',time:15,prompt:'초성을 보고 맞혀 보세요!'}
 };
 const TEAM_COLORS = ['#3D8BFF','#FF8A1E','#5FD3A8','#FF7EA8','#FFC23A','#B48CFF'];
-const SPEEDS = [[300,'0.3초 (어려움)'],[600,'0.6초'],[1000,'1초 (쉬움)']];
+/* 난이도: 순간포착 보여주는 시간·확대 시작 배율·제한 시간·초성 첫 글자와 힌트 */
+const LEVELS = {
+  easy:  {label:'😊 쉬움',   desc:'1.5초 보여주기 · 첫 글자와 힌트 공개', flash:1500, zoom:3.5, first:true,  hint:true,  time:{순간:15, 확대:18, 초성:25}},
+  normal:{label:'🙂 보통',   desc:'0.7초 · 힌트는 버튼으로',               flash:700,  zoom:6,   first:false, hint:false, time:{순간:10, 확대:12, 초성:15}},
+  hard:  {label:'🔥 어려움', desc:'0.35초 · 아주 크게 확대',               flash:350,  zoom:9,   first:false, hint:false, time:{순간:8,  확대:10, 초성:12}}
+};
+const lvl = () => LEVELS[cfg.level] || LEVELS.normal;
 /* 행사별 설정 — 주소 뒤에 ?ev=이름 을 붙이면 적용 */
 const EVENTS = {
   dheritage: {
@@ -285,20 +297,20 @@ const EVENTS = {
 확대 | 🎓 | 학사모 | 창업동아리와 창업대체학점
 확대 | 💰 | 돈주머니 | 사업화 자금
 확대 | 🔑 | 열쇠 | 입주기업이 받는 것
-확대 | 📋 | 서류판 | 지원 사업은 서류 심사부터
+확대 | 🏫 | 학교 | 대학교와 함께하는 캠퍼스타운
 초성 |  | 예비창업패키지 | 사업자 등록 전 예비 창업자를 위한 지원 사업
-초성 |  | 초기창업패키지 | 창업 3년 이내 기업을 위한 지원 사업
-초성 |  | 창업도약패키지 | 창업 3년에서 7년 사이 기업을 위한 지원 사업
-초성 |  | 청년창업사관학교 | 만 39세 이하 청년 창업자를 키우는 곳
+초성 |  | 초기창업패키지 | 「예비」 다음 단계 지원 사업
+초성 |  | 창업 | 오늘 모인 분들의 공통점
+초성 |  | 대표님 | 회사를 이끄는 분을 부르는 말
 초성 |  | 모두의창업 | 「모두」가 들어가는 창업 지원 사업
 초성 |  | 창업보육센터 | 사무 공간과 경영 지원을 주는 곳
 초성 |  | 캠퍼스타운 | 서울시와 대학이 함께하는 창업 지원
-초성 |  | 창업중심대학 | 창업 지원을 맡은 대학
+초성 |  | 지원금 | 지원 사업에 뽑히면 받는 돈
 초성 |  | 입주기업 | 센터 안에 사무실을 둔 기업
 초성 |  | 창업동아리 | 학생들의 창업 모임
 초성 |  | 창업대체학점 | 창업 활동을 학점으로 인정해 줘요
-초성 |  | 창업휴학 | 창업하려고 잠시 쉬는 학업
-초성 |  | 사업화자금 | 지원 사업에서 받는 돈
+초성 |  | 사무실 | 입주기업이 받는 공간
+초성 |  | 명함 | 처음 만나면 주고받는 것
 초성 |  | 사업계획서 | 지원 사업 신청의 첫 서류
 초성 |  | 사업자등록 | 예비 창업자와 창업자를 가르는 기준
 초성 |  | 예비창업자 | 아직 사업자 등록 전인 사람`
@@ -307,7 +319,7 @@ const EVENTS = {
 const EV_KEY = new URLSearchParams(location.search).get('ev');
 const EV = EVENTS[EV_KEY] || null;
 const BASE_Q = EV ? EV.q : DEFAULT_Q;
-const STORE = 'healing-flash-quiz-v3' + (EV ? '-' + EV_KEY : '');
+const STORE = 'healing-flash-quiz-v4' + (EV ? '-' + EV_KEY : '');
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -320,7 +332,7 @@ const saved = load();
 const cfg = {
   teamCount: saved.teamCount || (EV ? EV.teams.length : 4),
   names: saved.names || (EV ? EV.teams.slice() : ['1팀','2팀','3팀','4팀','5팀','6팀']),
-  speed: saved.speed || 600,
+  level: saved.level || (EV ? 'easy' : 'normal'),
   qText: saved.qText || BASE_Q
 };
 
@@ -348,8 +360,9 @@ function renderSetup(){
     `<button class="pill" type="button" data-n="${n}" aria-pressed="${n===cfg.teamCount}">${n}팀</button>`).join('');
   $('#teamNames').innerHTML = Array.from({length: cfg.teamCount}, (_, i) =>
     `<input data-i="${i}" maxlength="10" value="${esc(cfg.names[i] || (i+1)+'팀')}" style="border-left:6px solid ${TEAM_COLORS[i]}">`).join('');
-  $('#flashSpeed').innerHTML = SPEEDS.map(([ms, l]) =>
-    `<button class="pill" type="button" data-ms="${ms}" aria-pressed="${ms===cfg.speed}">${l}</button>`).join('');
+  $('#flashSpeed').innerHTML = Object.entries(LEVELS).map(([k, v]) =>
+    `<button class="pill" type="button" data-lv="${k}" aria-pressed="${k===cfg.level}">${v.label}</button>`).join('') +
+    `<span class="help" style="margin:0">${lvl().desc}</span>`;
   updateCount();
 }
 function enabledTypes(){ return [...document.querySelectorAll('#setup .chk input[value]')].filter(c => c.checked).map(c => c.value); }
@@ -366,14 +379,14 @@ $('#teamCount').addEventListener('click', e => {
 });
 $('#teamNames').addEventListener('input', e => { cfg.names[+e.target.dataset.i] = e.target.value; persist(); });
 $('#flashSpeed').addEventListener('click', e => {
-  const b = e.target.closest('[data-ms]'); if(!b) return;
-  cfg.speed = +b.dataset.ms; renderSetup(); persist();
+  const b = e.target.closest('[data-lv]'); if(!b) return;
+  cfg.level = b.dataset.lv; renderSetup(); persist();
 });
 document.querySelectorAll('#setup .chk input[value]').forEach(c => c.addEventListener('change', updateCount));
 $('#qText').value = cfg.qText;
 $('#qText').addEventListener('input', e => { cfg.qText = e.target.value; updateCount(); persist(); });
 $('#resetQ').addEventListener('click', () => { cfg.qText = BASE_Q; $('#qText').value = BASE_Q; updateCount(); persist(); });
-function persist(){ save({teamCount: cfg.teamCount, names: cfg.names, speed: cfg.speed, qText: cfg.qText}); }
+function persist(){ save({teamCount: cfg.teamCount, names: cfg.names, level: cfg.level, qText: cfg.qText}); }
 
 /* ───── 소리 (WebAudio, 파일 없음) ───── */
 let ac;
@@ -426,28 +439,31 @@ function setPhase(p){
     return;
   }
   if(p === 'run'){
+    const sec = lvl().time[q.type] || T.time;
     if(q.type === '순간'){
       const isEmoji = !/[가-힣A-Za-z0-9]/.test(q.show);
-      st.innerHTML = head + `<div class="center"><div class="flashbox" id="fb"></div></div>` + timerHTML(T.time);
+      st.innerHTML = head + `<div class="center"><div class="flashbox" id="fb"></div></div>` + timerHTML(sec);
       G.flashHTML = isEmoji ? `<div class="big">${esc(q.show)}</div>` : `<div class="word" style="font-size:${fitText(q.show)}cqw">${esc(q.show)}</div>`;
       setTimeout(doFlash, 700);
-      startTimer(T.time, 700 + cfg.speed);
+      startTimer(sec, 700 + lvl().flash);
     } else if(q.type === '확대'){
       st.innerHTML = head + `<div class="center"><div class="viewport"><div class="big" id="zm">${esc(q.show)}</div></div></div>` +
-        timerHTML(T.time);
-      const el = $('#zm'), dur = T.time * 1000, t0 = performance.now(), ox = (Math.random() - .5) * 30, oy = (Math.random() - .5) * 30;
+        timerHTML(sec);
+      const Z = lvl().zoom, el = $('#zm'), dur = sec * 1000, t0 = performance.now(), ox = (Math.random() - .5) * 30, oy = (Math.random() - .5) * 30;
       const step = now => {
-        const k = Math.min(1, (now - t0) / dur), s = 7 - 6 * (1 - Math.pow(1 - k, 2));
+        const k = Math.min(1, (now - t0) / dur), s = Z - (Z - 1) * (1 - Math.pow(1 - k, 2));
         el.style.transform = `translate(${ox * (1 - k)}%,${oy * (1 - k)}%) scale(${s})`;
         if(k < 1) G.raf = requestAnimationFrame(step);
       };
       G.raf = requestAnimationFrame(step);
-      startTimer(T.time);
+      startTimer(sec);
     } else {
-      const tiles = [...q.show].map((c, k) => c === ' ' ? `<div class="tile sp"></div>` : `<div class="tile" style="animation-delay:${k * .12}s">${esc(c)}</div>`).join('');
+      const open = lvl().first && chosung(q.answer) === q.show;
+      const tiles = [...q.show].map((c, k) => c === ' ' ? `<div class="tile sp"></div>` : `<div class="tile${open && k === 0 ? ' open' : ''}" style="animation-delay:${k * .12}s">${esc(open && k === 0 ? q.answer[0] : c)}</div>`).join('');
       st.innerHTML = head + `<div class="center"><div class="prompt">${esc(T.prompt)}</div><div class="tiles">${tiles}</div><div id="hintBox"></div></div>` +
-        timerHTML(T.time);
-      startTimer(T.time);
+        timerHTML(sec);
+      startTimer(sec);
+      if(lvl().hint) showHint(true);
     }
     return;
   }
@@ -466,13 +482,13 @@ function renderCtrl(p, q){
   const btn = (act, label, key, main) => `<button type="button" class="cb${main ? ' main' : ''}" data-act="${act}">${label}${key ? `<kbd>${key}</kbd>` : ''}</button>`;
   let h = btn('prev', '◀ 이전', '←');
   if(p === 'run' && q.type === '순간') h += btn('replay', '🔁 다시 보기', 'R');
-  if(p === 'run' && q.type === '초성' && q.hint) h += btn('hint', '💡 힌트', 'H');
+  if(p === 'run' && q.type === '초성' && q.hint && !lvl().hint) h += btn('hint', '💡 힌트', 'H');
   h += btn('next', p === 'ready' ? '▶ 문제 시작' : p === 'run' ? '정답 공개' : (last ? '🏆 최종 결과' : '다음 문제 ▶'), 'Space', true);
   $('#ctrl').innerHTML = h;
 }
-function showHint(){
+function showHint(quiet){
   const q = G.qs[G.i], hb = $('#hintBox');
-  if(hb && q.hint && !G.hint){ G.hint = true; hb.innerHTML = `<div class="hint">💡 ${esc(q.hint)}</div>`; sfx.flash(); }
+  if(hb && q.hint && !G.hint){ G.hint = true; hb.innerHTML = `<div class="hint">💡 ${esc(q.hint)}</div>`; if(!quiet) sfx.flash(); }
 }
 $('#ctrl').addEventListener('click', e => {
   const b = e.target.closest('[data-act]'); if(!b) return;
@@ -497,7 +513,7 @@ function doFlash(){
   const fb = $('#fb'); if(!fb || G.phase !== 'run') return;
   clearTimeout(G.flashT);
   fb.classList.add('on'); fb.innerHTML = G.flashHTML; sfx.flash();
-  G.flashT = setTimeout(() => { fb.classList.remove('on'); fb.innerHTML = '<div class="qmark">?</div>'; }, cfg.speed);
+  G.flashT = setTimeout(() => { fb.classList.remove('on'); fb.innerHTML = '<div class="qmark">?</div>'; }, lvl().flash);
 }
 
 function timerHTML(sec){
