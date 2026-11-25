@@ -23,6 +23,11 @@ body{font-family:var(--ko);color:var(--ink);word-break:keep-all;-webkit-font-smo
   background:radial-gradient(1100px 700px at 15% 5%,#4A52F5 0%,transparent 60%),radial-gradient(900px 600px at 90% 95%,#0E7C78 0%,transparent 60%),var(--bg)}
 button{font:inherit;color:inherit;border:0;cursor:pointer;background:none;touch-action:manipulation}
 input{font:inherit;color:inherit}
+.th-gold{--mint:#FFD27A;--sky:#E9B7FF;background:radial-gradient(1000px 650px at 12% 0%,#5B2A86 0%,transparent 60%),radial-gradient(900px 600px at 92% 100%,#7A4A12 0%,transparent 60%),#140C2E}
+.th-gold .btn{background:linear-gradient(135deg,#F7C85C,#E89B2D)}
+.tcount{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.tcount button{background:rgba(0,0,0,.25);border:2px solid transparent;border-radius:999px;padding:.35rem .8rem;font-weight:800;font-size:.9rem}
+.tcount button[aria-pressed="true"]{border-color:var(--mint);background:rgba(255,255,255,.12)}
 .scr{position:relative;height:100%;display:flex;flex-direction:column}
 .btn{background:linear-gradient(135deg,var(--or),#FFB066);color:#1A1200;font-weight:900;border-radius:16px;padding:.9rem 2rem;font-size:1.15rem;box-shadow:0 10px 26px rgba(255,138,30,.35)}
 .btn:disabled{opacity:.4}
@@ -234,6 +239,7 @@ input{font:inherit;color:inherit}
       <div class="qr" id="qr"></div>
       <div class="join">방 번호 <span id="roomNo"></span><small id="joinUrl"></small></div>
       <div><span class="cnt" id="pCount">0</span> <b>명 입장</b></div>
+      <div class="tcount" id="tCount"></div>
       <div class="tgrid" id="tGrid"></div>
     </div>
     <div class="right">
@@ -281,7 +287,7 @@ input{font:inherit;color:inherit}
     <div class="brand"><img src="../../assets/img/logo-h-white.svg" alt=""></div>
     <h1><em>힐링</em> 오락실<br><span id="pEv" style="font-size:.6em"></span></h1>
     <div class="field"><label for="nick">이름 (별명도 좋아요)</label><input id="nick" maxlength="8" placeholder="예: 김대표" autocomplete="off"></div>
-    <div class="field"><label>우리 테이블</label><div class="tpick" id="tPick"></div></div>
+    <div class="field"><label id="tWord">우리 팀</label><div class="tpick" id="tPick"></div></div>
     <button class="btn" id="joinBtn" type="button" disabled>입장하기</button>
     <p class="net" id="pNet">연결 중…</p>
   </div>
@@ -293,7 +299,7 @@ input{font:inherit;color:inherit}
     <h1 id="waitMsg">곧 게임이 시작돼요!</h1>
     <p id="waitSub">큰 화면을 봐 주세요. 이 화면은 켜 둔 채로 기다려요.</p>
     <p class="net" id="pNet2"></p>
-    <button class="btn ghost" id="changeBtn" type="button" style="font-size:.9rem;padding:.5rem 1rem">이름·테이블 바꾸기</button>
+    <button class="btn ghost" id="changeBtn" type="button" style="font-size:.9rem;padding:.5rem 1rem">이름·팀 바꾸기</button>
   </div>
 </section>
 <div id="arena" hidden></div>
@@ -317,8 +323,13 @@ const COLORS = ['#5BB8FF','#FF8A1E','#2EF0A0','#FF7EA8','#FFC23A','#B48CFF','#7F
 /* 공개 중계 서버 (앞에서부터 연결되는 곳을 씀) */
 const BROKERS = ['wss://broker.emqx.io:8084/mqtt', 'wss://broker.hivemq.com:8884/mqtt', 'wss://test.mosquitto.org:8081/mqtt'];
 const OVERRIDE = Q.get('broker');            // 시험용
-const EVENTS = { dheritage: {title: '디헤리티지 창업포럼', teams: ['A','B','C','D','E','H']} };
+const EVENTS = {
+  dheritage: {title: '디헤리티지 창업포럼', teams: ['A','B','C','D','E','H']},
+  mzhk: {title: '행경8090 미모회 송년의 밤', teams: null, theme: 'th-gold'}
+};
 const EVK = Q.get('ev'); const EV = EVENTS[EVK] || null;
+if(EV && EV.theme) document.body.classList.add(EV.theme);
+const numTeams = n => Array.from({length: n}, (_, i) => String(i + 1));
 function store(k, v){ try{ if(v === undefined) return JSON.parse(localStorage.getItem('he-arcade-' + k)); localStorage.setItem('he-arcade-' + k, JSON.stringify(v)); }catch(e){ return null; } }
 const rid = n => Array.from({length: n}, () => '23456789ABCDEFGHJKLMNPQRSTUVWXYZ'[Math.floor(Math.random() * 32)]).join('');
 
@@ -395,7 +406,7 @@ function host(){
   document.body.classList.add('host');
   const H = {
     room: (store('room-' + (EVK || '')) || rid(4)),
-    teams: EV ? EV.teams.slice() : ['1','2','3','4','5','6'],
+    teams: EV && EV.teams ? EV.teams.slice() : numTeams(store('tcount-' + (EVK || '')) || (EV ? 4 : 6)),
     players: {},           // pid -> {name, team, seen}
     total: {},             // team -> 누적 점수
     played: store('played-' + (EVK || '')) || [],
@@ -422,6 +433,19 @@ function host(){
   };
   $('#gList').addEventListener('click', e => { const b = e.target.closest('[data-g]'); if(b){ H.game = b.dataset.g; renderGames(); } });
   renderGames();
+
+  /* 팀 수 고르기 (행사에서 팀을 정해 두지 않은 경우) */
+  const renderTCount = () => {
+    if(EV && EV.teams){ $('#tCount').hidden = true; return; }
+    $('#tCount').innerHTML = [2,3,4,5,6,7,8].map(n => `<button type="button" data-n="${n}" aria-pressed="${H.teams.length === n}">${n}팀</button>`).join('');
+  };
+  $('#tCount').addEventListener('click', e => {
+    const b = e.target.closest('[data-n]'); if(!b) return; const n = +b.dataset.n; if(n === H.teams.length) return;
+    if(H.teams.some(t => H.total[t]) && !confirm('팀 수를 바꾸면 지금까지의 누적 점수가 지워져요. 바꿀까요?')) return;
+    H.teams = numTeams(n); H.total = {}; H.teams.forEach(t => H.total[t] = 0); H.played = []; store('tcount-' + (EVK || ''), n); saveTot();
+    renderTCount(); renderLobby(); pub();
+  });
+  renderTCount();
 
   const active = () => Object.entries(H.players).filter(([, p]) => Date.now() - p.seen < 45000);
   const renderLobby = () => {
@@ -469,7 +493,8 @@ function host(){
   /* 이번 판 팀 점수 = 참여한 사람 평균 (테이블 인원이 달라도 공평하게) */
   function teamStats(){
     return H.teams.map(t => {
-      const ps = Object.entries(H.scores).filter(([pid]) => H.players[pid] && H.players[pid].team === t).map(([, s]) => s);
+      // 실제로 한 사람만 평균에 넣음 (0점 = 자리 비움·식사 중으로 보고 뺌)
+      const ps = Object.entries(H.scores).filter(([pid, sc]) => sc > 0 && H.players[pid] && H.players[pid].team === t).map(([, sc]) => sc);
       const avg = ps.length ? ps.reduce((a, b) => a + b, 0) / ps.length : 0;
       return {t, avg: Math.round(avg * 10) / 10, n: ps.length};
     });
@@ -632,11 +657,13 @@ function host(){
 function player(room){
   const me = store('me') || {};
   me.pid = me.pid || rid(10);
-  let teams = EV ? EV.teams.slice() : [], client = null, base = 'healingent/arcade1/' + room + '/';
+  let teams = EV && EV.teams ? EV.teams.slice() : [], client = null, base = 'healingent/arcade1/' + room + '/';
   let joined = false, curRound = -1, playing = false, state = null, forceEnd = null;
   if(EV) $('#pEv').textContent = EV.title;
   $('#nick').value = me.name || '';
+  const tw = () => /^[A-Z]$/.test(teams[0] || '') ? '테이블' : '팀';
   const renderPick = () => {
+    $('#tWord').textContent = '우리 ' + tw(); $('#changeBtn').textContent = '이름·' + tw() + ' 바꾸기';
     $('#tPick').innerHTML = teams.map((t, i) => `<button type="button" data-t="${esc(t)}" aria-pressed="${me.team === t}" style="color:${COLORS[i % COLORS.length]}">${esc(t)}<small>${/^[A-Z]$/.test(t) ? '테이블' : '팀'}</small></button>`).join('');
     $('#joinBtn').disabled = !(me.team && teams.includes(me.team));
   };
@@ -676,6 +703,7 @@ function player(room){
   function onState(m, retained){
     state = m;
     if(m.teams && m.teams.join() !== teams.join()){ teams = m.teams; renderPick(); }
+    if(joined && !teams.includes(me.team)){ joined = false; me.team = null; renderPick(); show('pJoin'); $('#pNet').innerHTML = '<b>팀이 바뀌었어요. 우리 팀을 다시 골라 주세요!</b>'; return; }
     if(!joined){ return; }
     if(m.phase === 'lobby') waitScreen();
     else if(m.phase === 'count' || m.phase === 'play'){
@@ -687,7 +715,7 @@ function player(room){
     else if(m.phase === 'result' && m.res && m.res[me.team]){
       if(playing){ if(forceEnd) forceEnd(); return; }
       const r = m.res[me.team];
-      waitScreen(`우리 테이블 <span style="color:var(--ye)">${r.rank}위</span>!`, `이번 판 +${r.pt}점 · 평균 ${r.avg}`, r.rank === 1 ? '🏆' : r.rank <= 3 ? '🎉' : '👏');
+      waitScreen(`우리 ${tw()} <span style="color:var(--ye)">${r.rank}위</span>!`, `이번 판 +${r.pt}점 · 평균 ${r.avg}`, r.rank === 1 ? '🏆' : r.rank <= 3 ? '🎉' : '👏');
     }
     else if(m.phase === 'final') waitScreen('최종 순위 발표!', '큰 화면을 봐 주세요 🥁', '🏆');
   }
