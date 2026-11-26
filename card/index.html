@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>힐링MC 이현호 | 모바일 명함</title>
+<meta name="description" content="힐링엔터테인먼트 대표 MC 이현호. 20년 경력, 3,000회 이상 진행. 행사 기획부터 장비 · 세팅 · 진행까지 한 번에.">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="힐링MC 이현호 · 힐링엔터테인먼트">
+<meta property="og:description" content="20년 경력 · 3,000회 이상 진행. 행사 기획부터 장비 · 세팅 · 진행까지 한 번에. 전화 · 카카오톡 상담 · 연락처 저장">
+<meta name="theme-color" content="#0e1830">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+/* 새 디자인 "행사 입장권": 어두운 무대 바탕 위에 입장권 모양 명함 → 행사 순서표처럼 보는 분야별 영상 */
+:root{
+  --stage:#0e1830; --stage2:#16264a; --orange:#f47b20; --orange2:#ff9a48;
+  --paper:#ffffff; --ink:#16264a; --text:#23272e; --sub:#7d8590; --label:#9aa1ab; --line:#e3e6ea;
+  --on:#eef1f6; --onsub:#9fabc1; --online:rgba(255,255,255,.12);
+  --kakao:#fee500; --kakao-ink:#191600;
+  --font:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--stage)}
+body{margin:0;color:var(--on);font-family:var(--font);line-height:1.5;word-break:keep-all;
+  background:radial-gradient(120% 60% at 50% -8%,rgba(244,123,32,.30),rgba(244,123,32,0) 60%),var(--stage);background-repeat:no-repeat}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.wrap{max-width:480px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 18px) max(16px,env(safe-area-inset-right,0px)) calc(84px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+
+/* 맨 위 줄 */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.top img{height:28px;width:auto;display:block}
+.share{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.28);background:transparent;color:var(--on);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:500}
+.share svg{width:14px;height:14px}
+
+/* 입장권 */
+.ticket{background:var(--paper);color:var(--text);border-radius:16px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.t-head{position:relative;background:var(--stage2);color:#fff;padding:18px 20px 0;min-height:118px}
+.t-head .kind{font-size:12px;font-weight:700;letter-spacing:.24em;color:var(--orange2)}
+.t-head .no{position:absolute;right:20px;top:18px;font-size:12px;color:var(--onsub);letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.t-head .lights{position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,var(--orange) 0 14px,transparent 14px 22px)}
+.who{display:flex;gap:16px;align-items:flex-end;padding:0 20px;margin-top:-64px;position:relative}
+.photo{width:112px;height:140px;object-fit:cover;object-position:50% 12%;border:4px solid #fff;border-radius:10px;flex:none;display:block;background:#dde1e6}
+.who-text{padding-bottom:4px;min-width:0}
+.role{display:inline-block;background:var(--orange);color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.08em;padding:3px 9px;border-radius:999px}
+.name{margin:6px 0 0;font-size:40px;line-height:1.05;font-weight:900;letter-spacing:.06em;color:var(--ink)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin:0;padding:18px 20px 20px}
+.fields div{min-width:0}
+.fields dt{font-size:12px;font-weight:600;color:var(--label);letter-spacing:.06em}
+.fields dd{margin:2px 0 0;font-size:15px;font-weight:600;color:var(--text)}
+.fields dd b{font-size:30px;line-height:1.1;font-weight:900;color:var(--ink);margin-right:3px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.fields dd b.o{color:var(--orange)}
+.fields .wide{grid-column:1/-1}
+
+/* 절취선 */
+.tear{position:relative;height:24px;background:var(--paper)}
+.tear::before,.tear::after{content:"";position:absolute;top:0;width:24px;height:24px;border-radius:50%;background:var(--stage)}
+.tear::before{left:-12px}.tear::after{right:-12px}
+.tear i{position:absolute;left:20px;right:20px;top:11px;border-top:2px dashed #cfd4da}
+
+/* 입장권 아래쪽(문의) */
+.stub{padding:4px 20px 20px}
+.stub .lab{font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.2em}
+.phone{display:flex;align-items:center;gap:10px;margin-top:2px}
+.phone a{font-size:31px;font-weight:900;color:var(--ink);letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.copy{border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:500;color:var(--sub)}
+.mini{margin:6px 0 14px;font-size:14px;color:var(--sub);display:grid;gap:2px}
+.mini a{color:var(--text)}
+.mini span{display:inline-block;width:58px;color:var(--label);font-size:12.5px;font-weight:600}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border-radius:12px;font-size:16px;font-weight:700;border:1px solid transparent;padding:0 10px;text-align:center}
+.btn svg{width:19px;height:19px;flex:none}
+.btn.call{background:var(--orange);color:#fff}
+.btn.save{background:var(--stage2);color:#fff}
+.btn.kakao{grid-column:1/-1;background:var(--kakao);color:var(--kakao-ink)}
+.btn.ghost{background:#fff;border-color:var(--line);color:var(--ink);font-weight:500;font-size:15px;min-height:46px}
+.hint{margin:12px 0 0;font-size:13px;color:var(--sub)}
+
+/* 어두운 바탕 구역 */
+section.block{margin-top:34px}
+h2{display:flex;align-items:baseline;gap:10px;margin:0 0 14px;font-size:19px;font-weight:700;color:#fff;letter-spacing:.02em}
+h2 small{font-size:12.5px;font-weight:500;color:var(--onsub);letter-spacing:0}
+h2::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange);flex:none;align-self:center}
+
+/* 행사 순서표 (분야별 영상) */
+.order{margin:0;padding:0;list-style:none;border-top:1px solid var(--online)}
+.order a{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:10px;padding:13px 2px;border-bottom:1px solid var(--online)}
+.order .n{font-size:15px;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums}
+.order b{display:block;font-size:16px;font-weight:700;color:#fff;line-height:1.3}
+.order small{display:block;font-size:13px;color:var(--onsub)}
+.order svg{width:18px;height:18px;color:var(--onsub)}
+.order li.main a{background:rgba(244,123,32,.12);border-radius:10px;border-bottom-color:transparent;padding-left:10px;padding-right:10px;margin:6px -10px 0}
+.order li.main .n,.order li.main svg{color:var(--orange2)}
+
+.plain{margin:0;font-size:16px;font-weight:500;color:var(--on);line-height:1.8}
+.note{margin:10px 0 0;font-size:13px;color:var(--onsub)}
+
+.work{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.work li{background:rgba(255,255,255,.05);border:1px solid var(--online);border-radius:12px;padding:14px 16px}
+.work li.main{border-color:rgba(244,123,32,.55)}
+.work h3{margin:0 0 3px;font-size:16.5px;font-weight:700;color:#fff}
+.work p{margin:0;font-size:14px;color:var(--onsub)}
+.work .strong{color:var(--on);font-weight:500;margin-bottom:4px}
+.tag{display:inline-block;margin-bottom:6px;color:var(--orange2);font-size:12.5px;font-weight:700;letter-spacing:.06em}
+
+.links{margin:0;padding:0;list-style:none;border-top:1px solid var(--online)}
+.links a{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--online);padding:14px 2px}
+.links b{display:block;font-size:16px;font-weight:600;color:#fff}
+.links small{display:block;font-size:13px;color:var(--onsub)}
+.links svg{width:16px;height:16px;flex:none;color:var(--orange)}
+
+/* 명함 전하기 (작은 입장권) */
+.pass{display:flex;align-items:center;gap:16px;background:var(--paper);color:var(--text);border-radius:14px;padding:16px;position:relative}
+.pass img{width:112px;height:112px;flex:none;display:block}
+.pass p{margin:0 0 10px;font-size:14px;color:var(--sub)}
+
+footer{margin-top:36px;padding-top:20px;border-top:1px solid var(--online);color:var(--onsub);font-size:13px}
+footer img{height:24px;width:auto;margin-bottom:10px;display:block}
+footer p{margin:2px 0}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 82px);background:#fff;color:var(--ink);border-radius:999px;padding:10px 18px;font-size:14px;font-weight:600;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.toast[hidden]{display:none}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:rgba(14,24,48,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--online);padding:8px max(10px,env(safe-area-inset-left,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-right,0px))}
+.bar div{max-width:460px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.bar a{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:10px;font-size:14.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.1)}
+.bar a.c{background:var(--orange)}.bar a.k{background:var(--kakao);color:var(--kakao-ink)}
+
+@media (max-width:359px){.name{font-size:34px}.photo{width:96px;height:120px}.phone a{font-size:26px}.fields dd b{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <img src="assets/logo-white.png" alt="힐링엔터테인먼트">
+    <button class="share" id="shareBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.7l6.8-4M8.6 13.3l6.8 4"/></svg>
+      공유
+    </button>
+  </div>
+
+  <main class="ticket" aria-label="이현호 명함">
+    <div class="t-head">
+      <span class="kind">행사 초대장</span>
+      <span class="no">힐링엔터테인먼트</span>
+      <span class="lights" aria-hidden="true"></span>
+    </div>
+    <div class="who">
+      <img class="photo" src="assets/profile.jpg" alt="정장을 입은 MC 이현호">
+      <div class="who-text">
+        <span class="role">대표 MC</span>
+        <h1 class="name">이현호</h1>
+      </div>
+    </div>
+    <dl class="fields">
+      <div><dt>경력</dt><dd><b>20</b>년</dd></div>
+      <div><dt>진행</dt><dd><b class="o">3,000</b>회 이상</dd></div>
+      <div class="wide"><dt>분야</dt><dd>기업 · 학교 · 지자체 · 총동문회 행사 기획 · 진행</dd></div>
+      <div class="wide"><dt>한 번에</dt><dd>축제 기획 · 장비 · 세팅 · 진행까지</dd></div>
+    </dl>
+
+    <div class="tear" aria-hidden="true"><i></i></div>
+
+    <div class="stub">
+      <span class="lab">예약 문의</span>
+      <div class="phone"><a href="tel:+821056202153">010-5620-2153</a><button class="copy" type="button" data-copy="010-5620-2153">복사</button></div>
+      <div class="mini">
+        <div><span>메일</span><a href="mailto:leehh2153@gmail.com">leehh2153@gmail.com</a></div>
+        <div><span>홈페이지</span><a href="https://www.healingenter.co.kr/" target="_blank" rel="noopener">www.healingenter.co.kr</a></div>
+      </div>
+      <div class="btns">
+        <a class="btn call" href="tel:+821056202153">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          전화하기
+        </a>
+        <a class="btn save" href="healingmc-lee-hyunho.vcf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+          연락처 저장
+        </a>
+        <a class="btn kakao" href="https://open.kakao.com/me/vvipevent" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6l-1 3.7c-.1.3.3.6.6.4l4.4-2.9c.4 0 .9.1 1.3.1 5.5 0 10-3.5 10-7.9S17.5 3 12 3z"/></svg>
+          카카오톡 상담
+        </a>
+        <a class="btn ghost" href="sms:+821056202153">문자 보내기</a>
+        <a class="btn ghost" href="mailto:leehh2153@gmail.com">이메일 보내기</a>
+      </div>
+      <p class="hint">날짜 · 인원 · 장소만 알려 주시면 진행 가능 여부부터 확인해 드립니다.</p>
+    </div>
+  </main>
+
+  <section class="block">
+    <h2>분야별 영상 <small>보고 싶은 행사를 누르세요</small></h2>
+    <ol class="order">
+      <li class="main"><a href="https://www.healingenter.co.kr/video.html#plan" target="_blank" rel="noopener"><span class="n">01</span><span><b>축제 · 행사 기획</b><small>시장 축제 · 동 축제 · 기념식</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://www.healingenter.co.kr/video.html#corp" target="_blank" rel="noopener"><span class="n">02</span><span><b>기업 행사</b><small>워크숍 · 송년회 · 초대 행사</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://www.healingenter.co.kr/video.html#sports" target="_blank" rel="noopener"><span class="n">03</span><span><b>체육대회</b><small>50명부터 2,000명까지</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://www.healingenter.co.kr/video.html#gov" target="_blank" rel="noopener"><span class="n">04</span><span><b>지자체 · 관공서</b><small>회원 대회 · 공무원 행사</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://www.healingenter.co.kr/video.html#school" target="_blank" rel="noopener"><span class="n">05</span><span><b>학교 · 수학여행</b><small>레크리에이션 · 학교 축제</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://www.healingenter.co.kr/video.html#sportsday" target="_blank" rel="noopener"><span class="n">06</span><span><b>명랑 운동회</b><small>초 · 중 · 고 대동놀이</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://www.healingenter.co.kr/video.html#abroad" target="_blank" rel="noopener"><span class="n">07</span><span><b>해외 행사</b><small>포상여행 · 연수 · 선상 파티</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://www.healingenter.co.kr/video.html#ceo" target="_blank" rel="noopener"><span class="n">08</span><span><b>최고경영자과정 · 동문회</b><small>골프 대회 · 졸업여행</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <h2>함께한 곳</h2>
+    <p class="plain">한화생명 · 농협 · SKT · 노원구 · 동대문구 · GTX-A · 철도청</p>
+    <p class="note">세계거리춤축제 · 청량리종합시장 축제를 기획 · 진행했습니다.</p>
+  </section>
+
+  <section class="block">
+    <h2>하는 일</h2>
+    <ul class="work">
+      <li class="main">
+        <span class="tag">기획부터 한 번에</span>
+        <h3>축제 · 공공 행사</h3>
+        <p class="strong">기획 · 장비 · 세팅 · 진행을 한 곳에서 맡습니다.</p>
+        <p>세계거리춤축제 · 청량리종합시장 축제 · 노원 달빛 야시장 · 노원 가족문화예술제 · 상계동 축제</p>
+      </li>
+      <li><h3>기업 행사</h3><p>체육대회 · 워크숍 · 팀빌딩 · 송년회 · 기념식 · 해외 포상여행</p></li>
+      <li><h3>학교 · 청소년 행사</h3><p>운동회 · 수학여행 레크리에이션 · 학교 축제 · 졸업식</p></li>
+      <li><h3>총동문회 · 최고경영자과정</h3><p>기념식 · 체육대회 · 송년의 밤</p></li>
+    </ul>
+    <p class="note">억지 유도 없이 편안하게 웃는 진행을 합니다.</p>
+  </section>
+
+  <section class="block">
+    <h2>더 보기</h2>
+    <ul class="links">
+      <li><a href="https://www.healingenter.co.kr/video.html" target="_blank" rel="noopener"><span><b>영상 전체 보기</b><small>홈페이지 영상 모음</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://www.healingenter.co.kr/" target="_blank" rel="noopener"><span><b>홈페이지</b><small>www.healingenter.co.kr</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://www.healingenter.co.kr/quote.html" target="_blank" rel="noopener"><span><b>자동 견적 받아 보기</b><small>행사 종류와 인원을 넣으면 바로 확인</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://blog.naver.com/leehh2153" target="_blank" rel="noopener"><span><b>블로그 · 기업 · 공공 행사</b><small>기업 · 관공서 · 축제 후기</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://blog.naver.com/vnddns56" target="_blank" rel="noopener"><span><b>블로그 · 학교 · 청소년 행사</b><small>운동회 · 수학여행 · 학교 축제 후기</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://youtube.com/@healingevent" target="_blank" rel="noopener"><span><b>유튜브</b><small>힐링MC 이현호 채널</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+      <li><a href="https://www.instagram.com/mc_hyunholee" target="_blank" rel="noopener"><span><b>인스타그램</b><small>@mc_hyunholee</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>명함 전하기</h2>
+    <div class="pass">
+      <img src="assets/card-qr.png" alt="이 모바일 명함으로 연결되는 QR 코드" width="112" height="112">
+      <div>
+        <p>옆 사람 휴대폰 카메라로 이 QR을 찍으면 같은 명함이 열립니다.</p>
+        <button class="btn ghost" type="button" id="shareBtn2" style="width:100%">링크 보내기</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="assets/logo-white.png" alt="힐링엔터테인먼트">
+    <p>대표 MC 이현호 · 010-5620-2153</p>
+    <p>서울 노원구 덕릉로 595</p>
+  </footer>
+</div>
+
+<nav class="bar" aria-label="바로 연락하기"><div>
+  <a class="c" href="tel:+821056202153">전화</a>
+  <a href="sms:+821056202153">문자</a>
+  <a class="k" href="https://open.kakao.com/me/vvipevent" target="_blank" rel="noopener">카톡</a>
+  <a href="https://www.healingenter.co.kr/quote.html" target="_blank" rel="noopener">견적</a>
+</div></nav>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast'),timer;
+  function say(msg){toast.textContent=msg;toast.hidden=false;clearTimeout(timer);timer=setTimeout(function(){toast.hidden=true},1800)}
+  function copy(text,done){
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){say(done)},function(){fallback(text,done)})}
+    else fallback(text,done)
+  }
+  function fallback(text,done){
+    var t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();
+    try{document.execCommand('copy');say(done)}catch(e){say('복사하지 못했습니다')}
+    document.body.removeChild(t)
+  }
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b.getAttribute('data-copy'),'전화번호를 복사했습니다')})});
+  function share(){
+    var data={title:'힐링MC 이현호 모바일 명함',text:'힐링엔터테인먼트 대표 MC 이현호 · 010-5620-2153',url:location.href};
+    if(navigator.share){navigator.share(data).catch(function(){})}else copy(location.href,'링크를 복사했습니다')
+  }
+  document.getElementById('shareBtn').addEventListener('click',share);
+  document.getElementById('shareBtn2').addEventListener('click',share);
+})();
+</script>
+</body>
+</html>

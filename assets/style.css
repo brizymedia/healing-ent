@@ -780,3 +780,41 @@ input,select,textarea{font:inherit;color:inherit}
 .ftl{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-size:14px}
 .ftl a{color:var(--navy);font-weight:600}
 .ftl a:hover{color:var(--blue)}
+/* 행사 분류별로 보기 (첫 화면) */
+.catg{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.catg .cat{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 18px;display:flex;flex-direction:column;gap:6px}
+.catg .cat b{font-size:17px;color:var(--navy);line-height:1.35}
+.catg .cat small{font-size:13.5px;color:var(--sub);line-height:1.5;flex:1}
+.catg .cat span{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.catg .cat a{font-size:13.5px;font-weight:700;color:var(--blue);border:1.5px solid #9FB6E2;border-radius:999px;padding:5px 11px;white-space:nowrap}
+.catg .cat a:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+@media (max-width:1000px){.catg{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.catg{grid-template-columns:1fr}.catg .cat{padding:16px}}
+/* 간결한 대문 (2026-11-26) */
+.bycat .aud{margin-top:18px;font-size:14px;color:var(--sub);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.bycat .aud a{font-weight:700;color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.sig-more{margin-top:16px;font-size:14.5px;color:var(--sub);line-height:1.6}
+.sig-more a{color:var(--blue);font-weight:700}
+.vgrid.v3{grid-template-columns:repeat(3,1fr)}
+#office .box{max-width:720px}
+@media (max-width:760px){.vgrid.v3{grid-template-columns:1fr}}
+@media (max-width:520px){
+  .catg{grid-template-columns:1fr 1fr;gap:10px}
+  .catg .cat{padding:14px 12px;gap:4px}
+  .catg .cat b{font-size:15px}
+  .catg .cat small{display:none}
+  .catg .cat span{gap:4px;margin-top:6px}
+  .catg .cat a{font-size:12.5px;padding:4px 8px}
+}
+@media (max-width:760px){
+  .vgrid.v3{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+  .vgrid.v3 > *{scroll-snap-align:start}
+  .home-contact .ways,.home-contact .hours{display:none}
+  #signature .sigt a{min-height:150px;padding:14px}
+  #signature .sigt b{font-size:15px}
+}
+@media (max-width:760px){
+  .home-main > section.sec{padding:44px 0}
+  .home-main #bycat .sh > p,.home-main #faq .sh > p{display:none}
+  .home-main .sh{margin-bottom:18px}
+}

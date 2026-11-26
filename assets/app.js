@@ -21,8 +21,17 @@
   /* 유튜브 영상 — 리틀리(litt.ly/healingmc)의 영상 레퍼런스를 옮김.
      id: 유튜브 영상 주소의 11자리, s: true = 쇼츠(세로), c: 분류(VCATS 의 키). 맨 앞에 넣으면 먼저 보인다. */
   var PROMO_ID = 'bIoatdv9iYw';   // 힐링엔터 홍보영상 — 대문 · 영상 페이지 맨 위
-  var VCATS = { school: '학교행사 · 수학여행', sportsday: '명랑 운동회', sports: '체육대회', corp: '기업행사', gov: '지자체 · 관공서', abroad: '해외 워크숍', ceo: '최고경영자과정 · 골프', plan: '축제 · 행사 기획' };
+  var VCATS = { school: '학교행사 · 수학여행', sportsday: '명랑 운동회', sports: '체육대회', corp: '기업행사', gov: '지자체 · 관공서', abroad: '해외 행사', ceo: '최고경영자과정 · 동문회 · 골프', plan: '축제 · 행사 기획' };
   var VIDEOS = [
+    { id: 'NQOjWnBCLx4', t: '청량리종합시장 축제 — 제4회 달빛 나들이 (기획 · 진행)', c: 'plan' },
+    { id: 'bYobjAL8z3g', t: '노원 달빛 야시장 — 상계중앙시장 축제 (저녁)', c: 'plan' },
+    { id: 'n4q3LU2NXBc', t: '노원 달빛 야시장 — 상계중앙시장 축제 (낮)', c: 'plan' },
+    { id: '3KId3zPRN_A', t: '상계1동 주민축제 — 상1하나로 한마당 (기획 · 장비 · 진행)', c: 'plan' },
+    { id: 'Vkgo57l1Bfg', t: '상계2동 주민축제 — 원터마을문화축제 (기획 · 장비 · 진행)', c: 'plan' },
+    { id: 'EAbiZJNvvV4', t: '상계3·4동 주민축제 — 어울림 한마당 (기획 · 장비 · 진행)', c: 'plan' },
+    { id: 'nKUrLrdDmI8', t: '노원 가족문화예술제 하이라이트', c: 'plan', s: true },
+    { id: '9M93uvQkiUg', t: '전통시장 축제 하이라이트', c: 'plan', s: true },
+    { id: 'gTXCNu2yuho', t: '마을 푸드페스티벌 하이라이트', c: 'plan', s: true },
     { id: 'vX7UPCX1Yi8', t: '3,000명 대형 컨벤션 행사 기획 (TF팀 감독)', c: 'plan' },
     { id: '0Li2oNlEELo', t: '창립 기념식 토탈 기획 · 연출 · 진행 (2018~2024)', c: 'plan' },
     { id: 'JmzffC6j9CM', t: '체육대회 영상 모음', c: 'sports' },
@@ -187,6 +196,51 @@
       var f = b.getAttribute('data-f');
       $$('#vgrid .vcard').forEach(function (c) { c.hidden = f !== 'all' && c.getAttribute('data-c') !== f; });
     });
+    var vh = location.hash.replace('#', ''), vb = vh && vf.querySelector('[data-f="' + vh + '"]'); if (vb) vb.click();
+  }
+
+  /* ---------- 행사 분류 (영상 분류 VCATS 와 같은 이름으로 갤러리 · 행사 이야기도 나눔) ----------
+     글자(행사 이름 · 분류 표시)를 보고 분류를 정한다. old = 사진 칸(school · corp · fest · stage) */
+  function evCats(s, old) {
+    var r = [], add = function (k) { if (r.indexOf(k) < 0) r.push(k); };
+    var schoolFest = /학교축제|학교 축제|충암제/.test(s);
+    if (/해외|호주|시드니|베트남|호치민|무이네|방콕|태국|일본|괌|싱가포르|필리핀|크루즈/.test(s)) add('abroad');
+    if (/동문|최고경영자|최고위|골프/.test(s)) add('ceo');
+    if (!schoolFest && !/운동회/.test(s) && /지역축제|주민축제|주민총회|전통시장|시장 축제|시장 행사|중앙시장|종합시장|야시장|달빛|가요제|푸드페|페스티벌|페스타|문화예술|어울림 한마당|하나로|원터마을|명절 이벤트|설맞이|기념식|창립/.test(s)) add('plan');
+    if (/보육인|어린이집연합회|정책포럼|포럼|복지관|생신잔치|구지회|동 연합|새마을|주민자치|자유총연맹|청소년수련관|청소년 연합|공무원|구민|시민/.test(s)) add('gov');
+    var sport = /운동회|체육대회|체육활동|놀이 한마당|튼튼한마당|숲 한마당/.test(s);
+    var kid = /초등|중학교|중 |고등|학교|어린이집|유치원|가족|육아|학년|연합운동회|연합 운동회/.test(s) || old === 'school';
+    var biz = /기업|한화|임직원|직원|축산|BNI|SK|가족동반/.test(s);
+    if (sport) add(kid && !biz ? 'sportsday' : 'sports');
+    if (!sport && !/기념식/.test(s) && (schoolFest || /수학여행|레크리에이션|레크레이션|대학|학과|청소년|MT/.test(s)) && (old === 'school' || /학교|초등|중학|고등|대학|학과|청소년|레크리에이션 ·/.test(s))) add('school');
+    if (biz || /팀빌딩|워크숍|워크샵|세미나|야유회|송년|만찬|패밀리|컨벤션|컨퍼런스|청년회의소|JC|회원대회|경영설명회|산악회|풀파티|캠프|연수|아빠의 날|소상공인|가족동반|초대/.test(s)) { if (!r.length || biz) add('corp'); }
+    if (!r.length) add(old === 'school' ? 'school' : old === 'fest' ? 'plan' : 'corp');
+    return r;
+  }
+  // 분류 단추 묶음 만들기: items = [{c:'school corp'}...], extra = 분류 외 단추(무대·음향 등)
+  function catButtons(box, items, extra) {
+    var n = function (k) { return items.filter(function (w) { return (' ' + w.c + ' ').indexOf(' ' + k + ' ') >= 0; }).length; };
+    var act = box.getAttribute('data-built') ? box.querySelector('.act') : null, cur = act ? act.getAttribute('data-f') : (location.hash.replace('#', '') || 'all');
+    var keys = Object.keys(VCATS).concat(Object.keys(extra || {})), lab = function (k) { return VCATS[k] || extra[k]; };
+    if (cur !== 'all' && (keys.indexOf(cur) < 0 || !n(cur))) cur = 'all';
+    box.setAttribute('data-built', '1');
+    box.innerHTML = '<button data-f="all" class="' + (cur === 'all' ? 'act' : '') + '" aria-pressed="' + (cur === 'all') + '">전체 <small>' + items.length + '</small></button>' +
+      keys.map(function (k) { var c = n(k); return c ? '<button data-f="' + k + '" class="' + (cur === k ? 'act' : '') + '" aria-pressed="' + (cur === k) + '">' + lab(k) + ' <small>' + c + '</small></button>' : ''; }).join('');
+  }
+
+  /* 행사 이야기 목록(stories/index.html) — 카드 위에 분류 단추 */
+  var sbig = $('.scards.big');
+  if (sbig && /\/stories\/(index\.html)?$/.test(location.pathname)) {
+    var scs = $$('a.scard', sbig), sitems = scs.map(function (a) {
+      var sm = $('small', a), lab = sm ? sm.textContent : '', ttl = (a.textContent || '').replace(lab, '');
+      var im = $('img', a), old = im && /\/photos\/(school|corp|fest|stage)\//.exec(im.src); old = old ? old[1] : '';
+      var c = evCats(lab.split(' · ')[0] + ' ' + ttl, old).join(' '); a.setAttribute('data-c', c); return { c: c };
+    });
+    var sf = document.createElement('div'); sf.className = 'filters'; sf.id = 'sfilters'; sf.setAttribute('role', 'group'); sf.setAttribute('aria-label', '행사 분류');
+    sbig.parentNode.insertBefore(sf, sbig); catButtons(sf, sitems);
+    var sApply = function () { var a = $('.act', sf), f = a ? a.getAttribute('data-f') : 'all'; scs.forEach(function (x) { x.hidden = f !== 'all' && (' ' + x.getAttribute('data-c') + ' ').indexOf(' ' + f + ' ') < 0; }); };
+    sf.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; $$('button', sf).forEach(function (x) { x.classList.toggle('act', x === b); x.setAttribute('aria-pressed', x === b); }); sApply(); });
+    sApply();
   }
   // 재생 창
   var ym = null;
@@ -301,16 +355,16 @@
   function srcT(w) { return w.u || IMG + 'th/' + w.f; }
   function srcP(w) { return w.u || IMG + w.f; }
   function workCard(w, k) {
-    return '<figure data-k="' + k + '" data-c="' + esc(w.c) + '" tabindex="0" role="button" aria-label="' + esc(w.t) + ' 크게 보기">' +
+    return '<figure data-k="' + k + '" data-c="' + esc(w.k || w.c) + '" tabindex="0" role="button" aria-label="' + esc(w.t) + ' 크게 보기">' +
       '<img src="' + srcT(w) + '" alt="' + esc(w.t) + '" loading="lazy" width="800" height="600">' +
       '<figcaption><em>' + esc(w.o) + '</em><b>' + esc(w.t) + '</b></figcaption></figure>';
   }
   var gal = $('#gal'), pf = $('#pfGrid'), list = [], figs = [];
+  // 사진마다 행사 분류(영상과 같은 이름) 붙이기 — 무대·음향 사진은 따로 단추 하나 더
+  function tagWorks(a) { a.forEach(function (w) { if (w.k) return; var old = (w.c || '').split(' '), k = evCats(w.t + ' ' + (w.u ? w.o.replace(/기업 · 단체 워크숍|학교행사|지역축제|무대 · 음향/g, '') : w.o), old[0]); if (old.indexOf('stage') >= 0) k.push('stage'); w.k = k.join(' '); }); return a; }
   function counts() {
-    $$('#filters button').forEach(function (b) {
-      var f = b.getAttribute('data-f'), n = f === 'all' ? list.length : list.filter(function (w) { return w.c.split(' ').indexOf(f) >= 0; }).length;
-      var c = $('small', b); if (c) c.textContent = n; else b.insertAdjacentHTML('beforeend', '<small>' + n + '</small>');
-    });
+    var fb = $('#filters'); if (!fb) return;
+    catButtons(fb, list.map(function (w) { return { c: w.k || w.c }; }), { stage: '무대 · 음향' });
   }
   function applyFilter() {
     var act = $('#filters .act'), f = act ? act.getAttribute('data-f') : 'all';
@@ -318,13 +372,13 @@
   }
   if (gal) { var pick = (gal.getAttribute('data-pick') || '').split(',').map(Number); list = pick.map(function (k) { return WORKS[k]; }).filter(Boolean); gal.innerHTML = list.map(workCard).join(''); figs = $$('figure', gal); }
   if (pf) {
-    list = WORKS.slice(); pf.innerHTML = list.map(workCard).join(''); figs = $$('figure', pf); counts();
+    list = tagWorks(WORKS.slice()); pf.innerHTML = list.map(workCard).join(''); figs = $$('figure', pf); counts(); applyFilter();
     fetch(UP_LIST + '?t=' + Math.floor(Date.now() / 300000), { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
       if (!j || !j.photos || !j.photos.length) return;
       var up = j.photos.filter(function (x) { return x && x.path; }).map(function (x) {
         return { u: UP_IMG + x.path.split('/').map(encodeURIComponent).join('/'), t: x.event || '행사 현장', o: [UP_CAT[x.cat] || '현장', x.place, (x.date || '').replace(/-/g, '.')].filter(Boolean).join(' · '), c: x.cat || 'etc' };
       });
-      list = up.concat(WORKS); pf.innerHTML = list.map(workCard).join(''); figs = $$('figure', pf); counts(); applyFilter();
+      list = tagWorks(up.concat(WORKS)); pf.innerHTML = list.map(workCard).join(''); figs = $$('figure', pf); counts(); applyFilter();
     }).catch(function () {});
   }
   var grid = gal || pf, lb = $('#lb');
