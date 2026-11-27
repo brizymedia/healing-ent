@@ -818,3 +818,10 @@ input,select,textarea{font:inherit;color:inherit}
   .home-main #bycat .sh > p,.home-main #faq .sh > p{display:none}
   .home-main .sh{margin-bottom:18px}
 }
+
+/* 대문 첫 화면 문의 안내 한 줄 (2026-11-28) */
+.hero .cta-note{margin-top:14px;font-size:15px;font-weight:600;color:rgba(255,255,255,.9)}
+.hero .cta-note.hx{animation-delay:.86s}
+@media (max-width:640px){.hero .cta-note{font-size:13.5px;margin-top:10px}.hero .lead{line-height:1.6}}
+.hero .h1 .nw{white-space:nowrap;display:inline-block}
+.hero .cta-note a{color:var(--ye);font-weight:800;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
